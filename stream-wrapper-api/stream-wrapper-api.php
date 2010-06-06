@@ -8,6 +8,8 @@ Author: Jon Stacey
 Author URI: http://jonsview.com
 */
 
+// Coding standards: http://codex.wordpress.org/WordPress_Coding_Standards
+
 define('STREAM_WRAPPER_API_VERSION', '1.0');
 
 // class stuff
