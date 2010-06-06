@@ -13,6 +13,24 @@ Author URI: http://jonsview.com
 
 define('STREAM_WRAPPER_API_VERSION', '1.0');
 
-// class stuff
+/** 
+ * This file holds the stream wrapper registry
+ */
+//require_once ABSPATH.'/wp-config.php';
+
+/**
+ * Initializes the Stream Wrapper API
+ * 
+ * Prepares the Stream Wrapper API for use.
+ *
+ * @package Stream Wrappers
+ * @since 1.0
+ */
+function stream_wrapper_api_init()  {
+	// TODO: Initialize Streams API
+}
+
+// Register Stream Wrapper API Initialization function with WordPress
+add_action('init', 'stream_wrapper_api_init', 0, 0);
 
 ?>
