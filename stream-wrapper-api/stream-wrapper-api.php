@@ -9,6 +9,7 @@ Author URI: http://jonsview.com
 */
 
 // Coding standards: http://codex.wordpress.org/WordPress_Coding_Standards
+// Inline documentation standards: http://codex.wordpress.org/Inline_Documentation
 
 define('STREAM_WRAPPER_API_VERSION', '1.0');
 
