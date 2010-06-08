@@ -82,10 +82,9 @@ class WP_Stream_Wrapper_Registry {
 	private static $registry;
 	
 	private function __construct() {
-		// @todo: build the registry
-		// see http://codex.wordpress.org/Function_Reference/do_action
-		
-		echo "Constructor called<br />\n";
+		// Run register_stream_wrapper action which tells stream wrapper
+		// plugins that it's time to register themselves.
+		do_action('register_stream_wrapper');
 	}
 	
 	public static function get_registry() {
