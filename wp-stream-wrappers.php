@@ -11,12 +11,12 @@ Author URI: http://jonsview.com
 // Coding standards: http://codex.wordpress.org/WordPress_Coding_Standards
 // Inline documentation standards: http://codex.wordpress.org/Inline_Documentation
 
-define('WP_STREAM_WRAPPERS_VERSION', 1.0);
+define('WP_STREAM_WRAPPERS_VERSION', '1.0.0');
 
 /** 
  * This file holds the stream wrapper registry
  */
-//require_once ABSPATH.'/wp-config.php';
+require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-stream-wrapper-registry.php';
 
 /**
  * Initializes WP Stream Wrappers

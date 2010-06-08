@@ -55,17 +55,12 @@
  * Please use them in the order they appear here.  phpDocumentor has
  * several other tags available, feel free to use them.
  *
- * @category   CategoryName
- * @package    PackageName
- * @author     Original Author <author@example.com>
- * @author     Another Author <another@example.com>
- * @copyright  1997-2005 The PHP Group
- * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
- * @version    Release: @package_version@
- * @link       http://pear.php.net/package/PackageName
- * @see        NetOther, Net_Sample::Net_Sample()
- * @since      Class available since Release 1.2.0
- * @deprecated Class deprecated in Release 2.0.0
+ * @package    Stream Wrappers
+ * @author     Jon Stacey <jon@jonsview.com>
+ * @version    Release: 1.0.0
+ * @link       
+ * @see        
+ * @since      Class available since Release 1.0.0
  */
 
 class WP_Stream_Wrapper_Registry {
