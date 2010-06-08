@@ -27,6 +27,7 @@ require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-stream-wrapper-registry.php';
  * @since 1.0.0
  */
 function wp_stream_wrappers_init() {
+	wp_stream_wrapper_registry_init();
 	// @todo: Initialize WP Stream Wrappers
 }
 

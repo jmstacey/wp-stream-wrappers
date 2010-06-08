@@ -22,6 +22,20 @@
 
 
 /**
+ * Initializes WP Stream Wrappers Registry
+ * 
+ * Builds the stream wrapper registry. This is a helper function that simply
+ * makes sure that the registry gets built before use.
+ *
+ * @package Stream Wrappers
+ * @since 1.0.0
+ */
+function wp_stream_wrapper_registry_init() {
+	$registry = WP_Stream_Wrapper_Registry::get_registry();
+}
+
+
+/**
  * An example of how to write code to PEAR's standards
  *
  * Docblock comments start with "/**" at the top.  Notice how the "/"
@@ -65,6 +79,22 @@
 
 class WP_Stream_Wrapper_Registry {
 	
+	private static $registry;
+	
+	private function __construct() {
+		// @todo: build the registry
+		// see http://codex.wordpress.org/Function_Reference/do_action
+		
+		echo "Constructor called<br />\n";
+	}
+	
+	public static function get_registry() {
+		if (!self::$registry) {
+			self::$registry = new WP_Stream_Wrapper_Registry();
+		}
+		
+		return self::$registry;
+	}
 	
 }
 
