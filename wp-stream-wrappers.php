@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Stream Wrapper API
+Plugin Name: WP Stream Wrappers
 Plugin URI: TBD
-Description: Stream Wrapper API provides the core foundation upon which wrappers for WordPress are built.
+Description: WP Stream Wrappers provides the core foundation upon which wrappers for WordPress are built.
 Version: 1.0
 Author: Jon Stacey
 Author URI: http://jonsview.com
@@ -11,7 +11,7 @@ Author URI: http://jonsview.com
 // Coding standards: http://codex.wordpress.org/WordPress_Coding_Standards
 // Inline documentation standards: http://codex.wordpress.org/Inline_Documentation
 
-define('STREAM_WRAPPER_API_VERSION', '1.0');
+define('WP_STREAM_WRAPPERS_VERSION', 1.0);
 
 /** 
  * This file holds the stream wrapper registry
@@ -19,18 +19,20 @@ define('STREAM_WRAPPER_API_VERSION', '1.0');
 //require_once ABSPATH.'/wp-config.php';
 
 /**
- * Initializes the Stream Wrapper API
+ * Initializes WP Stream Wrappers
  * 
- * Prepares the Stream Wrapper API for use.
+ * Prepares the WordPress Stream Wrapper registry and interfaces for use.
  *
  * @package Stream Wrappers
  * @since 1.0
  */
-function stream_wrapper_api_init()  {
-	// TODO: Initialize Streams API
+function wp_stream_wrappers_init() {
+	// @todo: Initialize WP Stream Wrappers
 }
 
 // Register Stream Wrapper API Initialization function with WordPress
-add_action('init', 'stream_wrapper_api_init', 0, 0);
+// We may need to evenaully initialize even before WordPress.
+// It depends how far down the rabbit hole we wish to travel.
+add_action('init', 'wp_stream_wrappers_init', 0, 0);
 
 ?>

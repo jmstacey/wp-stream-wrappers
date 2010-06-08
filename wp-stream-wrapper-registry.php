@@ -67,7 +67,8 @@
  * @since      Class available since Release 1.2.0
  * @deprecated Class deprecated in Release 2.0.0
  */
-class Streams_Wrapper_Registry {
+
+class WP_Stream_Wrapper_Registry {
 	
 	
 }
