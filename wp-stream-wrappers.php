@@ -24,7 +24,7 @@ require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-stream-wrapper-registry.php';
  * Prepares the WordPress Stream Wrapper registry and interfaces for use.
  *
  * @package Stream Wrappers
- * @since 1.0
+ * @since 1.0.0
  */
 function wp_stream_wrappers_init() {
 	// @todo: Initialize WP Stream Wrappers
