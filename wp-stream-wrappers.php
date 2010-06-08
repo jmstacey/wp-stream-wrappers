@@ -3,7 +3,7 @@
 Plugin Name: WP Stream Wrappers
 Plugin URI: TBD
 Description: WP Stream Wrappers provides the core foundation upon which wrappers for WordPress are built.
-Version: 1.0
+Version: 1.0.0
 Author: Jon Stacey
 Author URI: http://jonsview.com
 */
