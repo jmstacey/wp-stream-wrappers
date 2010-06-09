@@ -141,13 +141,25 @@ class WP_Stream_Wrapper_Registry {
 	 * @see WP_Stream_Wrapper_Registry::unregister_wrapper()
 	 * @since Method available since Release 1.0.0
 	 */
-	public static function register_wrapper($scheme, $wrapper_metadata) {
-		// @todo: register with PHP first. If successful, then add to registry
-			// stream_wrapper_register($scheme, $wrapper_metadata['class']);
-		self::$stream_wrappers[$scheme] = $wrapper_metadata; // Add wrapper
-
-		// @todo: safety check: if wrapper already exists, unregister it.
-			// stream_wrapper_unregister($scheme);
+	public static function register_wrapper($scheme, $metadata) {
+		// Ask PHP for registered wrappers (stream_get_wrappers()).
+		// If a wrapper is already registered with this scheme, override.
+		if (in_array($scheme, stream_get_wrappers(), true)) {
+			stream_wrapper_unregister($scheme);
+		}
+		
+		self::$stream_wrappers[$scheme] = $metadata; // Debug purposes only
+	
+		// if (stream_wrapper_register($scheme, $metadata['class'])) {
+		// 	// If registered with PHP succesfully, add to registry.
+		// 	self::$stream_wrappers[$scheme] = $metadata;
+		// }
+		// else {
+		// 	// Throw an error. This should be very rare.
+		// 	// @todo: Is this proper use of WP_Error?
+		// 	$error = new WP_Error();
+		// 	$error.WP_Error('199001', "Unable to register wrapper implementing scheme '$scheme'");
+		// }
 	}
 	
 	/**
