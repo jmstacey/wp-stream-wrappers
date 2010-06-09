@@ -109,7 +109,6 @@ class WP_Stream_Wrapper_Registry {
 			self::$registry = new WP_Stream_Wrapper_Registry();
 		}
 		
-		//print_r(self::$registry);
 		return self::$registry;
 	}
 	
