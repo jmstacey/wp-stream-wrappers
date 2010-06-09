@@ -36,38 +36,10 @@ function wp_stream_wrapper_registry_init() {
 
 
 /**
- * An example of how to write code to PEAR's standards
+ * WP Stream Wrapper Registry
  *
- * Docblock comments start with "/**" at the top.  Notice how the "/"
- * lines up with the normal indenting and the asterisks on subsequent rows
- * are in line with the first asterisk.  The last line of comment text
- * should be immediately followed on the next line by the closing asterisk
- * and slash and then the item you are commenting on should be on the next
- * line below that.  Don't add extra lines.  Please put a blank line
- * between paragraphs as well as between the end of the description and
- * the start of the @tags.  Wrap comments before 80 columns in order to
- * ease readability for a wide variety of users.
- *
- * Docblocks can only be used for programming constructs which allow them
- * (classes, properties, methods, defines, includes, globals).  See the
- * phpDocumentor documentation for more information.
- * http://phpdoc.org/docs/HTMLSmartyConverter/default/phpDocumentor/tutorial_phpDocumentor.howto.pkg.html
- *
- * The Javadoc Style Guide is an excellent resource for figuring out
- * how to say what needs to be said in docblock comments.  Much of what is
- * written here is a summary of what is found there, though there are some
- * cases where what's said here overrides what is said there.
- * http://java.sun.com/j2se/javadoc/writingdoccomments/index.html#styleguide
- *
- * The first line of any docblock is the summary.  Make them one short
- * sentence, without a period at the end.  Summaries for classes, properties
- * and constants should omit the subject and simply state the object,
- * because they are describing things rather than actions or behaviors.
- *
- * Below are the tags commonly used for classes. @category through @version
- * are required.  The remainder should only be used when necessary.
- * Please use them in the order they appear here.  phpDocumentor has
- * several other tags available, feel free to use them.
+ * Stores information about registered WordPress stream wrappers in
+ * a single location for easy access and reference.
  *
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
@@ -76,25 +48,137 @@ function wp_stream_wrapper_registry_init() {
  * @see        
  * @since      Class available since Release 1.0.0
  */
-
 class WP_Stream_Wrapper_Registry {
 	
+	/**
+	 * The wrapper registry object
+	 *
+	 * The stream wrapper registry singleton.
+	 *
+	 * @var object
+	 * @access private
+	 */
 	private static $registry;
 	
+	/**
+	 * The wrapper registry
+	 *
+	 * An array containining registered stream wrappers in the following
+	 * format:
+	 *
+	 * $registry[$scheme][$info];
+	 * $scheme is the string version of the scheme (e.g. 'http')
+	 * $info is an array with additional metadata as follows:
+	 * 		'name' => 'wrapper name',
+	 *		'class' => 'wrapper implementation class name',
+	 *		'description' => 'brief description of wrapper.'
+	 *
+	 * @var array
+	 * @access private
+	 */
+	private static $stream_wrappers = array();
+	
+	/**
+	 * Initializes the WP_Stream_Wrapper_Regisitry singleton object
+	 *
+	 * @access private
+	 * @since Method available since Release 1.0.0
+	 */
 	private function __construct() {
 		// Run register_stream_wrapper action which tells stream wrapper
 		// plugins that it's time to register themselves.
 		do_action('register_stream_wrapper');
 	}
 	
+	/**
+	 * Gets the entire stream wrapper registry
+	 *
+	 * Returns the entire stream wrapper registry, or initializes a new
+	 * registry if one does not exist.
+	 *
+	 * @return object
+	 *   A singleton object for the stream wrapper registry.
+	 *
+	 * @access public
+	 * @static
+	 * @see WP_Stream_Wrapper_Registry::get_stream_wrappers()
+	 * @since Method available since Release 1.0.0
+	 */
 	public static function get_registry() {
-		if (!self::$registry) {
+		if (!isset(self::$registry)) {
 			self::$registry = new WP_Stream_Wrapper_Registry();
 		}
 		
+		//print_r(self::$registry);
 		return self::$registry;
 	}
 	
+	/**
+	 * Registers given stream wrapper
+	 *
+	 * Registers the given stream wrapper and populates the stream
+	 * wrapper registry with its metadata.
+	 *
+	 * Here is an example of what wrapper metadata might look like for
+	 * a wrapper implementing the sample scheme (e.g. sample://resource).
+	 * <code>
+	 * $wrapper_metadata = array(
+	 *		'name' => 'Sample wrapper',
+	 *		'class' => 'WP_Stream_Wrapper_Sample',
+	 *		'description' => 'A sample WordPress stream wrapper.'
+	 * );
+	 * </code>
+	 *
+	 * @param array 
+	 *   Stream wrapper metadata array. See array structure example above.
+	 *
+	 * @return array
+	 *   An array containing all metadata for all registered wrappers.
+	 *
+	 * @access public
+	 * @static
+	 * @see WP_Stream_Wrapper_Registry::unregister_wrapper()
+	 * @since Method available since Release 1.0.0
+	 */
+	public static function register_wrapper($scheme, $wrapper_metadata) {
+		// @todo: register with PHP first. If successful, then add to registry
+			// stream_wrapper_register($scheme, $wrapper_metadata['class']);
+		self::$stream_wrappers[$scheme] = $wrapper_metadata; // Add wrapper
+
+		// @todo: safety check: if wrapper already exists, unregister it.
+			// stream_wrapper_unregister($scheme);
+	}
+	
+	/**
+	 * Gets the stream wrappers registration array
+	 *
+	 * Returns the heart of the stream wrappers registry: the
+	 * array of registerd stream wrapper metadata.
+	 *
+	 * @return array
+	 *   An array containing all metadata for registered wrappers.
+	 *
+	 * @access public
+	 * @static
+	 * @see WP_Stream_Wrapper_Registry::register_wrapper()
+	 * @since Method available since Release 1.0.0
+	 */
+	public static function get_stream_wrappers() {
+		return self::$stream_wrappers;
+	}
+	
+	/**
+	 * Prevents users from cloing the registry
+	 *
+	 * This registry must remain singular throughout execution. Multiple
+	 * copies of the registry could make things very confusing. Additionally,
+	 * no use cases can currentlybe conceived in which an identical copy of
+	 * the registry would be needed.
+	 */
+    public function __clone()
+    {
+        trigger_error('Clone is not allowed.', E_USER_ERROR);
+    }
 }
 
 ?>
