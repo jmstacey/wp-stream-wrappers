@@ -128,6 +128,8 @@ class WP_Stream_Wrapper_Registry {
 	 * );
 	 * </code>
 	 *
+	 * @param string
+	 *   String containing the scheme implemented by wrapper (e.g. 'sample').
 	 * @param array 
 	 *   Stream wrapper metadata array. See array structure example above.
 	 *
