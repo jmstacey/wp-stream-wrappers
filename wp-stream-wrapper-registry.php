@@ -22,7 +22,7 @@
 
 
 /**
- * Initializes WP Stream Wrappers Registry
+ * Initializes WP Stream Wrapper Registry
  * 
  * Builds the stream wrapper registry. This is a helper function that simply
  * makes sure that the registry gets built before use.
