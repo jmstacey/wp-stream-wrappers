@@ -49,7 +49,7 @@ function wp_stream_wrapper_registry_init() {
  * @since      Class available since Release 1.0.0
  */
 class WP_Stream_Wrapper_Registry {
-	
+
 	/**
 	 * The wrapper registry object
 	 *
