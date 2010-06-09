@@ -168,7 +168,7 @@ class WP_Stream_Wrapper_Registry {
 	}
 	
 	/**
-	 * Prevents users from cloing the registry
+	 * Prevents users from cloning the registry
 	 *
 	 * This registry must remain singular throughout execution. Multiple
 	 * copies of the registry could make things very confusing. Additionally,
@@ -177,7 +177,7 @@ class WP_Stream_Wrapper_Registry {
 	 */
     public function __clone()
     {
-        trigger_error('Clone is not allowed.', E_USER_ERROR);
+        trigger_error('Cloning the WP Stream Wrapper Registry is not allowed.', E_USER_ERROR);
     }
 }
 
