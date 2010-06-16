@@ -39,7 +39,7 @@
  * @see        WP_Stream_Wrapper_Interface
  * @since      Class available since Release 1.0.0
  */
-interface Php_Stream_Wrapper_Interface {	
+interface PHP_Stream_Wrapper_Interface {	
 	public function __construct();
 	
 	public function dir_closedir();	
@@ -71,17 +71,17 @@ interface Php_Stream_Wrapper_Interface {
 /**
  * WordPress Stream Wrapper Extension
  *
- * Extends the Php_Stream_Wrapper_Interface with methods expected by
+ * Extends the PHP_Stream_Wrapper_Interface with methods expected by
  * WordPress stream wrapper classes
  *
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    Release: 1.0.0
  * @link       
- * @see        Php_Stream_Wrapper_Interface
+ * @see        PHP_Stream_Wrapper_Interface
  * @since      Class available since Release 1.0.0
  */
-interface WP_Stream_Wrapper_Interface extends Php_Stream_Wrapper_Interface {	
+interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {	
 
 }
 
