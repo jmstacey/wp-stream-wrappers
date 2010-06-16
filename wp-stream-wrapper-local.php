@@ -10,4 +10,24 @@
  * @package Stream Wrappers
  */
 
+/**
+ * WordPress stream wrapper: test
+ *
+ * A simple and complete stream wrapper implementation for testing and
+ * reference purposes. URIs such as "test://example.txt" are expanded
+ * to a normal filesystem path where the test files are contained, for
+ * example "wp-content/plugins/wp-stream-wrappers-test/files". After the URIs
+ * are expanded, PHP filesystem funcations are invoked with the expanded path.
+ *
+ * @package    Stream Wrappers
+ * @author     Jon Stacey <jon@jonsview.com>
+ * @version    Release: 1.0.0
+ * @link       
+ * @see        WP_Stream_Wrapper_Interface
+ * @since      Class available since Release 1.0.0
+ */
+abstract class WP_Local_Stream_Wrapper implements WP_Stream_Wrapper_Interface {
+	
+}
+
 ?>
