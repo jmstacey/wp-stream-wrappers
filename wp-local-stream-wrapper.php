@@ -22,12 +22,67 @@
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    Release: 1.0.0
- * @link       
+ * @link       http://www.php.net/manual/en/class.streamwrapper.php
  * @see        WP_Stream_Wrapper_Interface
  * @since      Class available since Release 1.0.0
  */
 abstract class WP_Local_Stream_Wrapper implements WP_Stream_Wrapper_Interface {
+	/**
+	 * Stream context resource
+	 *
+	 * Note: This property must be public so PHP can populate it with
+	 * the actual context resource. 
+	 *
+	 * @see stream_context_get_options()
+	 * @var resource
+	 * @access public
+	 */
+	public $context;
 	
+	/**
+	 * Generic resource handle
+	 *
+	 * This handle is needed so that the currently instantiated object
+	 * knows and has access to the actual resource.
+	 *
+	 * @var resource
+	 * @access public
+	 */
+	public $handle = null;
+	
+	/**
+	 * Instance URI (stream)
+	 *
+	 * A stream is referenced as "scheme://target".
+	 *
+	 * @var string
+	 * @access protected
+	 */
+	protected $uri;
+	
+	/**
+	 * Sets the URI instance variable
+	 *
+	 * Base implementation of set_uri().
+	 *
+	 * @package Stream Wrappers
+	 * @since 1.0.0
+	 */
+	function set_uri($uri) {
+		$this->uri = $uri;
+	}
+	
+	/**
+	 * Returns the instance URI
+	 *
+	 * Base implementation of get_uri().
+	 *
+	 * @package Stream Wrappers
+	 * @since 1.0.0
+	 */
+	function get_uri() {
+		return $this->uri;
+	}
 }
 
 ?>
