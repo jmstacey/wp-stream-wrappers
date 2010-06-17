@@ -135,6 +135,21 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	function realpath() {
 		return @realpath(@this->get_wrapper_path().'/'.WP_Stream::uri_target($uri));
 	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::dir_closedir()
+	 *
+	 * @return bool
+	 *   true on success.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::dir_closedir()
+	 * @link http://php.net/manual/en/streamwrapper.dir-closedir.php
+	 * @since 1.0.0
+	 */
+	public function dir_closedir() {
+		return closedir($this->handle);
+	}
 
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_open()
