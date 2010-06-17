@@ -70,7 +70,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @package Stream Wrappers
 	 * @since 1.0.0
 	 */
-	abstract function get_local_path();
+	abstract function get_wrapper_path();
 	
 	/**
 	 * Sets the URI instance variable
@@ -115,7 +115,25 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @since 1.0.0
 	 */
 	function realpath() {
-		return @realpath(@this->get_local_path().'/'.WP_Stream::uri_target($uri));
+		return @realpath(@this->get_wrapper_path().'/'.WP_Stream::uri_target($uri));
+	}
+	
+	/**
+	 * Returns the local filesystem path
+	 *
+	 * @param string $uri
+	 *   optional URI to be supplied when doing a move or rename.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::chmod()
+	 * @since 1.0.0
+	 */
+	protected function get_local_path($uri = null) {
+		if (!isset($uri)) {
+			$uri = $this->uri;
+		}
+		
+		return $this->get_wrapper_path().'/'.WP_Stream::uri_target($uri);
 	}
 	
 }
