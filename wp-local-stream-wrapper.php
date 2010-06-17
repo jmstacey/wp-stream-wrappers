@@ -39,7 +39,12 @@ add_action('register_stream_wrapper', 'wp_local_stream_wrapper_register', 1, 0);
 
 
 /**
- * WordPress Local Stream Wrapper
+ * WordPress Local Stream Wrapper Base
+ *
+ * A simple implementation of WP_Stream_Wrapper_Interface and ready to use
+ * skeleton for manipulating files on the local file system. New custom
+ * tailored stream wrappers that deal with local files can be created in
+ * just a few lines of code.
  *
  * A simple and complete stream wrapper implementation to handle files on the
  * local filesystem in an location agnostic manner. URIs such as
@@ -55,7 +60,7 @@ add_action('register_stream_wrapper', 'wp_local_stream_wrapper_register', 1, 0);
  * @see        WP_Stream_Wrapper_Interface
  * @since      Class available since Release 1.0.0
  */
-abstract class WP_Local_Stream_Wrapper implements WP_Stream_Wrapper_Interface {
+abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interface {
 	/**
 	 * Stream context resource
 	 *
@@ -92,7 +97,7 @@ abstract class WP_Local_Stream_Wrapper implements WP_Stream_Wrapper_Interface {
 	/**
 	 * Retrieves the path that the wrapper is responsible for
 	 *
-	 * All wrappers that extend WP_Local_Stream_Wrapper must implement
+	 * All wrappers that extend WP_Local_Stream_Wrapper_Base must implement
 	 * this method.
 	 *
 	 * @package Stream Wrappers
