@@ -197,6 +197,24 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function dir_readdir() {
 		return readdir($this->handle);
 	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::dir_rewinddir()
+	 *
+	 * This function is called in response to PHP's rewinddir().
+	 *
+	 * @return bool
+	 *   true on success or false on failure.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::dir_rewinddir()
+	 * @see rewinddir()
+	 * @link http://php.net/manual/en/streamwrapper.dir-rewinddir.php
+	 * @since 1.0.0
+	 */
+	public function dir_rewinddir() {
+		return rewinddir($this->handle);
+	}
 
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_open()
