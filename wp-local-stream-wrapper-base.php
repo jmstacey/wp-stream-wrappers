@@ -100,7 +100,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * Implementation of WP_Stream_Wrapper_Interface::chmod()
 	 *
 	 * @package Stream Wrappers
-	 * @see WP_Stream_Wrapper_Interface
+	 * @see WP_Stream_Wrapper_Interface::chmod()
 	 * @since 1.0.0
 	 */
 	function chmod($mode) {
