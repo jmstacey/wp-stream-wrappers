@@ -215,6 +215,37 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function dir_rewinddir() {
 		return rewinddir($this->handle);
 	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::mkdir()
+	 *
+	 * This function is called in response to PHP's mkdir().
+	 *
+	 * @param string $uri
+	 *   URI of the directory which should be created.
+	 * @param int $mode
+	 *   the value passed to PHP's mkdir().
+	 * @param int $options
+	 *   a bitwise mask of values, such as STREAM_MKDIR_RECURSIVE.
+	 * @return bool
+	 *   true on success or false on failure.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::dir_mkdir()
+	 * @see mkdir()
+	 * @link http://php.net/manual/en/streamwrapper.mkdir.php
+	 * @since 1.0.0
+	 */
+	public function mkdir($uri, $mode, $options) {
+		$this->uri = $uri;
+	    $recursive = (bool)($options & STREAM_MKDIR_RECURSIVE);
+	    if ($options & STREAM_REPORT_ERRORS) {
+	      return mkdir($this->get_local_path(), $mode, $recursive);
+	    }
+	    else {
+	      return @mkdir($this->get_local_path(), $mode, $recursive);
+	    }
+	}
 
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_open()
