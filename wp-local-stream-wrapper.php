@@ -1,6 +1,6 @@
 <?php
 /**
- * This file contains the wp-content WordPress Stream Wrapper which implements
+ * This file contains the Local WordPress Stream Wrapper which implements
  * the "local://" scheme. This is a simple and complete stream wrapper
  * implementation for testing, reference, and extension purposes. Other stream
  * wrappers that manipulate files on the local filesystem can quickly extend
@@ -11,13 +11,14 @@
  */
 
 /**
- * WordPress stream wrapper: test
+ * WordPress Local Stream Wrapper
  *
- * A simple and complete stream wrapper implementation for testing and
- * reference purposes. URIs such as "test://example.txt" are expanded
- * to a normal filesystem path where the test files are contained, for
- * example "wp-content/plugins/wp-stream-wrappers-test/files". After the URIs
- * are expanded, PHP filesystem funcations are invoked with the expanded path.
+ * A simple and complete stream wrapper implementation to handle files on the
+ * local filesystem in an location agnostic manner. URIs such as
+ * "test://example.txt" are expanded to a normal filesystem path where the
+ * test files are contained, for example 
+ * "wp-content/plugins/wp-stream-wrappers-test/files". After the URIs are
+ * expanded, PHP filesystem funcations are invoked with the expanded path.
  *
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
