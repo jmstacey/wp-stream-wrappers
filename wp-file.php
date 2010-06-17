@@ -69,6 +69,8 @@ class WP_File {
 	/**
 	 * Returns the scheme of the current file object's URI
 	 *
+	 * @todo should this be a static method?
+	 *
 	 * @return string
 	 *   String containing the name of the scheme.
 	 *
@@ -84,6 +86,8 @@ class WP_File {
 
 	/**
 	 * Returns the target of the current file object's URI
+	 *
+	 * @todo should this be a static method?
 	 *
 	 * @return string
 	 *   String containing the target (path). For example, the URI
