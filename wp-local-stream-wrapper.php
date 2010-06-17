@@ -61,6 +61,17 @@ abstract class WP_Local_Stream_Wrapper implements WP_Stream_Wrapper_Interface {
 	protected $uri;
 	
 	/**
+	 * Retrieves the path that the wrapper is responsible for
+	 *
+	 * All wrappers that extend WP_Local_Stream_Wrapper must implement
+	 * this method.
+	 *
+	 * @package Stream Wrappers
+	 * @since 1.0.0
+	 */
+	abstract function get_local_path();
+	
+	/**
 	 * Sets the URI instance variable
 	 *
 	 * Base implementation of set_uri().
