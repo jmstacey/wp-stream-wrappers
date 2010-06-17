@@ -149,12 +149,12 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 *
 	 * PHP's realpath() does not support stream wrappers. This default is
 	 * provided so that individual wrappers may implement their own
-	 * solutions. See WP_Local_Stream_Wrapper for an example.
+	 * solutions. See WP_Local_Stream_Wrapper_Base for an example.
 	 *
 	 * @return string
 	 *   a string with absolute pathname on success [as implemented by
-	 *   WP_Local_Stream_Wrapper], or false on failure or if the registered
-	 *   wrapper does not provide an implementation.
+	 *   WP_Local_Stream_Wrapper_Base], or false on failure or if the
+	 *   registered wrapper does not provide an implementation.
 	 *
 	 * @access public
 	 * @link http://php.net/manual/en/function.chmod.php
