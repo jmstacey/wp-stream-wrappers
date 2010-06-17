@@ -155,7 +155,8 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   true if file was opened successfully.
 	 *
 	 * @package Stream Wrappers
-	 * @see http://php.net/manual/en/streamwrapper.stream-open.php
+	 * @see WP_Stream_Wrapper_Interface::stream_open()
+	 * @link http://php.net/manual/en/streamwrapper.stream-open.php
 	 * @since 1.0.0
 	 */
 	public function stream_open($uri, $mode, $options, &$opened_path) {
