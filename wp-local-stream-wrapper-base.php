@@ -139,16 +139,44 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::dir_closedir()
 	 *
+	 * This function is called in response to PHP's closedir().
+	 *
 	 * @return bool
 	 *   true on success.
 	 *
 	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::dir_closedir()
+	 * @see closedir()
 	 * @link http://php.net/manual/en/streamwrapper.dir-closedir.php
 	 * @since 1.0.0
 	 */
 	public function dir_closedir() {
 		return closedir($this->handle);
+	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::dir_opendir()
+	 *
+	 * This function is called in response to PHP's opendir().
+	 *
+	 * @param  string @uri
+	 *   the URI passed to opendir().
+	 * @param  unkown $options
+	 *   whether or not to enforce safe mode.
+	 * @return bool
+	 *   true on success.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::dir_opendir()
+	 * @see opendir()
+	 * @link http://php.net/manual/en/streamwrapper.dir-opendir.php
+	 * @since 1.0.0
+	 */
+	public function dir_opendir($uri, $options) {
+		$this->uri = $uri;
+		$this->handle = opendir($this->get_local_path());
+		
+		return (bool)$this->handle;
 	}
 
 	/**
