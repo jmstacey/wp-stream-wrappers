@@ -16,7 +16,7 @@ This plugin by itself provides little to no user visible functionality.
 Instead, most use comes from other wrapper implementation plugins.
 For example, check out the YouTube and Amazon S3 wrappers [coming soon].
 
-[@todo: A more detailed description and links to documentation go here
+[@todo: A more detailed description and links to documentation go here]
 
 == Installation ==
 
