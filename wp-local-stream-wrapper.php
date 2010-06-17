@@ -27,7 +27,7 @@ function wp_local_stream_wrapper_register() {
 	$wrapper_metadata = array(
 		'name' => 'WP Local Stream Wrapper',
 		'class' => 'WP_Local_Stream_Wrapper',
-		'description' => 'WP Local Stream Wrapper provides a ready to use base for interacting with files on the local filesystem.'
+		'description' => 'WP Local Stream Wrapper provides a simple example of leveraging the WP_Local_Stream_Wrapper_Base class to create simple wrappers capable of manipulating local files.'
 	);
 
 	// Register this wrapper
