@@ -268,6 +268,34 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function rename($from_uri, $to_uri) {
 		return rename($this->get_local_path($from_uri), $this->get_local_path($to_uri));
 	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::rmdir()
+	 *
+	 * This function is called in response to PHP's rmdir().
+	 *
+	 * @param string $uri
+	 *   the directory which should be removed.
+	 * @param string $options
+	 *   a bitwise mask of valus, such as STREAM_REPORT_ERRORS.
+	 * @return bool
+	 *   true on success or false on failure.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::rmdir()
+	 * @see rmdir()
+	 * @link http://php.net/manual/en/streamwrapper.rmdir.php
+	 * @since 1.0.0
+	 */
+	public function rmdir($uri, $options) {
+		$this->uri = $uri;
+		if ($options & STREAM_REPORT_ERRORS) {
+			return rmdir($this->getLocalPath());
+		}
+		else {
+			return @rmdir($this->getLocalPath());
+		}
+	}
 
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_open()
