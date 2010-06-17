@@ -178,6 +178,25 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		
 		return (bool)$this->handle;
 	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::dir_readdir()
+	 *
+	 * This function is called in response to PHP's readdir().
+	 *
+	 * @return mixed
+	 *   the next filename (string), or false (bool) if there are no more
+	 * files in the directory.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::dir_readdir()
+	 * @see readdir()
+	 * @link http://php.net/manual/en/streamwrapper.dir-readdir.php
+	 * @since 1.0.0
+	 */
+	public function dir_readdir() {
+		return readdir($this->handle);
+	}
 
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_open()
