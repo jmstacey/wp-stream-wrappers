@@ -107,6 +107,17 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		return @chmod($this->realpath(), $mode);
 	}
 	
+	/**
+	 * Implementation of WP_Stream_Wrapper_Interface::realpath()
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::realpath()
+	 * @since 1.0.0
+	 */
+	function realpath() {
+		return @realpath($this->get_local_path().'/'.$wp_file->uri_target);
+	}
+	
 }
 
 ?>
