@@ -82,7 +82,87 @@ interface PHP_Stream_Wrapper_Interface {
  * @since      Class available since Release 1.0.0
  */
 interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {	
-
+	/**
+	 * URI (stream) of the current file object
+	 *
+	 * A stream is referenced as "scheme://target".
+	 *
+	 * @var string
+	 * @access private
+	 */
+	private $uri;
+	
+	/**
+	 * Returns the URI of the current file object
+	 *
+	 * A URI stream is referenced as "scheme://target"
+	 *
+	 * @return string
+	 *   String containing the current WP_File URI.
+	 *
+	 * @access public
+	 * @see set_uri()
+	 * @since Method available since Release 1.0.0
+	 */
+	public function get_uri() {
+		return $this->uri;
+	}
+	
+	/**
+	 * Sets the URI of the current file object
+	 *
+	 * A URI stream is referenced as "scheme://target"
+	 *
+	 * @param string
+	 *   String containing the new URI for the WP_File object.
+	 *
+	 * @access public
+	 * @see 
+	 * @since Method available since Release 1.0.0
+	 */
+	public function set_uri($uri) {
+		// TODO: Normalize the URI first?
+		$this->uri = $uri;
+	}
+	
+	/**
+	 * Changes permissions of the resource
+	 *
+	 * This functionality does not exist in the official stream wraper
+	 * interface, and so is implemented just for WordPress.
+	 *
+	 * @param int $mode
+	 *   an integer value for the permissions. Consult PHP chmod()
+	 *   documentation for more information.
+	 * @return bool
+	 *   true on success or false on failure.
+	 *
+	 * @access public
+	 * @link http://php.net/manual/en/function.chmod.php
+	 * @see 
+	 * @since Method available since Release 1.0.0
+	 */
+	public function chmod($mode);
+	
+	/**
+	 * Returns the canonical, absolute path of the resource
+	 *
+	 * PHP's realpath() does not support stream wrappers. This default is
+	 * provided so that individual wrappers may implement their own
+	 * solutions. See WP_Local_Stream_Wrapper for an example.
+	 *
+	 * @return string
+	 *   a string with absolute pathname on success [as implemented by
+	 *   WP_Local_Stream_Wrapper], or false on failure or if the registered
+	 *   wrapper does not provide an implementation.
+	 *
+	 * @access public
+	 * @link http://php.net/manual/en/function.chmod.php
+	 * @see 
+	 * @since Method available since Release 1.0.0
+	 */
+	public function realpath();
+	
 }
 
 
