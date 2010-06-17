@@ -24,7 +24,8 @@ require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-stream-wrapper-registry.php';
 require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-file.php';
 
 /** 
- * This file contains the WP_Local_Stream_Wrapper
+ * This file contains the WP Local Stream wrapper and corresponding
+ * WP_Local_Stream_Wrapper and WP_Local_Stream_Wrapper_Base classes.
  */
 require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-local-stream-wrapper.php';
 

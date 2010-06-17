@@ -1,17 +1,13 @@
 <?php
 /**
- * This file contains the WordPress File API that is compatible with stream
- * wrappers. WP_File could also be known as WP_Stream (if that makes more
- * sense). A WP_File is a stream. A stream is a resource object which
- * exhibits streamable behavior.
- *
- * @link http://www.php.net/manual/en/intro.stream.php
+ * This file contains the WordPress Stream Wrappers helper class. It provides
+ * useful functions that are used by WordPress Wrapper implementations.
  *
  * @package Stream Wrappers
  */
 
 /**
- * WordPress File Object and helper methods
+ * WordPress Stream File Object and helper methods
  *
  * @todo add more thourough description here
  *
@@ -22,50 +18,7 @@
  * @see        
  * @since      Class available since Release 1.0.0
  */
-class WP_File {
-	/**
-	 * URI (stream) of the current file object
-	 *
-	 * A stream is referenced as "scheme://target".
-	 *
-	 * @var string
-	 * @access private
-	 */
-	private $uri;
-	
-	/**
-	 * Returns the URI of the current file object
-	 *
-	 * A URI stream is referenced as "scheme://target"
-	 *
-	 * @return string
-	 *   String containing the current WP_File URI.
-	 *
-	 * @access public
-	 * @see set_uri()
-	 * @since Method available since Release 1.0.0
-	 */
-	public function get_uri() {
-		return $this->uri;
-	}
-	
-	/**
-	 * Sets the URI of the current file object
-	 *
-	 * A URI stream is referenced as "scheme://target"
-	 *
-	 * @param string
-	 *   String containing the new URI for the WP_File object.
-	 *
-	 * @access public
-	 * @see 
-	 * @since Method available since Release 1.0.0
-	 */
-	public function set_uri($uri) {
-		// TODO: Normalize the URI first?
-		$this->uri = $uri;
-	}
-	
+class WP_Stream {
 	/**
 	 * Returns the scheme of the current file object's URI
 	 *
@@ -75,10 +28,11 @@ class WP_File {
 	 *   String containing the name of the scheme.
 	 *
 	 * @access public
+	 * @static
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public function get_uri_scheme() {
+	public static function get_uri_scheme() {
 		/*
 			TODO Implement get_uri_scheme()
 		*/
@@ -94,10 +48,11 @@ class WP_File {
 	 *   "local://foobar/test.txt" would return "foobar/test.txt".
 	 *
 	 * @access public
+	 * @static
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public function get_uri_target() {
+	public static function get_uri_target() {
 		/*
 			TODO Implement get_uri_target()
 		*/
@@ -120,10 +75,11 @@ class WP_File {
 	 *   WordPress local stream wrapper object (WP_Local_Stream_Wrapper).
 	 *
 	 * @access public
+	 * @static
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public function get_stream_wrapper_instance() {
+	public static function get_stream_wrapper_instance() {
 		/*
 			TODO Implement get_stream_wrapper_instance()
 		*/
