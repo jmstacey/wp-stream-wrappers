@@ -560,6 +560,27 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function stream_write($data) {
 		return fwrite($this->handle, $data);
 	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::unlink()
+	 *
+	 * This function is called in response to PHP's unlink().
+	 *
+	 * @param string $path
+	 *   the file which should be deleted.
+	 * @return bool
+	 *   true on success or false on failure.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::unlink()
+	 * @see unlink()
+	 * @link http://php.net/manual/en/streamwrapper.unlink.php
+	 * @since 1.0.0
+	 */
+	public function unlink($path) {
+		$this->uri = $uri; // set instance URI
+		return unlink($this->get_local_path());
+	}
 }
 
 ?>
