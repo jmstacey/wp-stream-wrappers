@@ -539,6 +539,27 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function stream_tell() {
 		return ftell($this->handle);
 	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_write()
+	 *
+	 * This function is called in response to PHP's fwrite().
+	 *
+	 * @param string $data
+	 *   the data to store in the underlying stream.
+	 * @return int
+	 *   the number of bytes that were successfully stored, or 0
+	 *   if none could be stored.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_write()
+	 * @see fwrite()
+	 * @link http://php.net/manual/en/streamwrapper.stream-write.php
+	 * @since 1.0.0
+	 */
+	public function stream_write($data) {
+		return fwrite($this->handle, $data);
+	}
 }
 
 ?>
