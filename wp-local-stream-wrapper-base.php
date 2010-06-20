@@ -418,6 +418,31 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function stream_read($count) {
 		return fread($this->handle, $count);
 	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_seek()
+	 *
+	 * This function is called in response to PHP's fseek().
+	 *
+	 * @param int $offset
+	 *   the stream offset to seek to.
+	 * @param int $whence = SEEK_SET
+	 *   possible valuse include:
+	 *   - SEEK_SET to set position equal to $offset bytes
+	 *   - SEEK_CUR to set position to current location plus $offset
+	 *   - SEEK_END to set position to end-of-file plus $offset
+	 * @return bool
+	 *   true if the position was updated, false otherwise.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_seek()
+	 * @see fseek()
+	 * @link http://php.net/manual/en/streamwrapper.stream-seek.php
+	 * @since 1.0.0
+	 */
+	public function stream_seek($offset, $whence) {
+		return fseek($this->handle, $offset, $whence);
+	}
 
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_open()
