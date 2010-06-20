@@ -581,6 +581,38 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		$this->uri = $uri; // set instance URI
 		return unlink($this->get_local_path());
 	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::url_stat()
+	 *
+	 * This function is called in response to all PHP stat() related
+	 * functions. See streamWrapper::url_stat() documentation on the PHP
+	 * Web site for more information.
+	 *
+	 * @param string $uri
+	 *   the uri to get information about.
+	 * @param $flags
+	 *   additional flags set by the streams API. 
+	 *   See streamWrapper:url_stat().
+	 * @return mixed
+	 *   as many elements as stat() does.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::url_stat()
+	 * @see stat()
+	 * @link http://php.net/manual/en/streamwrapper.url-stat.php
+	 * @since 1.0.0
+	 */
+	public function url_stat($uri, $flags) {
+		$this->uri = $uri; // set instance URI
+		
+		if ($flags & STREAM_URL_STAT_QUIET) {
+			return @stat($this->get_local_path());
+		}
+		else {
+			return stat($this->get_local_path());
+		}
+	}
 }
 
 ?>
