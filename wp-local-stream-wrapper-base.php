@@ -443,6 +443,31 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function stream_seek($offset, $whence) {
 		return fseek($this->handle, $offset, $whence);
 	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_set_option()
+	 *
+	 * WARNING: The WP Local Stream Wrapper Base class does not
+	 * implement this method. It is here simply as a placeholder.
+	 *
+	 * This function is called to set options on the stream.
+	 *
+	 * @param int $option
+	 * @param int $arg1
+	 * @param int $arg2
+	 * @return bool
+	 *   false is always returned. This method is not implemened in the stream
+	 *   wrappers plugin as of version 1.0.0.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_set_option()
+	 * @see 
+	 * @link http://php.net/manual/en/streamwrapper.stream-set-option.php
+	 * @since 1.0.0
+	 */
+	public function stream_set_option($option, $arg1, $arg2) {
+		return false; // This method is not implemented.
+	}
 
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_open()
