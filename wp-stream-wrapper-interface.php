@@ -63,8 +63,8 @@ interface PHP_Stream_Wrapper_Interface {
 	public function stream_stat();
 	public function stream_tell();
 	public function stream_write($data);
-	public function unlink($uri);
 	
+	public function unlink($uri);
 	public function url_stat($uri, $flags);
 }
 
