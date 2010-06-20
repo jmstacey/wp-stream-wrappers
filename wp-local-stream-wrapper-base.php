@@ -468,6 +468,24 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function stream_set_option($option, $arg1, $arg2) {
 		return false; // This method is not implemented.
 	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_stat()
+	 *
+	 * This function is called in response to PHP's fstat().
+	 *
+	 * @return mixed
+	 *   see PHP's stat() documentation
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_stat()
+	 * @see stat()
+	 * @link http://www.php.net/manual/en/function.stat.php
+	 * @since 1.0.0
+	 */
+	public function stream_stat() {
+		return fstat($this->handle);
+	}
 
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_open()
