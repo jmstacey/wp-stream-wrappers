@@ -398,6 +398,27 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		return flock($this->handle, $operation);
 	}
 	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_read()
+	 *
+	 * This function is called in response to PHP's fread() and fgets().
+	 *
+	 * @param mode $count
+	 *   how many bytes of data from the current position should be returned.
+	 * @return mixed
+	 *   If there are less than $count bytes available, return as many as are
+	 *   available. If no more data is available, return either false or an
+	 *   empty string.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_read()
+	 * @see fread() and fgets()
+	 * @link http://php.net/manual/en/streamwrapper.stream-read.php
+	 * @since 1.0.0
+	 */
+	public function stream_read($count) {
+		return fread($this->handle, $count);
+	}
 
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_open()
