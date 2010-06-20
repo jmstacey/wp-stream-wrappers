@@ -402,7 +402,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *
 	 * This function is called in response to PHP's fread() and fgets().
 	 *
-	 * @param mode $count
+	 * @param int $count
 	 *   how many bytes of data from the current position should be returned.
 	 * @return mixed
 	 *   If there are less than $count bytes available, return as many as are
