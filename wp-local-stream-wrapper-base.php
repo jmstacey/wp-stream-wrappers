@@ -334,6 +334,24 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		return feof($this->handle);
 	}
 	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_flush()
+	 *
+	 * This function is called in response to PHP's fflush().
+	 *
+	 * @return bool
+	 *   true if the cached data was successfully stored (or there was no
+	 *   data to store), or false if the data could not be stored.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_flush()
+	 * @see fflush()
+	 * @link http://php.net/manual/en/streamwrapper.stream-flush.php
+	 * @since 1.0.0
+	 */
+	public function stream_flush() {
+		return fflush($this->handle);
+	}	
 	
 	
 
