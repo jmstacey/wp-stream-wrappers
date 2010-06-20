@@ -330,7 +330,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @link http://php.net/manual/en/streamwrapper.stream-eof.php
 	 * @since 1.0.0
 	 */
-	public function stream_close() {
+	public function stream_eof() {
 		return feof($this->handle);
 	}
 	
