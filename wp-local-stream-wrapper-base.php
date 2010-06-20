@@ -353,6 +353,30 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		return fflush($this->handle);
 	}	
 	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_lock()
+	 *
+	 * This function is called in response to PHP's flock().
+	 *
+	 * @param mode $operation
+	 *   one of the following:
+	 *   - LOCK_SH to acquire a shared lock (reader)
+	 *   - LOCK_EX to acquire an exclusive lock (writer)
+	 *   - LOCK_UN to release a lock (shared or exclusive)
+	 *   - LOCK_NB if you don't want flock() to block while locking
+	 * @return bool
+	 *   true on success or false on failure. Note that flock() will emit
+	 *   E_WARNING if call to this method fails.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_lock()
+	 * @see flock()
+	 * @link http://php.net/manual/en/streamwrapper.stream-lock.php
+	 * @since 1.0.0
+	 */
+	public function stream_lock($operation) {
+		return flock($this->handle, $operation);
+	}
 	
 
 	/**
