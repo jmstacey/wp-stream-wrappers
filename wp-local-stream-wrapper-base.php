@@ -298,6 +298,26 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	}
 	
 	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_cast()
+	 *
+	 * This function is called in response to PHP's stream_select().
+	 *
+	 * @param int $cast_as
+	 *   STREAM_CAST_FOR_SELECT or STREAM_CAST_AS_STREAM
+	 * @return mixed
+	 *   the underlying stream resource used by the wrapper, or false.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_cast()
+	 * @see stream_select()
+	 * @link http://php.net/manual/en/streamwrapper.stream-cast.php
+	 * @since 1.0.0
+	 */
+	public function stream_cast($cast_as) {
+		return stream_select($cast_as);
+	}
+	
+	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_close()
 	 *
 	 * This function is called in response to PHP's fclose().
