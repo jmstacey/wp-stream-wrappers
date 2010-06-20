@@ -566,7 +566,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *
 	 * This function is called in response to PHP's unlink().
 	 *
-	 * @param string $path
+	 * @param string $uri
 	 *   the file which should be deleted.
 	 * @return bool
 	 *   true on success or false on failure.
@@ -577,7 +577,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @link http://php.net/manual/en/streamwrapper.unlink.php
 	 * @since 1.0.0
 	 */
-	public function unlink($path) {
+	public function unlink($uri) {
 		$this->uri = $uri; // set instance URI
 		return unlink($this->get_local_path());
 	}
