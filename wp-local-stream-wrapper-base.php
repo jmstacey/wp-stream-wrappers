@@ -296,6 +296,29 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 			return @rmdir($this->getLocalPath());
 		}
 	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_close()
+	 *
+	 * This function is called in response to PHP's fclose().
+	 *
+	 * @return none
+	 *   No value is returned.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_close()
+	 * @see fclose()
+	 * @link http://php.net/manual/en/streamwrapper.stream-close.php
+	 * @since 1.0.0
+	 */
+	public function stream_close() {
+		return fclose($this->handle);
+	}
+	
+	
+	
+	
+	
 
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_open()
