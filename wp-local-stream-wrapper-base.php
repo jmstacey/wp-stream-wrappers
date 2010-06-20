@@ -296,6 +296,108 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 			return @rmdir($this->getLocalPath());
 		}
 	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_cast()
+	 *
+	 * This function is called in response to PHP's stream_select().
+	 *
+	 * @param int $cast_as
+	 *   STREAM_CAST_FOR_SELECT or STREAM_CAST_AS_STREAM
+	 * @return mixed
+	 *   the underlying stream resource used by the wrapper, or false.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_cast()
+	 * @see stream_select()
+	 * @link http://php.net/manual/en/streamwrapper.stream-cast.php
+	 * @since 1.0.0
+	 */
+	public function stream_cast($cast_as) {
+		return stream_select($cast_as);
+	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_close()
+	 *
+	 * This function is called in response to PHP's fclose().
+	 *
+	 * @return none
+	 *   No value is returned.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_close()
+	 * @see fclose()
+	 * @link http://php.net/manual/en/streamwrapper.stream-close.php
+	 * @since 1.0.0
+	 */
+	public function stream_close() {
+		return fclose($this->handle);
+	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_eof()
+	 *
+	 * This function is called in response to PHP's feof().
+	 *
+	 * @return bool
+	 *   true if the read/write position is at the end of the stream and
+	 *   no more data is available to be read, otherwise false.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_eof()
+	 * @see feof()
+	 * @link http://php.net/manual/en/streamwrapper.stream-eof.php
+	 * @since 1.0.0
+	 */
+	public function stream_eof() {
+		return feof($this->handle);
+	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_flush()
+	 *
+	 * This function is called in response to PHP's fflush().
+	 *
+	 * @return bool
+	 *   true if the cached data was successfully stored (or there was no
+	 *   data to store), or false if the data could not be stored.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_flush()
+	 * @see fflush()
+	 * @link http://php.net/manual/en/streamwrapper.stream-flush.php
+	 * @since 1.0.0
+	 */
+	public function stream_flush() {
+		return fflush($this->handle);
+	}	
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_lock()
+	 *
+	 * This function is called in response to PHP's flock().
+	 *
+	 * @param mode $operation
+	 *   one of the following:
+	 *   - LOCK_SH to acquire a shared lock (reader)
+	 *   - LOCK_EX to acquire an exclusive lock (writer)
+	 *   - LOCK_UN to release a lock (shared or exclusive)
+	 *   - LOCK_NB if you don't want flock() to block while locking
+	 * @return bool
+	 *   true on success or false on failure. Note that flock() will emit
+	 *   E_WARNING if call to this method fails.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_lock()
+	 * @see flock()
+	 * @link http://php.net/manual/en/streamwrapper.stream-lock.php
+	 * @since 1.0.0
+	 */
+	public function stream_lock($operation) {
+		return flock($this->handle, $operation);
+	}
+	
 
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_open()
