@@ -385,8 +385,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   - LOCK_UN to release a lock (shared or exclusive)
 	 *   - LOCK_NB if you don't want flock() to block while locking
 	 * @return bool
-	 *   true on success or false on failure. Note that flock() will emit
-	 *   E_WARNING if call to this method fails.
+	 *   true on success or false on failure.
 	 *
 	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::stream_lock()
