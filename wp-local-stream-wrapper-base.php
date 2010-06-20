@@ -315,7 +315,24 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		return fclose($this->handle);
 	}
 	
-	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_eof()
+	 *
+	 * This function is called in response to PHP's feof().
+	 *
+	 * @return bool
+	 *   true if the read/write position is at the end of the stream and
+	 *   no more data is available to be read, otherwise false.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_eof()
+	 * @see feof()
+	 * @link http://php.net/manual/en/streamwrapper.stream-eof.php
+	 * @since 1.0.0
+	 */
+	public function stream_close() {
+		return feof($this->handle);
+	}
 	
 	
 	
