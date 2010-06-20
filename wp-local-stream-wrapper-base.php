@@ -398,6 +398,41 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	}
 	
 	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_open()
+	 *
+	 * Adds support for fopen(), file_get_contents(), file_put_contents(),
+	 * etc.
+	 *
+	 * @param string $uri
+	 *   the path to the file to open.
+	 * @param string $mode
+	 *   the file mode (e.g. "r" or "wb" etc.).
+	 * @param bitmask $options
+	 *   @todo this needs to be reworked to be WP specific
+	 *   a bitmask of STREAM_USER_PATH AND STREAM_REPORT_ERRORS.
+	 * @param reference &$opened_path
+	 *   path actually opened.
+	 * @return bool
+	 *   true if file was opened successfully.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_open()
+	 * @link http://php.net/manual/en/streamwrapper.stream-open.php
+	 * @since 1.0.0
+	 */
+	public function stream_open($uri, $mode, $options, &$opened_path) {
+		$this->uri = $uri;
+		$path = $this->getLocalPath();
+		$this->handle = ($options & STREAM_REPORT_ERRORS) ? fopen($path, $mode) : @fopen($path, $mode);
+
+		if ((bool)$this->handle && $options & STREAM_USE_PATH) {
+			$opened_url = $path;
+		}
+
+		return (bool)$this->handle;
+	}
+	
+	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_read()
 	 *
 	 * This function is called in response to PHP's fread() and fgets().
@@ -486,42 +521,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function stream_stat() {
 		return fstat($this->handle);
 	}
-
-	/**
-	 * Implements WP_Stream_Wrapper_Interface::stream_open()
-	 *
-	 * Adds support for fopen(), file_get_contents(), file_put_contents(),
-	 * etc.
-	 *
-	 * @param string $uri
-	 *   the path to the file to open.
-	 * @param string $mode
-	 *   the file mode (e.g. "r" or "wb" etc.).
-	 * @param bitmask $options
-	 *   @todo this needs to be reworked to be WP specific
-	 *   a bitmask of STREAM_USER_PATH AND STREAM_REPORT_ERRORS.
-	 * @param reference &$opened_path
-	 *   path actually opened.
-	 * @return bool
-	 *   true if file was opened successfully.
-	 *
-	 * @package Stream Wrappers
-	 * @see WP_Stream_Wrapper_Interface::stream_open()
-	 * @link http://php.net/manual/en/streamwrapper.stream-open.php
-	 * @since 1.0.0
-	 */
-	public function stream_open($uri, $mode, $options, &$opened_path) {
-		$this->uri = $uri;
-		$path = $this->getLocalPath();
-		$this->handle = ($options & STREAM_REPORT_ERRORS) ? fopen($path, $mode) : @fopen($path, $mode);
-
-		if ((bool)$this->handle && $options & STREAM_USE_PATH) {
-			$opened_url = $path;
-		}
-
-		return (bool)$this->handle;
-	}
-
 }
 
 ?>
