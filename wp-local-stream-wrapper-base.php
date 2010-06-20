@@ -521,6 +521,24 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function stream_stat() {
 		return fstat($this->handle);
 	}
+	
+	/**
+	 * Implements WP_Stream_Wrapper_Interface::stream_tell()
+	 *
+	 * This function is called in response to PHP's ftell().
+	 *
+	 * @return int
+	 *   the current position of the stream.
+	 *
+	 * @package Stream Wrappers
+	 * @see WP_Stream_Wrapper_Interface::stream_tell()
+	 * @see ftell()
+	 * @link http://php.net/manual/en/streamwrapper.stream-tell.php
+	 * @since 1.0.0
+	 */
+	public function stream_tell() {
+		return ftell($this->handle);
+	}
 }
 
 ?>
