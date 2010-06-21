@@ -67,6 +67,13 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * All wrappers that extend WP_Local_Stream_Wrapper_Base must implement
 	 * this method.
 	 *
+	 * This allows, with minimal development effort, the addition and
+	 * customization of wrappers specific to different local filesystem
+	 * paths.
+	 *
+	 * @return string
+	 *   the path that this wrapper is responsible for.
+	 *
 	 * @package Stream Wrappers
 	 * @since 1.0.0
 	 */
