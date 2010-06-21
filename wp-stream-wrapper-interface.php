@@ -111,6 +111,25 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	public function set_uri($uri);
 	
 	/**
+	 * Returns the web accessible URL for the resource
+	 *
+	 * Returns a URL that can be accessed from a browser. For example,
+	 * the web URL of the internal URI "local://example.txt" might be
+	 * "http://www.example.com/wp-content/example.txt".
+	 *
+	 * All wrappers that intend to make their resources available
+	 * in this way must implement this method.
+	 *
+	 * @return string
+	 *   the web accessible URL for the resource.
+	 *
+	 * @access public
+	 * @see 
+	 * @since Method available since Release 1.0.0
+	 */
+	public function get_web_accessible_url()
+	
+	/**
 	 * Changes permissions of the resource
 	 *
 	 * This functionality does not exist in the official stream wraper
@@ -149,6 +168,5 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	public function realpath();
 	
 }
-
 
 ?>
