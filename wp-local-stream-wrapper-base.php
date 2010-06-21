@@ -74,7 +74,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return string
 	 *   the path that this wrapper is responsible for.
 	 *
-	 * @package Stream Wrappers
 	 * @since 1.0.0
 	 */
 	abstract function get_wrapper_path();
@@ -85,7 +84,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @param string $uri
 	 *   optional URI to be supplied when doing a move or rename.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::chmod()
 	 * @since 1.0.0
 	 */
@@ -102,7 +100,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *
 	 * Base implementation of set_uri().
 	 *
-	 * @package Stream Wrappers
 	 * @since 1.0.0
 	 */
 	function set_uri($uri) {
@@ -114,7 +111,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *
 	 * Base implementation of get_uri().
 	 *
-	 * @package Stream Wrappers
 	 * @since 1.0.0
 	 */
 	function get_uri() {
@@ -124,7 +120,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::chmod()
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::chmod()
 	 * @since 1.0.0
 	 */
@@ -135,7 +130,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	/**
 	 * Implementation of WP_Stream_Wrapper_Interface::realpath()
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::realpath()
 	 * @since 1.0.0
 	 */
@@ -151,7 +145,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return bool
 	 *   true on success.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::dir_closedir()
 	 * @see closedir()
 	 * @link http://php.net/manual/en/streamwrapper.dir-closedir.php
@@ -173,7 +166,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return bool
 	 *   true on success.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::dir_opendir()
 	 * @see opendir()
 	 * @link http://php.net/manual/en/streamwrapper.dir-opendir.php
@@ -195,7 +187,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   the next filename (string), or false (bool) if there are no more
 	 * files in the directory.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::dir_readdir()
 	 * @see readdir()
 	 * @link http://php.net/manual/en/streamwrapper.dir-readdir.php
@@ -213,7 +204,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return bool
 	 *   true on success or false on failure.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::dir_rewinddir()
 	 * @see rewinddir()
 	 * @link http://php.net/manual/en/streamwrapper.dir-rewinddir.php
@@ -237,7 +227,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return bool
 	 *   true on success or false on failure.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::dir_mkdir()
 	 * @see mkdir()
 	 * @link http://php.net/manual/en/streamwrapper.mkdir.php
@@ -266,7 +255,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return bool
 	 *   true on success or false on failure.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::rename()
 	 * @see rename()
 	 * @link http://php.net/manual/en/streamwrapper.rename.php
@@ -288,7 +276,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return bool
 	 *   true on success or false on failure.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::rmdir()
 	 * @see rmdir()
 	 * @link http://php.net/manual/en/streamwrapper.rmdir.php
@@ -314,7 +301,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return mixed
 	 *   the underlying stream resource used by the wrapper, or false.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::stream_cast()
 	 * @see stream_select()
 	 * @link http://php.net/manual/en/streamwrapper.stream-cast.php
@@ -332,7 +318,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return none
 	 *   No value is returned.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::stream_close()
 	 * @see fclose()
 	 * @link http://php.net/manual/en/streamwrapper.stream-close.php
@@ -351,7 +336,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   true if the read/write position is at the end of the stream and
 	 *   no more data is available to be read, otherwise false.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::stream_eof()
 	 * @see feof()
 	 * @link http://php.net/manual/en/streamwrapper.stream-eof.php
@@ -370,7 +354,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   true if the cached data was successfully stored (or there was no
 	 *   data to store), or false if the data could not be stored.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::stream_flush()
 	 * @see fflush()
 	 * @link http://php.net/manual/en/streamwrapper.stream-flush.php
@@ -394,7 +377,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return bool
 	 *   true on success or false on failure.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::stream_lock()
 	 * @see flock()
 	 * @link http://php.net/manual/en/streamwrapper.stream-lock.php
@@ -422,7 +404,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return bool
 	 *   true if file was opened successfully.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::stream_open()
 	 * @link http://php.net/manual/en/streamwrapper.stream-open.php
 	 * @since 1.0.0
@@ -451,7 +432,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   available. If no more data is available, return either false or an
 	 *   empty string.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::stream_read()
 	 * @see fread() and fgets()
 	 * @link http://php.net/manual/en/streamwrapper.stream-read.php
@@ -476,7 +456,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return bool
 	 *   true if the position was updated, false otherwise.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::stream_seek()
 	 * @see fseek()
 	 * @link http://php.net/manual/en/streamwrapper.stream-seek.php
@@ -501,7 +480,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   false is always returned. This method is not implemened in the stream
 	 *   wrappers plugin as of version 1.0.0.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::stream_set_option()
 	 * @see 
 	 * @link http://php.net/manual/en/streamwrapper.stream-set-option.php
@@ -519,7 +497,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return mixed
 	 *   see PHP's stat() documentation
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::stream_stat()
 	 * @see stat()
 	 * @link http://www.php.net/manual/en/function.stat.php
@@ -537,7 +514,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return int
 	 *   the current position of the stream.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::stream_tell()
 	 * @see ftell()
 	 * @link http://php.net/manual/en/streamwrapper.stream-tell.php
@@ -558,7 +534,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   the number of bytes that were successfully stored, or 0
 	 *   if none could be stored.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::stream_write()
 	 * @see fwrite()
 	 * @link http://php.net/manual/en/streamwrapper.stream-write.php
@@ -578,7 +553,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return bool
 	 *   true on success or false on failure.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::unlink()
 	 * @see unlink()
 	 * @link http://php.net/manual/en/streamwrapper.unlink.php
@@ -604,7 +578,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @return mixed
 	 *   as many elements as stat() does.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Stream_Wrapper_Interface::url_stat()
 	 * @see stat()
 	 * @link http://php.net/manual/en/streamwrapper.url-stat.php

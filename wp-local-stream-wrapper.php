@@ -63,7 +63,6 @@ class WP_Local_Stream_Wrapper extends WP_Local_Stream_Wrapper_Base {
 	 * @return string
 	 *   the path that this wrapper is responsible for.
 	 *
-	 * @package Stream Wrappers
 	 * @see WP_Local_Stream_Wrapper_Base::get_wrapper_path()
 	 * @since 1.0.0
 	 */
