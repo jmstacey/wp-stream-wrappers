@@ -153,17 +153,13 @@ class WP_Stream {
 	 * Confirms that there is a registered stream handler for the given
 	 * scheme and that it is callable. This is useful if you want to confirm
 	 * a valid scheme without creating a new instance of the registered
-	 * wrpper.
+	 * wrapper.
 	 *
-	 * This is a helper function that can be called without a WP_File
-	 * instance. 
-	 *
-	 * @param string
-	 *   String containing the URI scheme. A stream is referenced as
-	 *   "scheme://target".
+	 * @param string $scheme
+	 *   the stream scheme.
 	 * @return bool
-	 *   Boolean true returned if string is the name of a valide stream, or
-	 *   boolean false if the scheme does not have a registered wrapper.
+	 *   true if the scheme is valid, or false if the scheme does not have
+	 *   a registered handler.
 	 *
 	 * @access public
 	 * @static
@@ -171,9 +167,14 @@ class WP_Stream {
 	 * @since Method available since Release 1.0.0
 	 */
 	public static function scheme_valid($scheme) {
-		/*
-			TODO Implement stream_wrapper_scheme_valid()
-		*/
+		$class_name = WP_Stream::wrapper_class_name($scheme);
+		
+		if (class_exists($class_name)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	/**
