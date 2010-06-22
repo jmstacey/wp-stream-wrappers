@@ -129,16 +129,13 @@ class WP_Stream {
 	}
 	
 	/**
-	 * Returns the stream wrapper class name for a given scheme
+	 * Returns ths class name of the wrapper implementation for given scheme
 	 *
-	 * This is a helper function that can be called without a WP_File
-	 * instance.
-	 *
-	 * @param string
-	 *   String containing the stream scheme.
+	 * @param string $scheme
+	 *   the stream scheme.
 	 * @return string
-	 *   String containing the class name of the registered handler. If no
-	 *   handler exists for this scheme, false is returned.
+	 *   the class name of the registered wrapper handler, or false if
+	 *   there is no registered handler.
 	 *
 	 * @access public
 	 * @static
@@ -146,9 +143,8 @@ class WP_Stream {
 	 * @since Method available since Release 1.0.0
 	 */
 	public static function wrapper_class_name($scheme) {
-		/*
-			TODO Implement stream_wrapper_class_name()
-		*/
+		$wrappers = WP_Stream_Wrapper_Registry::get_registry();
+		return empty($wrappers[$scheme]) ? false : $wrappers[$scheme]['class'];
 	}
 
 	/**
