@@ -114,7 +114,7 @@ class WP_Stream {
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public static function wrapper_instance($uri) {
+	public static function new_wrapper_instance($uri) {
 		$scheme 	= WP_Stream::uri_scheme($uri);
 		$class_name = WP_Stream::wrapper_class_name($scheme);
 		
