@@ -33,7 +33,7 @@ class WP_Stream {
 	 *
 	 * @param string $uri
 	 *   the stream URI referenced as "scheme://target".
-	 * @return string
+	 * @return mixed
 	 *   the name of the scheme, or false if there is no scheme.
 	 *
 	 * @access public
