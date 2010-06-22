@@ -178,22 +178,18 @@ class WP_Stream {
 	}
 	
 	/**
-	 * Normalizes a URI by making it syntactically correct
+	 * Normalizes a stream URI by making it syntactically correct
 	 *
-	 * The following actions are performed on the URI and the changes
-	 * are saved in-place. That is, this function will manipulate the
-	 * $uri instance variable of the current file object.
+	 * The following actions are performed on the stream URI that is
+	 * returned.
 	 *
-	 * Note: This is a helper function that can be called without a WP_File
-	 * instance. It does not automatically update the URI of an instance.
-	 * That is, if you want to change the URI of a file object you will need
-	 * to call this function followed by set_uri().
+	 * - Removing leading slashes from target.
 	 *
-	 * @param string
-	 *   String containing the URI to normalize.
+	 * @param string $uri
+	 *   the stream URI to normalize.
 	 * @return string
-	 *   String containing the normalized URI after the modifications listed
-	 *   in the function description have been performed.
+	 *   the normalized stream URI after the modifications listed in the
+	 *   function description have been performed.
 	 *
 	 * @access public
 	 * @static
@@ -201,9 +197,17 @@ class WP_Stream {
 	 * @since Method available since Release 1.0.0
 	 */
 	public static function normalize_uri($uri) {
-		/*
-			TODO Implement normalize_uri()
-		*/
+		$scheme = WP_Stream::uri_scheme($uri);
+		
+		if ($scheme && WP_Stream::scheme_valid($scheme)) {
+			$target = WP_Stream::uri_target($uri);
+			
+			if ($target !== false) {
+				$uri = $scheme . '://' . $target;
+			}
+		}
+		
+		return $uri
 	}
 
 }
