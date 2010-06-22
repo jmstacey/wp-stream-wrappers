@@ -20,22 +20,31 @@
  */
 class WP_Stream {
 	/**
-	 * Returns the scheme of the current file object's URI
+	 * Returns the scheme of a stream
 	 *
-	 * @todo should this be a static method?
+	 * A stream is referenced as "scheme://target".
 	 *
+	 * Example usage of this static method:
+	 * <code>
+	 * $uri = "local://example.txt"
+	 * $ret = WP_Stream::uri_scheme($uri);
+	 * // $ret is "local"
+	 * </code>
+	 *
+	 * @param string $uri
+	 *   the stream URI referenced as "scheme://target".
 	 * @return string
-	 *   String containing the name of the scheme.
+	 *   the name of the scheme, or false if there is no scheme.
 	 *
 	 * @access public
 	 * @static
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public static function uri_scheme() {
-		/*
-			TODO Implement get_uri_scheme()
-		*/
+	public static function uri_scheme($uri) {
+		$components = explode('://', $uri, 2);
+		
+		return count($components) == 2 ? $data[0] : false;
 	}
 
 	/**
