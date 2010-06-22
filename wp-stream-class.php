@@ -61,9 +61,10 @@ class WP_Stream {
 	 *
 	 * @param string $uri
 	 *   the stream URI referenced as "scheme://target".
-	 * @return mixed
-	 *   the target (a.k.a. path) of the stream, or false if there
-	 *   is no target.
+	 * @return string
+	 *   the target (a.k.a. path) of the stream. An empty string ('') is
+	 *   returned if the stream does not have an explicit target, such as
+	 *   in the case of "scheme://"
 	 *
 	 * @access public
 	 * @static
