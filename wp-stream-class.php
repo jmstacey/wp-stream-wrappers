@@ -79,30 +79,53 @@ class WP_Stream {
 	}
 	
 	/**
-	 * Teturns a reference to the stream wrapper class responsible for
-	 * the current file object's URI.
+	 * Returns a new instance of the wrapper responsible for given stream URI
 	 *
-	 * The scheme determines the stream wrapper class that should be used by
-	 * consulting the WP stream wrapper registry.
+	 * Example use:
+	 * <code>
+	 * // Option 1 - in this case the wrapper instance is initialized with the
+	 * // given full URI "local://example.txt"
+	 * $uri = "local://example.txt"
+	 * $instance = WP_Stream::wrapper_instance($uri);
+	 * 
+	 * // Option 2 - in this case only the scheme (in proper stream reference
+	 * // form), so the wrapper instance is initialized without a 
+	 * // target "local://".
+	 * $scheme = "local"
+	 * $instance = WP_Stream:wrapper_instance($scheme);
+	 * </code>
+	 * In both options in the above example, an instance of
+	 * WP_Local_Stream_Wrapper is returned.
 	 *
-	 * @param string
-	 *   String containing the URI stream. A stream is referenced as
-	 *   "scheme://target".
+	 * Note: Even if a scheme is used, or a URI without a target, the instance
+	 * URI will be initialized as a full stream. That is, the instance URI
+	 * will be "scheme://", which has both a scheme and target despite target
+	 * being empty.
+	 *
+	 * @param string $uri
+	 *   the stream URI. For example, both "local://example.txt" or
+	 *   "local://" are acceptable.
 	 * @return object
-	 *   Returns a new stream wrapper object appropriate for the given
-	 *   URI, or false if no suitable registered wrapper could be found.
-	 *   For example, a URI of "local://example.txt" would return a new
-	 *   WordPress local stream wrapper object (WP_Local_Stream_Wrapper).
+	 *   a new stream wrapper instance for the given URI. Returns false if
+	 *   a registered wrapper cannot be found.
 	 *
 	 * @access public
 	 * @static
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public static function wrapper_instance() {
-		/*
-			TODO Implement get_stream_wrapper_instance()
-		*/
+	public static function wrapper_instance($uri) {
+		$scheme 	= WP_Stream::uri_scheme($uri);
+		$class_name = WP_Stream::wrapper_class_name($scheme);
+		
+		if (class_exists($class_name)) {
+			$instance = new $class_name();
+			$instance->set_uri($uri);
+			return $instance;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	/**
