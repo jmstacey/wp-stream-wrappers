@@ -48,23 +48,33 @@ class WP_Stream {
 	}
 
 	/**
-	 * Returns the target of the current file object's URI
+	 * Returns the target of a stream
 	 *
-	 * @todo should this be a static method?
+	 * A stream is referenced as "scheme://target".
 	 *
-	 * @return string
-	 *   String containing the target (path). For example, the URI
-	 *   "local://foobar/test.txt" would return "foobar/test.txt".
+	 * Example usage of this static method:
+	 * <code>
+	 * $uri = "local://foobar/example.txt"
+	 * $ret = WP_Stream::uri_target($uri);
+	 * // $ret is "foobar/example.txt"
+	 * </code>
+	 *
+	 * @param string $uri
+	 *   the stream URI referenced as "scheme://target".
+	 * @return mixed
+	 *   the target (a.k.a. path) of the stream, or false if there
+	 *   is no target.
 	 *
 	 * @access public
 	 * @static
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public static function uri_target() {
-		/*
-			TODO Implement get_uri_target()
-		*/
+	public static function uri_target($uri) {
+		list($scheme, $target) = explode('://', $uri, 2);
+		
+		// Remove unnecessary leading and traling slashes.
+		return trim($target, '\/');
 	}
 	
 	/**
