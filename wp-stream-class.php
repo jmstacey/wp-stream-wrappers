@@ -32,7 +32,7 @@ class WP_Stream {
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public static function get_uri_scheme() {
+	public static function uri_scheme() {
 		/*
 			TODO Implement get_uri_scheme()
 		*/
@@ -52,7 +52,7 @@ class WP_Stream {
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public static function get_uri_target() {
+	public static function uri_target() {
 		/*
 			TODO Implement get_uri_target()
 		*/
@@ -79,7 +79,7 @@ class WP_Stream {
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public static function get_stream_wrapper_instance() {
+	public static function wrapper_instance() {
 		/*
 			TODO Implement get_stream_wrapper_instance()
 		*/
@@ -131,7 +131,7 @@ class WP_Stream {
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public static function stream_wrapper_class_name($scheme) {
+	public static function wrapper_class_name($scheme) {
 		/*
 			TODO Implement stream_wrapper_class_name()
 		*/
@@ -160,7 +160,7 @@ class WP_Stream {
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public static function stream_wrapper_scheme_valid($scheme) {
+	public static function scheme_valid($scheme) {
 		/*
 			TODO Implement stream_wrapper_scheme_valid()
 		*/
