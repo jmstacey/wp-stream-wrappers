@@ -129,35 +129,6 @@ class WP_Stream {
 	}
 	
 	/**
-	 * Normalizes a URI by making it syntactically correct
-	 *
-	 * The following actions are performed on the URI and the changes
-	 * are saved in-place. That is, this function will manipulate the
-	 * $uri instance variable of the current file object.
-	 *
-	 * Note: This is a helper function that can be called without a WP_File
-	 * instance. It does not automatically update the URI of an instance.
-	 * That is, if you want to change the URI of a file object you will need
-	 * to call this function followed by set_uri().
-	 *
-	 * @param string
-	 *   String containing the URI to normalize.
-	 * @return string
-	 *   String containing the normalized URI after the modifications listed
-	 *   in the function description have been performed.
-	 *
-	 * @access public
-	 * @static
-	 * @see 
-	 * @since Method available since Release 1.0.0
-	 */
-	public static function normalize_uri($uri) {
-		/*
-			TODO Implement normalize_uri()
-		*/
-	}
-	
-	/**
 	 * Returns the stream wrapper class name for a given scheme
 	 *
 	 * This is a helper function that can be called without a WP_File
@@ -206,6 +177,35 @@ class WP_Stream {
 	public static function scheme_valid($scheme) {
 		/*
 			TODO Implement stream_wrapper_scheme_valid()
+		*/
+	}
+	
+	/**
+	 * Normalizes a URI by making it syntactically correct
+	 *
+	 * The following actions are performed on the URI and the changes
+	 * are saved in-place. That is, this function will manipulate the
+	 * $uri instance variable of the current file object.
+	 *
+	 * Note: This is a helper function that can be called without a WP_File
+	 * instance. It does not automatically update the URI of an instance.
+	 * That is, if you want to change the URI of a file object you will need
+	 * to call this function followed by set_uri().
+	 *
+	 * @param string
+	 *   String containing the URI to normalize.
+	 * @return string
+	 *   String containing the normalized URI after the modifications listed
+	 *   in the function description have been performed.
+	 *
+	 * @access public
+	 * @static
+	 * @see 
+	 * @since Method available since Release 1.0.0
+	 */
+	public static function normalize_uri($uri) {
+		/*
+			TODO Implement normalize_uri()
 		*/
 	}
 
