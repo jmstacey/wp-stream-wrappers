@@ -55,7 +55,7 @@ class WP_Stream {
 	 * Example usage of this static method:
 	 * <code>
 	 * $uri = "local://foobar/example.txt"
-	 * $ret = WP_Stream::uri_target($uri);
+	 * $ret = WP_Stream::target($uri);
 	 * // $ret is "foobar/example.txt"
 	 * </code>
 	 *
@@ -71,7 +71,7 @@ class WP_Stream {
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public static function uri_target($uri) {
+	public static function target($uri) {
 		list($scheme, $target) = explode('://', $uri, 2);
 		
 		// Remove unnecessary leading and traling slashes.
@@ -200,7 +200,7 @@ class WP_Stream {
 		$scheme = WP_Stream::scheme($uri);
 		
 		if ($scheme && WP_Stream::scheme_valid($scheme)) {
-			$target = WP_Stream::uri_target($uri);
+			$target = WP_Stream::target($uri);
 			
 			if ($target !== false) {
 				$uri = $scheme . '://' . $target;

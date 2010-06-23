@@ -104,7 +104,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 			$uri = $this->uri;
 		}
 		
-		return $this->get_wrapper_path().'/'.WP_Stream::uri_target($uri);
+		return $this->get_wrapper_path().'/'.WP_Stream::target($uri);
 	}
 	
 	/**
@@ -146,7 +146,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @since 1.0.0
 	 */
 	function realpath() {
-		return @realpath($this->get_wrapper_path().'/'.WP_Stream::uri_target($uri));
+		return @realpath($this->get_wrapper_path().'/'.WP_Stream::target($uri));
 	}
 	
 	/**
