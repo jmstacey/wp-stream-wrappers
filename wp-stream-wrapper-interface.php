@@ -81,7 +81,7 @@ interface PHP_Stream_Wrapper_Interface {
  * @see        PHP_Stream_Wrapper_Interface
  * @since      Class available since Release 1.0.0
  */
-interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {	
+interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	/**
 	 * Returns the URI of the current file object
 	 *
