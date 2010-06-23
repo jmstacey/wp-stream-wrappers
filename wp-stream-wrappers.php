@@ -19,15 +19,21 @@ define('WP_STREAM_WRAPPERS_VERSION', '1.0.0');
 require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-stream-wrapper-registry.php';
 
 /** 
- * This file contains the WP_File class
+ * This file contains the WP_Class utilities class
  */
 require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-stream-class.php';
+
+/** 
+ * This file contains the WP Stream Wrapper interface that WordPress
+ * stream wrappers use.
+ */
+require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-stream-wrapper-interface.php';
 
 /** 
  * This file contains the WP Local Stream wrapper and corresponding
  * WP_Local_Stream_Wrapper and WP_Local_Stream_Wrapper_Base classes.
  */
-require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-local-stream-wrapper.php';
+require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-local-stream-wrapper-base.php';
 
 /**
  * Initializes WP Stream Wrappers
