@@ -163,6 +163,34 @@ class WP_Stream_Wrapper_Registry {
 	}
 	
 	/**
+	 * Unregisters given stream wrapper
+	 *
+	 * Unregisters the given stream wrapper and removes its metadata
+	 * from the wrapper registry.
+	 *
+	 * @param string $scheme
+	 *   the scheme implemented by the wrapper to unregister.
+	 *
+	 * @return bool
+	 *   true on success, or false on failure.
+	 *
+	 * @access public
+	 * @static
+	 * @see WP_Stream_Wrapper_Registry::register_wrapper()
+	 * @since Method available since Release 1.0.0
+	 */
+	public static function unregister_wrapper($scheme) {
+		if (in_array($scheme, stream_get_wrappers(), true)) {
+			stream_wrapper_unregister($scheme);
+			self::$stream_wrappers[$scheme] = NULL;
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	/**
 	 * Gets the stream wrappers registration array
 	 *
 	 * Returns the heart of the stream wrappers registry: the
