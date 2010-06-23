@@ -175,6 +175,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   the URI passed to opendir().
 	 * @param  unkown $options
 	 *   whether or not to enforce safe mode.
+	 *
 	 * @return bool
 	 *   true on success.
 	 *
@@ -236,6 +237,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   the value passed to PHP's mkdir().
 	 * @param int $options
 	 *   a bitwise mask of values, such as STREAM_MKDIR_RECURSIVE.
+	 *
 	 * @return bool
 	 *   true on success or false on failure.
 	 *
@@ -264,6 +266,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   the URI to the current file.
 	 * @param string $to_uri
 	 *   the URI which $from_uri should be renamed to.
+	 *
 	 * @return bool
 	 *   true on success or false on failure.
 	 *
@@ -285,6 +288,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   the directory which should be removed.
 	 * @param string $options
 	 *   a bitwise mask of valus, such as STREAM_REPORT_ERRORS.
+	 *
 	 * @return bool
 	 *   true on success or false on failure.
 	 *
@@ -310,6 +314,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *
 	 * @param int $cast_as
 	 *   STREAM_CAST_FOR_SELECT or STREAM_CAST_AS_STREAM
+	 *
 	 * @return mixed
 	 *   the underlying stream resource used by the wrapper, or false.
 	 *
@@ -386,6 +391,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   - LOCK_EX to acquire an exclusive lock (writer)
 	 *   - LOCK_UN to release a lock (shared or exclusive)
 	 *   - LOCK_NB if you don't want flock() to block while locking
+	 *
 	 * @return bool
 	 *   true on success or false on failure.
 	 *
@@ -413,6 +419,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   a bitmask of STREAM_USER_PATH AND STREAM_REPORT_ERRORS.
 	 * @param reference &$opened_path
 	 *   path actually opened.
+	 *
 	 * @return bool
 	 *   true if file was opened successfully.
 	 *
@@ -439,6 +446,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *
 	 * @param int $count
 	 *   how many bytes of data from the current position should be returned.
+	 *
 	 * @return mixed
 	 *   If there are less than $count bytes available, return as many as are
 	 *   available. If no more data is available, return either false or an
@@ -465,6 +473,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   - SEEK_SET to set position equal to $offset bytes
 	 *   - SEEK_CUR to set position to current location plus $offset
 	 *   - SEEK_END to set position to end-of-file plus $offset
+	 *
 	 * @return bool
 	 *   true if the position was updated, false otherwise.
 	 *
@@ -488,6 +497,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @param int $option
 	 * @param int $arg1
 	 * @param int $arg2
+	 *
 	 * @return bool
 	 *   false is always returned. This method is not implemened in the stream
 	 *   wrappers plugin as of version 1.0.0.
@@ -542,6 +552,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *
 	 * @param string $data
 	 *   the data to store in the underlying stream.
+	 *
 	 * @return int
 	 *   the number of bytes that were successfully stored, or 0
 	 *   if none could be stored.
@@ -562,6 +573,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *
 	 * @param string $uri
 	 *   the file which should be deleted.
+	 *
 	 * @return bool
 	 *   true on success or false on failure.
 	 *
@@ -587,6 +599,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @param $flags
 	 *   additional flags set by the streams API. 
 	 *   See streamWrapper:url_stat().
+	 *
 	 * @return mixed
 	 *   as many elements as stat() does.
 	 *
