@@ -62,6 +62,18 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	protected $uri;
 	
 	/**
+	 * Initializes the abstract implementation of WP_Local_Stream_Wrapper_Base
+	 *
+	 * @access public
+	 * @see WP_Local_Stream_Wrapper
+	 * @since Method available since Release 1.0.0
+	 */
+	public function __construct() {
+		// The local stream wrapper needs no initialization at this point.
+	}
+	
+	
+	/**
 	 * Retrieves the path that the wrapper is responsible for
 	 *
 	 * All wrappers that extend WP_Local_Stream_Wrapper_Base must implement
