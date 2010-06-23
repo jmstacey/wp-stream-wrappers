@@ -27,7 +27,7 @@ class WP_Stream {
 	 * Example usage of this static method:
 	 * <code>
 	 * $uri = "local://example.txt"
-	 * $ret = WP_Stream::uri_scheme($uri);
+	 * $ret = WP_Stream::scheme($uri);
 	 * // $ret is "local"
 	 * </code>
 	 *
@@ -41,7 +41,7 @@ class WP_Stream {
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public static function uri_scheme($uri) {
+	public static function scheme($uri) {
 		$components = explode('://', $uri, 2);
 		
 		return count($components) == 2 ? $data[0] : false;
@@ -115,7 +115,7 @@ class WP_Stream {
 	 * @since Method available since Release 1.0.0
 	 */
 	public static function new_wrapper_instance($uri) {
-		$scheme 	= WP_Stream::uri_scheme($uri);
+		$scheme 	= WP_Stream::scheme($uri);
 		$class_name = WP_Stream::wrapper_class_name($scheme);
 		
 		if (class_exists($class_name)) {
@@ -197,7 +197,7 @@ class WP_Stream {
 	 * @since Method available since Release 1.0.0
 	 */
 	public static function normalize_uri($uri) {
-		$scheme = WP_Stream::uri_scheme($uri);
+		$scheme = WP_Stream::scheme($uri);
 		
 		if ($scheme && WP_Stream::scheme_valid($scheme)) {
 			$target = WP_Stream::uri_target($uri);
