@@ -196,7 +196,7 @@ class WP_Stream {
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public static function normalize_uri($uri) {
+	public static function normalize($uri) {
 		$scheme = WP_Stream::scheme($uri);
 		
 		if ($scheme && WP_Stream::scheme_valid($scheme)) {
