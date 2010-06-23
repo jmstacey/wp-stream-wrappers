@@ -150,16 +150,16 @@ class WP_Stream_Wrapper_Registry {
 		
 		self::$stream_wrappers[$scheme] = $metadata; // Debug purposes only
 	
-		// if (stream_wrapper_register($scheme, $metadata['class'])) {
-		// 	// If registered with PHP succesfully, add to registry.
-		// 	self::$stream_wrappers[$scheme] = $metadata;
-		// }
-		// else {
-		// 	// Throw an error. This should be very rare.
-		// 	// @todo: Is this proper use of WP_Error?
-		// 	$error = new WP_Error();
-		// 	$error.WP_Error('199001', "Unable to register wrapper implementing scheme '$scheme'");
-		// }
+		if (stream_wrapper_register($scheme, $metadata['class'])) {
+			// If registered with PHP succesfully, add to registry.
+			self::$stream_wrappers[$scheme] = $metadata;
+		}
+		else {
+			// Throw an error. This should be very rare.
+			// @todo: Is this proper use of WP_Error?
+			$error = new WP_Error();
+			$error.WP_Error('199001', "Unable to register wrapper implementing scheme '$scheme'");
+		}
 	}
 	
 	/**
