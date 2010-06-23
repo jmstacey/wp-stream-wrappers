@@ -207,7 +207,7 @@ class WP_Stream {
 			}
 		}
 		
-		return $uri
+		return $uri;
 	}
 
 }
