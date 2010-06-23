@@ -13,6 +13,16 @@ Author URI: http://jonsview.com
 
 define('WP_STREAM_WRAPPERS_VERSION', '1.0.0');
 
+/**
+ * Initialization takes place in the following order.
+ *
+ * Step 1: Initialize stream wrapper registry
+ * Step 2: Load WP_Stream utilities class
+ * Step 3: Load the WP Stream Wrapper Interface
+ * Step 4: Load the base local registry wrapper implementation
+ * Step 5: Load the WP Local Stream wrapper [implements local://]
+ */
+
 /** 
  * This file holds the stream wrapper registry
  */
@@ -25,15 +35,19 @@ require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-stream-class.php';
 
 /** 
  * This file contains the WP Stream Wrapper interface that WordPress
- * stream wrappers use.
+ * stream wrappers use
  */
 require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-stream-wrapper-interface.php';
 
 /** 
- * This file contains the WP Local Stream wrapper and corresponding
- * WP_Local_Stream_Wrapper and WP_Local_Stream_Wrapper_Base classes.
+ * This file contains the base WP Local Stream wrapper class
  */
 require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-local-stream-wrapper-base.php';
+
+/** 
+ * This file contains the WP Local Stream wrapper implementation
+ */
+require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-local-stream-wrapper.php';
 
 /**
  * Initializes WP Stream Wrappers
