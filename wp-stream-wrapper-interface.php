@@ -131,6 +131,26 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	public function chmod($mode);
 	
 	/**
+	 * Returns the directory name component of given path
+	 *
+	 * PHP's dirname() function does not support stream wrappers. This
+	 * default is provided so that individual wrappers may implement
+	 * their own solutions. See WP_Local_Stream_Wrapper_Base for an example.
+	 *
+	 * @param string $uri
+	 *   the URI or path.
+	 *
+	 * @return mixed
+	 *   the new temporary filename, or false on failure.
+	 *
+	 * @access public
+	 * @link http://us2.php.net/manual/en/function.dirname.php
+	 * @see 
+	 * @since Method available since Release 1.0.0
+	 */
+	public function dirname($uri);
+	
+	/**
 	 * Returns the canonical [absolute] path of the resource
 	 *
 	 * PHP's realpath() does not support stream wrappers. This default is
