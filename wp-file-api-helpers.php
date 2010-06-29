@@ -154,9 +154,6 @@ function wp_tempnam($directory, $prefix) {
  * @since 1.0.0
  */
 function wp_dirname($uri) {
-	echo "oops! wp_dirname needs the ->dirname bit implemented";
-	die();
-	
 	$scheme = WP_Stream::scheme($uri);
 	
 	if ($scheme && WP_Stream::scheme_valid($scheme)) {
