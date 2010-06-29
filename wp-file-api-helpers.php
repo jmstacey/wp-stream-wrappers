@@ -16,7 +16,7 @@
  *
  * This function is fully compatible with PHP's chmod() function and can be
  * called in the same way. For example, both a URI and a normal filepath
- * can be provided for the $uri argument.
+ * can be provided for the $uri parameter.
  *
  * @param string $uri
  *   the stream URI, or a filepath to the file.
@@ -67,7 +67,7 @@ function wp_chmod($uri, $mode = null) {
  *
  * This function is fully compatible with PHP's realpath() function and can be
  * called in the same way. For example, both a URI and a normal filepath
- * can be provided for the $uri argument.
+ * can be provided for the $uri parameter.
  *
  * @param string $uri
  *   the URI or filepath from which to obtain the absolute pathname.
@@ -100,7 +100,7 @@ function wp_realpath($uri) {
  *
  * This function is fully compatible with PHP's tempnam() function and may be
  * called in the same way. For example, both a URI and a normal filepath
- * can be provided for the $uri argument.
+ * can be provided for the $uri parameter.
  *
  * @param string $directory
  *   the directory where the temporary filename will be created.
