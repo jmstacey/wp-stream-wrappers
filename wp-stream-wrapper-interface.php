@@ -143,7 +143,7 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 *   registered wrapper does not provide an implementation.
 	 *
 	 * @access public
-	 * @link http://php.net/manual/en/function.chmod.php
+	 * @link http://php.net/manual/en/function.realpath.php
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
