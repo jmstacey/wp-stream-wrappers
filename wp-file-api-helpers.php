@@ -27,10 +27,9 @@
  * @return bool
  *   true on success or false on failure.
  *
- * @access public
  * @link http://php.net/manual/en/function.chmod.php
  * @see 
- * @since Method available since Release 1.0.0
+ * @since 1.0.0
  */
 function wp_chmod($uri, $mode = null) {
 	/**
