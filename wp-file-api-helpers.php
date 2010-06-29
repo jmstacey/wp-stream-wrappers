@@ -59,4 +59,37 @@ function wp_chmod($uri, $mode = null) {
 	return false;
 }
 
+/**
+ * Returns the canonical [absolute] path of the resource
+ *
+ * PHP's realpath() does not support stream wrappers. This helper function
+ * properly adds this missing support.
+ *
+ * This function is fully compatible with PHP's realpath() function and can be
+ * called in the same way. For example, both a URI and a normal filepath
+ * can be provided for the $uri argument.
+ *
+ * @param string $uri
+ *   the URI or filepath from which to obtain the absolute pathname.
+ *
+ * @return string
+ *   the canonicalized [absolute] pathname on success, or false on failure
+ *   such as when the file does not exist.
+ *
+ * @link http://php.net/manual/en/function.realpath.php
+ * @see realpath()
+ * @see WP_Stream_Wrapper_Interface::realpath()
+ * @since 1.0.0
+ */
+function wp_realpath($uri) {
+	if ($wrapper = WP_Stream::new_wrapper_instance($uri)) {
+		return $wrapper->realpath();
+	}
+	elseif (!empty($uri)) {
+		return realpath($uri);
+	}
+	
+	return false;
+}
+
 ?>
