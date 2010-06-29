@@ -119,6 +119,7 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 * @param int $mode
 	 *   an integer value for the permissions. Consult PHP chmod()
 	 *   documentation for more information.
+	 *
 	 * @return bool
 	 *   true on success or false on failure.
 	 *
