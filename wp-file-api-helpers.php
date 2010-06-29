@@ -72,7 +72,7 @@ function wp_chmod($uri, $mode = null) {
  * @param string $uri
  *   the URI or filepath from which to obtain the absolute pathname.
  *
- * @return string
+ * @return mixed
  *   the canonicalized [absolute] pathname on success, or false on failure
  *   such as when the file does not exist.
  *
@@ -96,7 +96,7 @@ function wp_realpath($uri) {
  * Creates a file with a unique name
  *
  * PHP's tempnam() does not support stream wrappers. This helper function
- * properly addes this missing support.
+ * properly adds this missing support.
  *
  * This function is fully compatible with PHP's tempnam() function and may be
  * called in the same way. For example, both a URI and a normal filepath
@@ -108,7 +108,7 @@ function wp_realpath($uri) {
  *   the prefix of the generated emporary filename.
  *   Note: Windows uses only the first three characters of $prefix
  *
- * @return string
+ * @return mixed
  *   the new temporary filename, or false on failure.
  *
  * @link http://php.net/manual/en/function.tempnam.php
