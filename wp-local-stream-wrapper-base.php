@@ -280,6 +280,33 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	}
 	
 	/**
+	 * Implements WP_Stream_Wrapper_Interface::dirname()
+	 *
+	 * This function is typically invoked through wp_dirname().
+	 *
+	 * @param string $uri
+	 *   the URI or path.
+	 *
+	 * @return mixed
+	 *   the new temporary filename, or false on failure.
+	 *
+	 * @see WP_Stream_Wrapper_Interface::dirname()
+	 * @see wp_dirname()
+	 * @since 1.0.0
+	 */
+	public function dirname($uri) {
+		list($scheme, $target) = explode('://', $uri, 2);
+		$target  = WP_Stream::target($uri);
+		$dirname = dirname($target);
+		
+		if ($dirname == '.') {
+			$dirname = '';
+		}
+		
+		return $scheme . '://' . $dirname;
+	}
+	
+	/**
 	 * Implements WP_Stream_Wrapper_Interface::rmdir()
 	 *
 	 * This function is called in response to PHP's rmdir().
