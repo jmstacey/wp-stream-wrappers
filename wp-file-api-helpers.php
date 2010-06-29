@@ -92,4 +92,45 @@ function wp_realpath($uri) {
 	return false;
 }
 
+/**
+ * Creates a file with a unique name
+ *
+ * PHP's tempnam() does not support stream wrappers. This helper function
+ * properly addes this missing support.
+ *
+ * This function is fully compatible with PHP's tempnam() function and may be
+ * called in the same way. For example, both a URI and a normal filepath
+ * can be provided for the $uri argument.
+ *
+ * @param string $directory
+ *   the directory where the temporary filename will be created.
+ * @param string $prefix
+ *   the prefix of the generated emporary filename.
+ *   Note: Windows uses only the first three characters of $prefix
+ *
+ * @return string
+ *   the new temporary filename, or false on failure.
+ *
+ * @link http://php.net/manual/en/function.tempnam.php
+ * @see tempnam()
+ * @since 1.0.0
+ */
+function wp_tempnam($directory, $prefix) {
+	$scheme = WP_Stream::scheme($directory);
+	
+	if ($scheme && WP_Stream::scheme_valid($scheme)) {
+		$wrapper = WP_Stream::new_wrapper_instance($scheme . '://');
+		
+		if ($filename = tempnam($wrapper->get_wrapper_path(), $prefix)) {
+			return $scheme . '://' . basename($filename);
+		}
+		else {
+			return false;
+		}
+	}
+	else {
+		return tempnam($directory, $prefix);
+	}
+}
+
 ?>
