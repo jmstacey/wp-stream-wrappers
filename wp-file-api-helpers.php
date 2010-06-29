@@ -133,4 +133,38 @@ function wp_tempnam($directory, $prefix) {
 	}
 }
 
+/**
+ * Returns directory name component of path
+ *
+ * PHP's dirname() does not support stream wrappers. This helper function
+ * properly adds this missing support.
+ *
+ * This function is fully compatible with PHP's dirname() function and may be
+ * called in the same way. For example, both a URI and a normal filepath
+ * can be provided for the $uri parameter.
+ *
+ * @param string $uri
+ *   the URI or path to file.
+ *
+ * @return string
+ *   the new temporary filename, or false on failure.
+ *
+ * @link http://us2.php.net/manual/en/function.dirname.php
+ * @see dirname()
+ * @since 1.0.0
+ */
+function wp_dirname($uri) {
+	echo "oops! wp_dirname needs the ->dirname bit implemented";
+	die();
+	
+	$scheme = WP_Stream::scheme($uri);
+	
+	if ($scheme && WP_Stream::scheme_valid($scheme)) {
+		return WP_Stream::new_wrapper_instance($scheme . '://')->dirname($uri);
+	}
+	else {
+		return dirname($uri);
+	}
+}
+
 ?>
