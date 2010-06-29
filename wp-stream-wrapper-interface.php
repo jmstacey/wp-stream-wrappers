@@ -131,7 +131,7 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	public function chmod($mode);
 	
 	/**
-	 * Returns the canonical, absolute path of the resource
+	 * Returns the canonical [absolute] path of the resource
 	 *
 	 * PHP's realpath() does not support stream wrappers. This default is
 	 * provided so that individual wrappers may implement their own
