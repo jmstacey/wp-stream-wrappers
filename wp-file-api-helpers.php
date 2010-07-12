@@ -115,23 +115,23 @@ function wp_realpath($uri) {
  * @see tempnam()
  * @since 1.0.0
  */
-function wp_tempnam($directory, $prefix) {
-	$scheme = WP_Stream::scheme($directory);
-	
-	if ($scheme && WP_Stream::scheme_valid($scheme)) {
-		$wrapper = WP_Stream::new_wrapper_instance($scheme . '://');
-		
-		if ($filename = tempnam($wrapper->get_wrapper_path(), $prefix)) {
-			return $scheme . '://' . basename($filename);
-		}
-		else {
-			return false;
-		}
-	}
-	else {
-		return tempnam($directory, $prefix);
-	}
-}
+// function wp_tempnam($directory, $prefix) {
+// 	$scheme = WP_Stream::scheme($directory);
+// 	
+// 	if ($scheme && WP_Stream::scheme_valid($scheme)) {
+// 		$wrapper = WP_Stream::new_wrapper_instance($scheme . '://');
+// 		
+// 		if ($filename = tempnam($wrapper->get_wrapper_path(), $prefix)) {
+// 			return $scheme . '://' . basename($filename);
+// 		}
+// 		else {
+// 			return false;
+// 		}
+// 	}
+// 	else {
+// 		return tempnam($directory, $prefix);
+// 	}
+// }
 
 /**
  * Returns directory name component of path
