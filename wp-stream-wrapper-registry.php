@@ -182,7 +182,7 @@ class WP_Stream_Wrapper_Registry {
 	public static function unregister_wrapper($scheme) {
 		if (in_array($scheme, stream_get_wrappers(), true)) {
 			stream_wrapper_unregister($scheme);
-			self::$stream_wrappers[$scheme] = NULL;
+			unset(self::$stream_wrappers[$scheme]);
 			
 			return true;
 		}
