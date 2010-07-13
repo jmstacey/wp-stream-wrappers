@@ -1,7 +1,0 @@
-<phpunit>
-	<testsuites>
-		<testsuite name="WP_Stream_Wrappers">
-			<file>./wp-stream-wrapper-registry-test.php</file>
-		</testsuite>
-	</testsuites>
-</phpunit>
