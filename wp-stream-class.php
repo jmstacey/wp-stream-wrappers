@@ -43,8 +43,8 @@ class WP_Stream {
 	 */
 	public static function scheme($uri) {
 		$components = explode('://', $uri, 2);
-		
-		return count($components) == 2 ? $data[0] : false;
+
+		return count($components) == 2 ? $components[0] : false;
 	}
 
 	/**
