@@ -143,7 +143,7 @@ class WP_Stream {
 	 * @since Method available since Release 1.0.0
 	 */
 	public static function wrapper_class_name($scheme) {
-		$wrappers = WP_Stream_Wrapper_Registry::get_registry();
+		$wrappers = WP_Stream_Wrapper_Registry::get_stream_wrappers();
 		return empty($wrappers[$scheme]) ? false : $wrappers[$scheme]['class'];
 	}
 
