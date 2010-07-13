@@ -102,6 +102,9 @@ function wp_realpath($uri) {
  * called in the same way. For example, both a URI and a normal filepath
  * can be provided for the $uri parameter.
  *
+ * Note: The function name used is temporary until the conflict with
+ * wp_tempnam() in wp-admin/includes/file.php can be resolved.
+ *
  * @param string $directory
  *   the directory where the temporary filename will be created.
  * @param string $prefix
@@ -115,23 +118,30 @@ function wp_realpath($uri) {
  * @see tempnam()
  * @since 1.0.0
  */
-// function wp_tempnam($directory, $prefix) {
-// 	$scheme = WP_Stream::scheme($directory);
-// 	
-// 	if ($scheme && WP_Stream::scheme_valid($scheme)) {
-// 		$wrapper = WP_Stream::new_wrapper_instance($scheme . '://');
-// 		
-// 		if ($filename = tempnam($wrapper->get_wrapper_path(), $prefix)) {
-// 			return $scheme . '://' . basename($filename);
-// 		}
-// 		else {
-// 			return false;
-// 		}
-// 	}
-// 	else {
-// 		return tempnam($directory, $prefix);
-// 	}
-// }
+function wp_tempnam_stream_compatible($directory, $prefix) {
+	/**
+	 * NOTE: This is a temporary function name. This function should
+	 * be named wp_tempnam(), but that currently conflicts with an existing
+	 * declaration in wp-admin/includes/file.php.
+	 *
+	 * @todo Merge the two functions.
+	 */
+	$scheme = WP_Stream::scheme($directory);
+	
+	if ($scheme && WP_Stream::scheme_valid($scheme)) {
+		$wrapper = WP_Stream::new_wrapper_instance($scheme . '://');
+		
+		if ($filename = tempnam($wrapper->get_wrapper_path(), $prefix)) {
+			return $scheme . '://' . basename($filename);
+		}
+		else {
+			return false;
+		}
+	}
+	else {
+		return tempnam($directory, $prefix);
+	}
+}
 
 /**
  * Returns directory name component of path
