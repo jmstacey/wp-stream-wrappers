@@ -56,8 +56,14 @@ class WP_Test_Stream_Wrapper extends WP_Local_Stream_Wrapper_Base {
 	 * @since 1.0.0
 	 */
 	public function get_wrapper_path() {
-		// @todo change this to the test directory
-		return WP_CONTENT_DIR;
+		$path = WP_CONTENT_DIR . '/stream_tests';
+		
+		// Make sure the test directory exists
+		if (!file_exists($path)) {
+			mkdir($path);
+		}
+		
+		return $path;
 	}
 	
 	/**
