@@ -189,7 +189,7 @@ function wp_dirname($uri) {
  *   the URI or path to file.
  * @param resource $context
  *   refer to PHP documentation for more information.
- * @param bool recursively
+ * @param bool recursive
  *   remove directories recursively. This is false by default. Set to true to
  *   achieve essentially a forced rmdir() call.
  *
@@ -200,8 +200,8 @@ function wp_dirname($uri) {
  * @see rmdir()
  * @since 1.0.0
  */
-function wp_rmdir($uri, $context = null, $recursively = false) {
-	if (!$recusrively) {
+function wp_rmdir($uri, $context = null, $recursive = false) {
+	if (!$recusrive) {
 		return rmdir($uri, $context);
 	}
 	else {
