@@ -196,8 +196,9 @@ function wp_dirname($uri) {
  */
 function wp_rmdir_recursive($uri) {
 	$path = wp_realpath($uri);
+	$path = rtrim($path, "/");
 	
-	$objects = glob($path . '*', GLOB_MARK);
+	$objects = glob($path . '/*', GLOB_MARK);
 	foreach($objects as $object) {
 		if (is_dir($object)) {
 			wp_rmdir_recursive($object);
