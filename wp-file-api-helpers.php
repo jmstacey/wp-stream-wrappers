@@ -172,6 +172,54 @@ function wp_dirname($uri) {
 	else {
 		return dirname($uri);
 	}
+	
+/**
+ * Removes directory
+ *
+ * IMPORTANT: This function is experimental and has not been tested.
+ *
+ * Attempts to remove the given directory. Unlike PHP's rmdir(), wp_rmdir()
+ * has an extra parameter that can be toggled to delete the directory
+ * recursively and thus remove any subdirectories or files contained
+ * within. Recursive deletions are disabled by default, but can be enabled by
+ * setting the third parameter to true. For example: 
+ * wp_rmdir('path', null, true)
+ *
+ * @param string $uri
+ *   the URI or path to file.
+ * @param resource $context
+ *   refer to PHP documentation for more information.
+ * @param bool recursively
+ *   remove directories recursively. This is false by default. Set to true to
+ *   achieve essentially a forced rmdir() call.
+ *
+ * @return bool
+ *   true on success or false on failure.
+ *
+ * @link http://us2.php.net/manual/en/function.rmdir.php
+ * @see rmdir()
+ * @since 1.0.0
+ */
+function wp_rmdir($uri, $context = null, $recursively = false) {
+	if (!$recusrively) {
+		return rmdir($uri, $context);
+	}
+	else {
+		// Delete recursively
+		$objects = glob($uri . '*', GLOB_MARK);
+		foreach($objects as $object) {
+			if (substr($object, -1) == '/') {
+				return wp_rmdir($object, null, true);
+			}
+			else {
+				unlink($object);
+			}
+		}
+		
+		if (is_dir($uri)) {
+			return rmdir($uri);
+		}
+	}
 }
 
 ?>
