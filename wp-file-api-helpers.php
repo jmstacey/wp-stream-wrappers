@@ -195,18 +195,20 @@ function wp_dirname($uri) {
  * @since 1.0.0
  */
 function wp_rmdir_recursive($uri) {
-	$objects = glob($uri . '*', GLOB_MARK);
+	$path = wp_realpath($uri);
+	
+	$objects = glob($path . '*', GLOB_MARK);
 	foreach($objects as $object) {
-		if (substr($object, -1) == '/') {
-			return wp_rmdir_recursive($object);
+		if (is_dir($object)) {
+			wp_rmdir_recursive($object);
 		}
 		else {
 			unlink($object);
 		}
 	}
 	
-	if (is_dir($uri)) {
-		return rmdir($uri);
+	if (is_dir($path)) {
+		rmdir($path);
 	}
 }
 
