@@ -18,9 +18,10 @@ define('WP_STREAM_WRAPPERS_VERSION', '1.0.0');
  *
  * Step 1: Initialize stream wrapper registry
  * Step 2: Load WP_Stream utilities class
- * Step 3: Load the WP Stream Wrapper Interface
- * Step 4: Load the base local registry wrapper implementation
- * Step 5: Load the WP Local Stream wrapper [implements local://]
+ * Step 3: Load WP File API Helpers
+ * Step 4: Load the WP Stream Wrapper Interface
+ * Step 5: Load the base local registry wrapper implementation
+ * Step 6: Load the WP Local Stream wrapper [implements local://]
  */
 
 /** 
@@ -32,6 +33,11 @@ require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-stream-wrapper-registry.php';
  * This file contains the WP_Class utilities class
  */
 require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-stream-class.php';
+
+/** 
+ * This file holds the WordPress File API Helper functions
+ */
+require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-file-api-helpers.php';
 
 /** 
  * This file contains the WP Stream Wrapper interface that WordPress
