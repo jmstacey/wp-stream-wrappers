@@ -146,7 +146,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @since 1.0.0
 	 */
 	function realpath() {
-		return @realpath($this->get_wrapper_path().'/'.WP_Stream::target($uri));
+		return @realpath($this->get_wrapper_path().'/'.WP_Stream::target($this->uri));
 	}
 	
 	/**
@@ -327,10 +327,10 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function rmdir($uri, $options) {
 		$this->uri = $uri;
 		if ($options & STREAM_REPORT_ERRORS) {
-			return rmdir($this->getLocalPath());
+			return rmdir($this->get_local_path());
 		}
 		else {
-			return @rmdir($this->getLocalPath());
+			return @rmdir($this->get_local_path());
 		}
 	}
 	
@@ -456,7 +456,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 */
 	public function stream_open($uri, $mode, $options, &$opened_path) {
 		$this->uri = $uri;
-		$path = $this->getLocalPath();
+		$path = $this->get_local_path();
 		$this->handle = ($options & STREAM_REPORT_ERRORS) ? fopen($path, $mode) : @fopen($path, $mode);
 
 		if ((bool)$this->handle && $options & STREAM_USE_PATH) {
