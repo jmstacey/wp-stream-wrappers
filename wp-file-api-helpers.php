@@ -209,8 +209,10 @@ function wp_rmdir_recursive($uri) {
 	}
 	
 	if (is_dir($path)) {
-		rmdir($path);
+		return rmdir($path);
 	}
+	
+	return true;
 }
 
 ?>
