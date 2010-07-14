@@ -172,26 +172,20 @@ function wp_dirname($uri) {
 	else {
 		return dirname($uri);
 	}
+}
 	
 /**
- * Removes directory
+ * Removes directory recursively
  *
  * IMPORTANT: This function is experimental and has not been tested.
  *
- * Attempts to remove the given directory. Unlike PHP's rmdir(), wp_rmdir()
- * has an extra parameter that can be toggled to delete the directory
- * recursively and thus remove any subdirectories or files contained
- * within. Recursive deletions are disabled by default, but can be enabled by
- * setting the third parameter to true. For example: 
- * wp_rmdir('path', null, true)
+ * Attempts to remove the given directory recursively. Unlike PHP's rmdir()
+ * which only removes the directory if it's empty, wp_rmdir_recursive() will
+ * try to recursively delete all files and directories. Essentially this is
+ * equivalent to a "rm -rf" command, or a forced rmdir() if you will.
  *
  * @param string $uri
  *   the URI or path to file.
- * @param resource $context
- *   refer to PHP documentation for more information.
- * @param bool recursive
- *   remove directories recursively. This is false by default. Set to true to
- *   achieve essentially a forced rmdir() call.
  *
  * @return bool
  *   true on success or false on failure.
@@ -200,25 +194,19 @@ function wp_dirname($uri) {
  * @see rmdir()
  * @since 1.0.0
  */
-function wp_rmdir($uri, $context = null, $recursive = false) {
-	if (!$recusrive) {
-		return rmdir($uri, $context);
+function wp_rmdir_recursive($uri) {
+	$objects = glob($uri . '*', GLOB_MARK);
+	foreach($objects as $object) {
+		if (substr($object, -1) == '/') {
+			return wp_rmdir_recursive($object);
+		}
+		else {
+			unlink($object);
+		}
 	}
-	else {
-		// Delete recursively
-		$objects = glob($uri . '*', GLOB_MARK);
-		foreach($objects as $object) {
-			if (substr($object, -1) == '/') {
-				return wp_rmdir($object, null, true);
-			}
-			else {
-				unlink($object);
-			}
-		}
-		
-		if (is_dir($uri)) {
-			return rmdir($uri);
-		}
+	
+	if (is_dir($uri)) {
+		return rmdir($uri);
 	}
 }
 
