@@ -53,18 +53,6 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	}
 	
 	/**
-	 * The following things should be tested in this first round:
-	 *
-	 * - mkdir()
-	 * - rmdir()
-	 * - creating a file
-	 * - Writing to a file
-	 * - unlinking (deleting) a file
-	 * - get_local_path()
-	 * - get_wrapper_path()
-	 */
-	
-	/**
 	 * Tests creating directories
 	 *
 	 * Tests WP_Local_Stream_Wrapper_Base::mkdir()
@@ -74,7 +62,7 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 		 * Test creating a single directory
 		 */
 		$dir  = 'dir1';
-		$uri  = 'test://' . $dir;
+		$uri  = 'test://'.$dir;
 		$path = $this->test_dir.'/'.$dir;
 		
 		mkdir($uri);
@@ -103,6 +91,68 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 		$this->assertTrue($error_tripped, "rmdir() on a non-empty directory should trigger an error.");
 		$this->assertTrue(wp_rmdir_recursive('test://dir2'));
 		$this->assertFileNotExists($this->test_dir.'/dir2');				
+	}
+	
+	/**
+	 * Tests creating files, writing to files, and reading from files,
+	 * and deleting them again.
+	 *
+	 * Tests WP_Local_Stream_Wrapper_Base::fopen() and family
+	 */
+	public function test_file_manipulations() {
+		/**
+		 * Test creating a file
+		 */
+		$filename = 'testfile.txt';
+		$uri  = 'test://'.$filename;
+		$path = $this->test_dir.'/'.$filename;
+		$expected_contents = 'The miracle is this - the more we share, the more we have. -- Leonard Nimoy';
+		
+		// Make sure the file doesn't exist to start with
+		$this->assertFileNotExists($path);
+		
+		// Touch the file
+		touch($uri);
+		$this->assertFileExists($path);
+		
+		// Unlink the file
+		unlink($uri);
+		$this->assertFileNotExists($path);
+		
+		// Open and write to the file
+		$fh = fopen($uri, 'w');
+		$fwrite($fh, $expected_contents);
+		fclose($fh);
+		$this->assertFileExists($path);
+		$this->assertEquals(filesize($uri), filesize($path));
+		
+		// Open and read from the file
+		$fh = fopen($uri, 'r');
+		$actual_contents = fread($fh, filesize($uri));
+		close($fh);
+		$this->assertEquals($expected_contents, $actual_contents);
+		
+		// Copy the file
+		$second_filename = 'testfile2.txt';
+		$second_uri  = 'test://'.$second_filename;
+		$second_path = $this->test_dir.'/'.$second_filename;
+		
+		copy($uri, $second_uri);
+		$this->assertFileExists($this->test_dir.'/'.$second_filename);
+		$this->assertEquals(filesize($uri), filesize($second_uri));
+		
+		// Unlink original file
+		unlink($uri);
+		$this->assertFileNotExists($path);
+		
+		// Rename second file to first file
+		rename($second_uri, $uri);
+		$this->assertFileNotExists($second_path);
+		$this->assertfileExists($path);
+		
+		// Cleanup
+		unlink($uri);
+		$this->assertfileNotExists($path);	
 	}
 	
 	/**
