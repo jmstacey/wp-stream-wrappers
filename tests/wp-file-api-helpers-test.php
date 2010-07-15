@@ -116,15 +116,6 @@ class WP_File_Helpers_Test extends WPTestCase {
 	}
 	
 	/**
-	 * The following things should be tested in this first round:
-	 *
-	 * - wp_chmod()
-	 * - wp_realpath()
-	 * - wp_tempnam_stream_compatible()
-	 * - wp_dirname()
-	 */
-	
-	/**
 	 * Tests changing permissions of file or directory
 	 *
 	 * Tests wp_chmod()
@@ -177,7 +168,39 @@ class WP_File_Helpers_Test extends WPTestCase {
 	 * Tests wp_tempnam_stream_compatible()
 	 */
 	public function test_wp_tempnam_stream_compatible() {
+		/**
+		 * Test using URI
+		 */
+		$tmp_file = wp_tempnam_stream_compatible('test://', 'foo');
+		$this->assertFileExists($tmp_file);
+		unlink($tmp_file);
+		$this->assertfileNotExists($tmp_file);
 		
+		/**
+		 * Test using path
+		 */
+		$tmp_file = wp_tempnam_stream_compatible($this->test_dir, 'foo');
+		$this->assertFileExists($tmp_file);
+		unlink($tmp_file);
+		$this->assertfileNotExists($tmp_file);
+	}
+	
+	/**
+	 * Tests getting directory name component of path
+	 *
+	 * Tests wp_dirname()
+	 */
+	public function test_wp_dirname() {
+		/**
+		 * Test using URI
+		 */
+		$this->assertEquals('test://', wp_dirname('test://dir1'));
+		$this->assertEquals('test://dir1', wp_dirname('test://dir1/dir2'));
+		
+		/**
+		 * Test using path
+		 */
+		$this->assertEquals(dirname('/dir1/dir2'), wp_dirname('/dir1/dir2'));
 	}
 	
 	/**
