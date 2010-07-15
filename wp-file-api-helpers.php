@@ -108,7 +108,7 @@ function wp_realpath($uri) {
  * @param string $directory
  *   the directory where the temporary filename will be created.
  * @param string $prefix
- *   the prefix of the generated emporary filename.
+ *   the prefix of the generated temporary filename.
  *   Note: Windows uses only the first three characters of $prefix
  *
  * @return mixed
