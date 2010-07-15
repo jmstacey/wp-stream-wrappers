@@ -156,6 +156,12 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	}
 	
 	/**
+	 * @todo test touch() because it currently isn't working. It probably
+	 * has something to do with the way stream wrapper implementation use
+	 * realpath and the file doesn't exist.
+	 */
+	
+	/**
 	 * Teardown this test case
 	 */
 	function tearDown() {

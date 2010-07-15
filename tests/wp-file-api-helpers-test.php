@@ -164,9 +164,6 @@ class WP_File_Helpers_Test extends WPTestCase {
 		$this->assertEquals($this->path, wp_realpath($this->uri));
 		$this->assertFalse(wp_realpath('test://somedir/../'.$this->filename));
 		
-		// @todo touch() isn't working. Probably has to do with realpath()
-		// wrapper implementation when file doesn't exist.
-		
 		/**
 		 * Test using path
 		 */
