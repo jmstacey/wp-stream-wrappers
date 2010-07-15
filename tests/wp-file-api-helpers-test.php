@@ -172,6 +172,15 @@ class WP_File_Helpers_Test extends WPTestCase {
 	}
 	
 	/**
+	 * Tests stream compatible version of tempnam()
+	 *
+	 * Tests wp_tempnam_stream_compatible()
+	 */
+	public function test_wp_tempnam_stream_compatible() {
+		
+	}
+	
+	/**
 	 * Teardown this test case
 	 */
 	function tearDown() {
