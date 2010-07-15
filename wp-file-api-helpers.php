@@ -38,7 +38,7 @@ function wp_chmod($uri, $mode = null) {
 	 */
 	if (!isset($mode)) {
 		if (is_dir($uri)) {
-			$mode = '0075';
+			$mode = '0775';
 		}
 		else {
 			$mode = '0664';
