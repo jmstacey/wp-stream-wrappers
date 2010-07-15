@@ -51,7 +51,7 @@ function wp_chmod($uri, $mode = null) {
 		}
 	}
 	else {
-		if (@chmod($uri, $mode)) {
+		if (chmod($uri, $mode)) {
 			return true;
 		}
 	}
