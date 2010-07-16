@@ -128,16 +128,21 @@ class WP_Stream_Wrapper_Registry {
 	 * );
 	 * </code>
 	 *
+	 * @todo consider tracking WP_Errors in this class for later display
+	 * to admin use in agregate form using admin_notices action hook.
+	 *
 	 * @param string
 	 *   String containing the scheme implemented by wrapper (e.g. 'sample').
 	 * @param array 
 	 *   Stream wrapper metadata array. See array structure example above.
 	 *
-	 * @return array
-	 *   An array containing all metadata for all registered wrappers.
+	 * @return mixed
+	 *   returns true on success or a WP_Error object on failure.
 	 *
 	 * @access public
 	 * @static
+	 * @link http://www.php.net/manual/en/function.stream-wrapper-unregister.php
+	 * @link http://php.net/manual/en/function.stream-wrapper-register.php
 	 * @see WP_Stream_Wrapper_Registry::unregister_wrapper()
 	 * @since Method available since Release 1.0.0
 	 */
@@ -153,12 +158,10 @@ class WP_Stream_Wrapper_Registry {
 		if (stream_wrapper_register($scheme, $metadata['class'])) {
 			// If registered with PHP succesfully, add to registry.
 			self::$stream_wrappers[$scheme] = $metadata;
+			return true;
 		}
 		else {
-			// Throw an error. This should be very rare.
-			// @todo: Is this proper use of WP_Error?
-			$error = new WP_Error();
-			$error.WP_Error('199001', "Unable to register wrapper implementing scheme '$scheme'");
+			return new WP_Error('stream-wrapper-registration-error', sprintf(__("Unable to register wrapper implementing scheme '%s'"), $scheme));
 		}
 	}
 	
