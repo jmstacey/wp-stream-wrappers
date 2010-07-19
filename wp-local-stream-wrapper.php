@@ -90,7 +90,7 @@ class WP_Local_Stream_Wrapper extends WP_Local_Stream_Wrapper_Base {
 	public function get_web_accessible_url() {
 		$path = str_replace('\\', '/', WP_Stream::target($this->uri));
 		
-		return content_url().'/'.self::get_wrapper_path().'/'.$path;
+		return content_url($path);
 	}
 }
 
