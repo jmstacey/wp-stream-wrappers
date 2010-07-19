@@ -162,9 +162,44 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	 */
 	
 	/**
+	 * Tests getting the web accessible URL of a file.
+	 *
+	 * Tests $wrapper_instance->get_web_accessible_url() implementation. This
+	 * function is part of the wrapper interface, and not directly implemented
+	 * in the local stream wrapper base class.
+	 */
+	public function test_get_web_accessible_url() {
+		/**
+		 * Create a test file
+		 */
+		$filename = 'testfile.txt';
+		$uri  = 'test://'.$filename;
+		$path = $this->test_dir.'/'.$filename;
+		$expected_contents = 'The miracle is this - the more we share, the more we have. -- Leonard Nimoy';
+		
+		// Make sure the file doesn't exist to start with
+		$this->assertFileNotExists($path);
+		
+		// Open and write to the file
+		$fh = fopen($uri, 'w');
+		fwrite($fh, $expected_contents);
+		fclose($fh);
+		$this->assertFileExists($path);
+		
+		$expected = content_url().'/stream_tests/'.$filename;
+		$actual   = WP_Stream::new_wrapper_instance($uri)->get_web_accessible_url();
+		
+		$this->assertEquals($expected, $actual);
+	}
+	
+	
+	/**
 	 * Teardown this test case
 	 */
 	function tearDown() {
+		// Remove any remaining test files
+		wp_rmdir_recursive('test://');
+		
 		// Unregister test stream wrapper
 		WP_Stream_Wrapper_Registry::unregister_wrapper('test');
 	}
