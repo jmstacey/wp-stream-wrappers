@@ -39,8 +39,7 @@ function wp_chmod($uri, $mode = null) {
 	if (!isset($mode)) {
 		if (is_dir($uri)) {
 			$mode = '0775';
-		}
-		else {
+		} else {
 			$mode = '0664';
 		}
 	}
@@ -49,8 +48,7 @@ function wp_chmod($uri, $mode = null) {
 		if ($wrapper->chmod($mode)) {
 			return true;
 		}
-	}
-	else {
+	} else {
 		if (chmod($uri, $mode)) {
 			return true;
 		}
@@ -84,8 +82,7 @@ function wp_chmod($uri, $mode = null) {
 function wp_realpath($uri) {
 	if ($wrapper = WP_Stream::new_wrapper_instance($uri)) {
 		return $wrapper->realpath();
-	}
-	elseif (!empty($uri)) {
+	} elseif (!empty($uri)) {
 		return realpath($uri);
 	}
 	
@@ -133,12 +130,10 @@ function wp_tempnam_stream_compatible($directory, $prefix) {
 		
 		if ($filename = tempnam($wrapper->get_wrapper_path(), $prefix)) {
 			return $scheme . '://' . basename($filename);
-		}
-		else {
+		} else {
 			return false;
 		}
-	}
-	else {
+	} else {
 		return tempnam($directory, $prefix);
 	}
 }
@@ -168,8 +163,7 @@ function wp_dirname($uri) {
 	
 	if ($scheme && WP_Stream::scheme_valid($scheme)) {
 		return WP_Stream::new_wrapper_instance($scheme . '://')->dirname($uri);
-	}
-	else {
+	} else {
 		return dirname($uri);
 	}
 }
@@ -202,8 +196,7 @@ function wp_rmdir_recursive($uri) {
 	foreach($objects as $object) {
 		if (is_dir($object)) {
 			wp_rmdir_recursive($object);
-		}
-		else {
+		} else {
 			unlink($object);
 		}
 	}

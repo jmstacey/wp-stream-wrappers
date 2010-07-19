@@ -249,10 +249,10 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function mkdir($uri, $mode, $options) {
 		$this->uri = $uri;
 		$recursive = (bool)($options & STREAM_MKDIR_RECURSIVE);
+		
 		if ($options & STREAM_REPORT_ERRORS) {
 			return mkdir($this->get_local_path(), $mode, $recursive);
-		}
-		else {
+		} else {
 			return @mkdir($this->get_local_path(), $mode, $recursive);
 		}
 	}
@@ -326,10 +326,10 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 */
 	public function rmdir($uri, $options) {
 		$this->uri = $uri;
+		
 		if ($options & STREAM_REPORT_ERRORS) {
 			return rmdir($this->get_local_path());
-		}
-		else {
+		} else {
 			return @rmdir($this->get_local_path());
 		}
 	}
@@ -640,8 +640,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		
 		if ($flags & STREAM_URL_STAT_QUIET) {
 			return @stat($this->get_local_path());
-		}
-		else {
+		} else {
 			return stat($this->get_local_path());
 		}
 	}

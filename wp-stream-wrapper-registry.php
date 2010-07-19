@@ -159,8 +159,7 @@ class WP_Stream_Wrapper_Registry {
 			// If registered with PHP succesfully, add to registry.
 			self::$stream_wrappers[$scheme] = $metadata;
 			return true;
-		}
-		else {
+		} else {
 			return new WP_Error('stream-wrapper-registration-error', sprintf(__("Unable to register wrapper implementing scheme '%s'"), $scheme));
 		}
 	}
@@ -188,8 +187,7 @@ class WP_Stream_Wrapper_Registry {
 			unset(self::$stream_wrappers[$scheme]);
 			
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}

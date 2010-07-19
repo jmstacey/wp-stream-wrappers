@@ -122,8 +122,7 @@ class WP_Stream {
 			$instance = new $class_name();
 			$instance->set_uri($uri);
 			return $instance;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
@@ -171,8 +170,7 @@ class WP_Stream {
 		
 		if (class_exists($class_name)) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
