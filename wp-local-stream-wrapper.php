@@ -7,6 +7,17 @@
  * this class to suit more specific needs. The WP Test [test://] stream
  * is an excellent example of this use case.
  *
+ * Developers: If you are using this wrapper as a template for a new wrapper
+ * and intend to extend WP_Local_Stream_Wrapper_Base you must perform
+ * your own plugin dependency check. That is, if you tried adding a plugin
+ * with the WP_Local_Stream_Wrapper class below without the WP Stream Wrappers
+ * plugin being installed, everything would come to a crashing halt and the
+ * end user will not be pleased. The best solution at this time is to separate
+ * your wrapper registration and action hooks form the wrapper implementation
+ * class. Then, only include the wrapper implementation file after checking
+ * for the existence of the WP_Local_Stream_Wrapper_Base class to assert
+ * that WP Stream Wrappers is installed and ready for use.
+ *
  * @package Stream Wrappers
  */
 
