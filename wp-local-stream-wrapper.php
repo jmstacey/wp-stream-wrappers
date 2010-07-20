@@ -12,11 +12,10 @@
  * your own plugin dependency check. That is, if you tried adding a plugin
  * with the WP_Local_Stream_Wrapper class below without the WP Stream Wrappers
  * plugin being installed, everything would come to a crashing halt and the
- * end user will not be pleased. The best solution at this time is to separate
- * your wrapper registration and action hooks form the wrapper implementation
- * class. Then, only include the wrapper implementation file after checking
- * for the existence of the WP_Local_Stream_Wrapper_Base class to assert
- * that WP Stream Wrappers is installed and ready for use.
+ * end user will not be pleased. The easiest solution is to move the wrapper
+ * class implementaiton to its own file. Then, only include it from within
+ * your registration hook function. This will ensure that the WP Stream
+ * Wrappers plugin was installed and activated before loading any lethal code.
  *
  * @package Stream Wrappers
  */
@@ -43,6 +42,15 @@ function wp_local_stream_wrapper_register() {
 
 	// Register this wrapper
 	WP_Stream_Wrapper_Registry::register_wrapper($scheme, $wrapper_metadata);
+	
+	/**
+	 * Developers: You should have your class implementation in a separate
+	 * file and then include it from within this function right before
+	 * registring your wrapper. This will ensure that the WP Stream Wrappers
+	 * plugin is installed and activated properly. See file header
+	 * documentation of this file and wp-local-stream-wrapper-base.php for
+	 * more information.
+	 */
 }
 
 // Register test stream wrapper

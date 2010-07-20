@@ -6,6 +6,17 @@
  * the local filesystem. A custom wrapper such as "local://" can be created
  * with just a few lines of code.
  *
+ * Developers: If you are using this class as a base for your own wrapper you
+ * must make sure that this class exists first! It is quite possible that an
+ * end-user might install your wrapper without having first installed the WP
+ * Stream Wrappers Plugin. If you were to implement a wrapper in the same way
+ * that the included WP Local Stream Wrapper is you could bring everything to
+ * a crashing halt. The easiest solution is to move your wrapper
+ * class implementation to a separate file from the registration hook
+ * function. Then, in your registration hook load the class implementation
+ * file. This will ensure that the WP Stream Wrappers plugin is installed
+ * and was activated.
+ *
  * @package Stream Wrappers
  */
 
