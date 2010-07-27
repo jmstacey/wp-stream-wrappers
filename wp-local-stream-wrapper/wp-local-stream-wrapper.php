@@ -46,7 +46,41 @@ function wp_local_stream_wrapper_register() {
 	WP_Stream_Wrapper_Registry::register_wrapper($scheme, $wrapper_metadata);
 }
 
-// Register test stream wrapper
+/**
+ * Checks plugin dependencies
+ *
+ * Note: This particular wrapper does not truly require this because
+ * it is part of the core plugin. However, it is included here to serve
+ * as an example to other developers creating separate wrapper plugins.
+ *
+ * @package Stream Wrappers
+ * @since 1.0.0
+ */
+function wp_local_stream_wrapper_dependency_check() {
+	if (!has_action('register_stream_wrapper')) {
+		// Notify the user the stream wrappers plugin is needed
+		add_action('admin_notices', 'wp_local_stream_wrapper_show_error');
+		
+		return new WP_Error('stream-wrapper-dependency-error', __("The WP Stream Wrappers Plugin is required, but is not installed."));
+	}
+}
+
+/**
+ * Shows dependency error message to admin users
+ *
+ * A message is displayed to admin users about the requirement of
+ * the WP Stram Wrappers Plugin.
+ *
+ * @package Stream Wrappers
+ * @since 1.0.0
+ */
+function wp_local_stream_wrapper_show_error() {
+	// @todo: Update href to a useful page in the documentation
+	print('<div id="message" class="error">Unable to register the WP Local Stream Wrapper (local://). The WP Stream Wrappers plugin is required. <a href="/">More info...</a></div>');
+}
+
+// Register action hooks
 add_action('register_stream_wrapper', 'wp_local_stream_wrapper_register', 1, 0);
+add_action('plugins_loaded', 'wp_local_stream_wrapper_dependency_check');
 
 ?>
