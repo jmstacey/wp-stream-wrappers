@@ -116,16 +116,12 @@ class WP_Stream_Wrapper_Registry_Test extends WPTestCase {
 	
 	/**
 	 * Test cloning the registry
+	 *
+	 * Attempting to clone the registry should trigger an error.
 	 */
 	public function test_clone() {
-		try {
-			$cloned_registry = clone WP_Stream_Wrapper_Registry::get_registry();
-		}
-		catch (PHPUnit_Framework_Error $e) {
-			return;
-		}
-		
-		$this->fail('An expected exception has not been raised. The stream wrapper registry should not be cloneable.');
+		$this->setExpectedException('PHPUnit_Framework_Error');
+		$cloned_registry = clone WP_Stream_Wrapper_Registry::get_registry();
 	}
 }
 
