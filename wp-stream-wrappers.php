@@ -53,7 +53,7 @@ require_once('wp-local-stream-wrapper-base.php');
 /** 
  * This file contains the WP Local Stream wrapper implementation
  */
-require_once('wp-local-stream-wrapper.php');
+require_once('wp-local-stream-wrapper/wp-local-stream-wrapper.php');
 
 /**
  * Initializes WP Stream Wrappers

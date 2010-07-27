@@ -7,15 +7,12 @@
  * with just a few lines of code.
  *
  * Developers: If you are using this class as a base for your own wrapper you
- * must make sure that this class exists first! It is quite possible that an
+ * must make sure that this class exists first. It is quite possible that an
  * end-user might install your wrapper without having first installed the WP
- * Stream Wrappers Plugin. If you were to implement a wrapper in the same way
- * that the included WP Local Stream Wrapper is you could bring everything to
- * a crashing halt. The easiest solution is to move your wrapper
- * class implementation to a separate file from the registration hook
- * function. Then, in your registration hook load the class implementation
- * file. This will ensure that the WP Stream Wrappers plugin is installed
- * and was activated.
+ * Stream Wrappers Plugin. If this happens, everythign will come to a crashing
+ * halt. Refer to the included WP Local Stream Wrapper implementation for
+ * an example handling this problem. Basically, put your implementation class
+ * in a separate file and only include it upon registration.
  *
  * @package Stream Wrappers
  */
