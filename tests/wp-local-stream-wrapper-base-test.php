@@ -211,6 +211,31 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	}
 	
 	/**
+	 * Tests getting the wrapper path
+	 *
+	 * Tests generic call routing of
+	 * $wrapper_instance->get_web_accessible_uril() to the appropriate wrapper
+	 * implementation. This tests calls to both the test:// and local://
+	 * wrapper implementations. These functions are part of the wrapper
+	 * interface and not directly implemented in the local stream wrapper
+	 * base class.
+	 */
+	public function test_get_wrapper_path() {
+		/**
+		 * Test test stream wrapper implementation
+		 */
+		$actual = WP_Stream::new_wrapper_instance('test://')->get_wrapper_path();
+		$this->assertEquals($this->test_dir, $actual);
+		
+		/**
+		 * Test local stream wrapper implementation
+		 */
+		$actual = WP_Stream::new_wrapper_instance('local://')->get_wrapper_path();
+		$this->assertEquals(WP_CONTENT_DIR, $actual);
+	}
+		
+	
+	/**
 	 * Test wrapper checking dependencies
 	 *
 	 * @todo Figure out how to test failure with WP Automated Tests
