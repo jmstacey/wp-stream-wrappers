@@ -170,9 +170,12 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	/**
 	 * Tests getting the web accessible URL of a file.
 	 *
-	 * Tests $wrapper_instance->get_web_accessible_url() implementation. This
-	 * function is part of the wrapper interface, and not directly implemented
-	 * in the local stream wrapper base class.
+	 * Tests generic call routing of
+	 * $wrapper_instance->get_web_accessible_uril() to the appropriate wrapper
+	 * implementation. This tests calls to both the test:// and local://
+	 * wrapper implementations. These functions are part of the wrapper
+	 * interface and not directly implemented in the local stream wrapper
+	 * base class.
 	 */
 	public function test_get_web_accessible_url() {
 		/**
@@ -196,6 +199,15 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 		$actual   = WP_Stream::new_wrapper_instance($uri)->get_web_accessible_url();
 		
 		$this->assertEquals($expected, $actual);
+		
+		/**
+		 * Test the WP Local Stream Wrapper Implmentation
+		 */
+		$filename = 'testfile.txt';
+		$uri  = 'local://'.$filename;
+		
+		$expected = content_url().'/'.$filename;
+		$actual   = WP_Stream::new_wrapper_instance($uri)->get_web_accessible_url();
 	}
 	
 	/**
@@ -207,14 +219,6 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 		// At the moment this simply simulates the plugins loaded action
 		// so that the local wraper code coverage is counted
 		do_action('plugins_loaded');
-	}
-	
-	/**
-	 * Tests WP_Local_Stream_Wrapper->get_wrapper_path()
-	 */
-	public function test_wp_local_stream_wrapper_get_wrapper_path() {
-		$actual = WP_Stream::new_wrapper_instance('local://')->get_wrapper_path();
-		$this->assertEquals(WP_CONTENT_DIR, $actual);
 	}
 	
 	/**
