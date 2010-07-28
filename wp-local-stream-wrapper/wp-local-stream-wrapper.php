@@ -58,6 +58,8 @@ function wp_local_stream_wrapper_register() {
  */
 function wp_local_stream_wrapper_dependency_check() {
 	if (!has_action('register_stream_wrapper')) {
+		// @todo: figure out how to test with WP Automated Tests
+		
 		// Notify the user the stream wrappers plugin is needed
 		add_action('admin_notices', 'wp_local_stream_wrapper_show_error');
 		

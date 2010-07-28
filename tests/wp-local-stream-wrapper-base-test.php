@@ -192,6 +192,16 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 		$this->assertEquals($expected, $actual);
 	}
 	
+	/**
+	 * Test wrapper checking dependencies
+	 *
+	 * @todo Figure out how to test failure with WP Automated Tests
+	 */
+	public function test_local_stream_wrapper_dependency_check() {
+		// At the moment this simply simulates the plugins loaded action
+		// so that the local wraper code coverage is counted
+		do_action('plugins_loaded');
+	}
 	
 	/**
 	 * Teardown this test case
