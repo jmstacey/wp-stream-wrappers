@@ -65,7 +65,6 @@ require_once('wp-local-stream-wrapper/wp-local-stream-wrapper.php');
  */
 function wp_stream_wrappers_init() {
 	wp_stream_wrapper_registry_init();
-	// @todo: Initialize WP Stream Wrappers
 }
 
 // Register Stream Wrapper API Initialization function with WordPress
