@@ -15,11 +15,6 @@ require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-stream-wrappers.php';
  */
 require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/tests/wp-test-stream-wrapper.php';
 
-/** 
- * This file contains the WP Local Stream Wrapper class.
- */
-require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-local-stream-wrapper/wp-local-stream-wrapper.php';
-
 /**
  * WordPress Local Stream Wrapper Base Test cases
  *
@@ -49,9 +44,10 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	 * Setup this test case
 	 */
 	function setUp() {
+		do_action('init');
+		
 		// Register test stream wrapper
 		wp_test_stream_wrapper_register();
-		wp_local_stream_wrapper_register();
 		
 		// Set the expected test directory
 		$wrapper = WP_Stream::new_wrapper_instance('test://');
