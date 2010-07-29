@@ -174,7 +174,7 @@ class WP_File_Helpers_Test extends WPTestCase {
 		$tmp_file = wp_tempnam_stream_compatible('test://', 'foo');
 		$this->assertFileExists($tmp_file);
 		unlink($tmp_file);
-		$this->assertfileNotExists($tmp_file);
+		$this->assertFileNotExists($tmp_file);
 		
 		/**
 		 * Test using path
@@ -182,7 +182,7 @@ class WP_File_Helpers_Test extends WPTestCase {
 		$tmp_file = wp_tempnam_stream_compatible($this->test_dir, 'foo');
 		$this->assertFileExists($tmp_file);
 		unlink($tmp_file);
-		$this->assertfileNotExists($tmp_file);
+		$this->assertFileNotExists($tmp_file);
 	}
 	
 	/**
