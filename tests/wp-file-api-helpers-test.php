@@ -207,6 +207,11 @@ class WP_File_Helpers_Test extends WPTestCase {
 		 */
 		$this->assertEquals($this->path, wp_realpath($this->path));
 		$this->assertEquals($this->path, wp_realpath($this->test_dir.'/../stream_tests/'.$this->filename));
+		
+		/**
+		 * Test a false return
+		 */
+		$this->assertFalse(wp_realpath(''));
 	}
 	
 	/**
