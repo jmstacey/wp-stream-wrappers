@@ -118,6 +118,7 @@ class WP_File_Helpers_Test extends WPTestCase {
 	/**
 	 * Tests changing permissions of file or directory
 	 *
+	 * @todo Simplify the mess and confusion with octals
 	 * Tests wp_chmod()
 	 */
 	public function test_wp_chmod() {
@@ -133,14 +134,60 @@ class WP_File_Helpers_Test extends WPTestCase {
 		$this->assertNotEquals($perms, fileperms($this->uri));
 		
 		$cur_octal = substr(sprintf('%o', fileperms($this->uri)), -4);
-		$this->assertEquals(0000, $cur_octal);
+		$this->assertEquals('0000', $cur_octal);
 		$this->assertEquals(fileperms($this->uri), fileperms($this->path));
+		
+		/**
+		 * Test with a normal path and not URI
+		 */
+		$this->assertTrue(wp_chmod($this->path, 0444));
+		clearstatcache();
+		$cur_octal = substr(sprintf('%o', fileperms($this->uri)), -4);
+		$this->assertEquals('0444', $cur_octal);
+		
+		/**
+		 * Test without passing mode on a file
+		 */
+		$this->assertTrue(wp_chmod($this->uri));
+		clearstatcache();
+		$cur_octal = substr(sprintf('%o', fileperms($this->uri)), -4);
+		$this->assertEquals('0664', $cur_octal);
 		
 		$this->assertTrue(wp_chmod($this->uri, $perms));
 		clearstatcache();
 		$cur_octal = substr(sprintf('%o', fileperms($this->uri)), -4);
 		$this->assertEquals($perms_octal, $cur_octal);
 		$this->assertEquals(fileperms($this->uri), fileperms($this->path));
+		
+		/**
+		 * Test without passing mode on a directory
+		 */
+		$dir_uri = 'test://test_dir';
+		
+		if (file_exists($dir_uri)) {
+			rmdir($dir_uri);
+		}
+		$this->assertFileNotExists($dir_uri);
+		mkdir($dir_uri);
+		$this->assertFileExists($dir_uri);
+		
+		// Get perms
+		$perms 		 = fileperms($dir_uri);
+		$perms_octal = substr(sprintf('%o', $perms), -4);
+		
+		$this->assertType('int', $perms);
+		
+		// Change permissions to unexpected value (from the one we will test)
+		$this->assertTrue(wp_chmod($dir_uri, 0777));
+		clearstatcache();
+		$cur_octal = substr(sprintf('%o', fileperms($dir_uri)), -4);
+		$this->assertEquals('0777', $cur_octal);
+		
+		// chmod without mode
+		$this->asserttrue(wp_chmod($dir_uri));
+		clearstatcache();
+		$cur_octal = substr(sprintf('%o', fileperms($dir_uri)), -4);
+		$this->assertEquals('0775', $cur_octal, "Base wrapper should set permissions of a directory to 0775 if no mode is given to chmod().");
 	}
 	
 	/**
