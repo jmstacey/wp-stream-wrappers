@@ -183,6 +183,8 @@ class WP_Stream {
 	 *
 	 * - Removing leading slashes from target.
 	 *
+	 * @todo remove any duplicate slashes in the target
+	 *
 	 * @param string $uri
 	 *   the stream URI to normalize.
 	 * @return string
