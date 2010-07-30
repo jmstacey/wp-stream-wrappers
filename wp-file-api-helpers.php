@@ -127,9 +127,10 @@ function wp_tempnam_stream_compatible($directory, $prefix) {
 	
 	if ($scheme && WP_Stream::scheme_valid($scheme)) {
 		$wrapper = WP_Stream::new_wrapper_instance($scheme . '://');
+		$path 	 = wp_realpath($directory);
 		
-		if ($filename = tempnam($wrapper->get_wrapper_path(), $prefix)) {
-			return $scheme . '://' . basename($filename);
+		if ($path && $filename = tempnam($path, $prefix)) {
+			return WP_Stream::normalize($directory . '/' . basename($filename));
 		} else {
 			return false;
 		}
