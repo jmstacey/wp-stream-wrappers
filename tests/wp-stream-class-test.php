@@ -117,7 +117,7 @@ class WP_Stream_Test extends WPTestCase {
 		 * Test malformed URI at the scheme/target junction
 		 */
 		$malformed_uri = 'test:///example/path1/path2/hello_world.txt';
-		$expected 	   = 'test://example/path1/path2/hello_world.txt';
+		$expected      = 'test://example/path1/path2/hello_world.txt';
 		
 		$this->assertEquals($expected, WP_Stream::normalize($malformed_uri));
 		
@@ -125,7 +125,7 @@ class WP_Stream_Test extends WPTestCase {
 		 * Test malformed URI with multiple separators in target
 		 */
 		$malformed_uri = 'test://example/path1//path2/hello_world.txt';
-		$expected	   = 'test://example/path1/path2/hello_world.txt';
+		$expected      = 'test://example/path1/path2/hello_world.txt';
 		
 		$this->assertEquals($expected, WP_Stream::normalize($malformed_uri));
 		
@@ -133,7 +133,23 @@ class WP_Stream_Test extends WPTestCase {
 		 * Test malformed URI with mutliple problems
 		 */
 		$malformed_uri = 'test:////example/path1//path2//hello_world.txt';
-		$expected 	   = 'test://example/path1/path2/hello_world.txt';
+		$expected      = 'test://example/path1/path2/hello_world.txt';
+		
+		$this->assertEquals($expected, WP_Stream::normalize($malformed_uri));
+		
+		/**
+		 * Test method call when there is no target
+		 */
+		$malformed_uri = 'test://';
+		$expected      = 'test://';
+		
+		$this->assertEquals($expected, WP_Stream::normalize($malformed_uri));
+		
+		/**
+		 * Test method call when there is no target but the URI is malformed
+		 */
+		$malformed_uri = 'test:///';
+		$expected      = 'test://';
 		
 		$this->assertEquals($expected, WP_Stream::normalize($malformed_uri));
 	}
