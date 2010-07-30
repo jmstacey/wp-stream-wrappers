@@ -188,6 +188,9 @@ class WP_File_Helpers_Test extends WPTestCase {
 		clearstatcache();
 		$cur_octal = substr(sprintf('%o', fileperms($dir_uri)), -4);
 		$this->assertEquals('0775', $cur_octal, "Base wrapper should set permissions of a directory to 0775 if no mode is given to chmod().");
+		
+		rmdir($dir_uri);
+		$this->assertFileNotExists($dir_uri);
 	}
 	
 	/**
