@@ -182,8 +182,7 @@ class WP_Stream {
 	 * returned.
 	 *
 	 * - Removing leading slashes from target.
-	 *
-	 * @todo remove any duplicate slashes in the target
+	 * - Removing duplicate path separators from target.
 	 *
 	 * @param string $uri
 	 *   the stream URI to normalize.
@@ -203,11 +202,42 @@ class WP_Stream {
 			$target = WP_Stream::target($uri);
 			
 			if ($target !== false) {
-				$uri = $scheme . '://' . $target;
+				$target = self::_clean_path_components($target);
+				$uri 	= $scheme . '://' . $target;
 			}
 		}
 		
 		return $uri;
+	}
+	
+	/**
+	 * Removes superfluous separators from given path
+	 *
+	 * For example, and input string of:
+	 * "dir1/dir2//dir3/dir4"
+	 * would return "dir1/dir2/dir3/dir4"
+	 *
+	 * @param string $path
+	 *   the path to remove superfluous separators from.
+	 * @return string
+	 *   the cleaned path.
+	 *
+	 * @access private
+	 * @static
+	 * @see WP_Stream::normalize()
+	 * @since Method available since Release 1.0.0
+	 */
+	private static function _clean_path_components($path) {
+		$components = explode('/', $path);
+		
+		$path = '';
+		foreach ($components as $c) {
+			if (strlen($c) > 0) {
+				$path .= '/' . $c;
+			}
+		}
+		
+		return ltrim($path, '/');
 	}
 
 }
