@@ -238,6 +238,11 @@ class WP_File_Helpers_Test extends WPTestCase {
 		$this->assertFileExists($tmp_file);
 		unlink($tmp_file);
 		$this->assertFileNotExists($tmp_file);
+		
+		/**
+		 * Test a failure
+		 */
+		$this->assertFalse(wp_tempnam_stream_compatible('test://skdf/dfas', 'foo'));
 	}
 	
 	/**
