@@ -110,7 +110,7 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	 *
 	 * Tests WP_Local_Stream_Wrapper_Base::fopen() and family
 	 */
-	public function test_file_manipulations() {
+	public function test_basic_file_manipulations() {
 		/**
 		 * Test creating a file
 		 */
