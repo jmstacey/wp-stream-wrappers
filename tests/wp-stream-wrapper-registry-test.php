@@ -68,6 +68,12 @@ class WP_Stream_Wrapper_Registry_Test extends WPTestCase {
 		// Assert test stream wrapper is registered
 		$this->assertArrayHasKey('test', WP_Stream_Wrapper_Registry::get_stream_wrappers(), 'The test stream wrapper should be registered here.');
 		
+		// Try overriding test stream wrapper with a new [identical] implementation
+		wp_test_stream_wrapper_register();
+		
+		// Assert test stream wrapper is still registered
+		$this->assertArrayHasKey('test', WP_Stream_Wrapper_Registry::get_stream_wrappers());
+		
 		// Unregister test stream wrappers
 		WP_Stream_Wrapper_Registry::unregister_wrapper('test');
 		
