@@ -73,6 +73,9 @@ class WP_Stream_Wrapper_Registry_Test extends WPTestCase {
 		
 		// Assert test stream wrapper no longer registered
 		$this->assertArrayNotHasKey('test', WP_Stream_Wrapper_Registry::get_stream_wrappers(), 'The test stream wrapper should have been unregistered.');
+		
+		// Assert false return trying to remove nonexistent stream wrapper
+		$this->assertFalse(WP_Stream_Wrapper_Registry::unregister_wrapper('test'));
 	}
 	
 	/**
