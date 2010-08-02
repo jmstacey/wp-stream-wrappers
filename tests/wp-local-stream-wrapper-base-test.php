@@ -205,33 +205,15 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	 */
 	
 	/**
-	 * Tests PHP opendir() calls
+	 * Tests PHP opendir(), readdir(), and rewinddir()
 	 *
 	 * Tests WP_Local_Stream_Wrapper_Base::dir_opendir()
-	 */
-	public function test_opendir() {
-		// @todo implement test_opendir()
-		$this->markTestIncomplete('opendir() test has not been implemented yet.');
-	}
-	
-	/**
-	 * Tests PHP closedir() calls
-	 *
 	 * Tests WP_Local_Stream_Wrapper_Base::dir_closedir()
-	 */
-	public function test_closedir() {
-		// @todo implement test_closedir()
-		$this->markTestIncomplete('closedir() test has not been implemented yet.');
-	}
-	
-	/**
-	 * Tests PHP readdir() calls
-	 *
 	 * Tests WP_Local_Stream_Wrapper_Base::dir_readdir()
 	 */
-	public function test_readdir() {
-		// @todo implement test_readdir()
-		$this->markTestIncomplete('readdir() test has not been implemented yet.');
+	public function test_opendir_family() {
+		// @todo implement test_opendir_family()
+		$this->markTestIncomplete('opendir() and family tests have not been implemented yet.');
 	}
 	
 	/**
