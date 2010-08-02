@@ -218,8 +218,7 @@ class WP_Stream_Wrapper_Registry {
 	 * no use cases can currentlybe conceived in which an identical copy of
 	 * the registry would be needed.
 	 */
-    public function __clone()
-    {
+    public function __clone() {
         trigger_error('Cloning the WP Stream Wrapper Registry is not allowed.', E_USER_ERROR);
     }
 }
