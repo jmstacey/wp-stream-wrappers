@@ -256,12 +256,14 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function mkdir($uri, $mode, $options) {
 		$this->uri = $uri;
 		$recursive = (bool)($options & STREAM_MKDIR_RECURSIVE);
-		
+
 		if ($options & STREAM_REPORT_ERRORS) {
-			return mkdir($this->get_local_path(), $mode, $recursive);
+			$ret = mkdir($this->get_local_path(), $mode, $recursive);
 		} else {
-			return @mkdir($this->get_local_path(), $mode, $recursive);
+			$ret = @mkdir($this->get_local_path(), $mode, $recursive);
 		}
+
+		return $ret == 0 ? true : false;
 	}
 
 	/**
