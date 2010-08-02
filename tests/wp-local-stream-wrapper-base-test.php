@@ -238,7 +238,7 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	 */
 	public function test_local_stream_wrapper_dependency_check() {
 		// At the moment this simply simulates the plugins loaded action
-		// so that the local wraper code coverage is counted
+		// so that the local wrapper code coverage is counted
 		do_action('plugins_loaded');
 	}
 	
