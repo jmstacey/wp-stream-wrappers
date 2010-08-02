@@ -322,10 +322,10 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	 * stream_cast() is not implemented so we expect an exception in this test.
 	 */
 	public function test_stream_select() {
-		$read    = array('test');
-		$write   = array('test');
-		$except  = array();
-		$timeout = 10;
+		$stream = fopen($this->sample_file, 'r');
+		$read   = array($stream);
+		$write  = null;
+		$except = null;
 		
 		$this->setExpectedException('PHPUnit_Framework_Error');
 		$this->assertFalse(stream_select($read, $write, $except, $timeout));
