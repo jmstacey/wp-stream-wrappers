@@ -517,7 +517,9 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @since 1.0.0
 	 */
 	public function stream_seek($offset, $whence) {
-		return fseek($this->handle, $offset, $whence);
+		$ret = fseek($this->handle, $offset, $whence);
+		
+		return $ret == 0 ? true : false;
 	}
 	
 	/**
