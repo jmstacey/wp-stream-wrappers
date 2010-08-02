@@ -233,17 +233,27 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 		$this->assertEquals(3, count($dirs));  // Expecing: '.', '..', and 'dir3'
 		$this->assertEquals('dir3', $dirs[2]); // $dir[2] should be 'dir3
 		
+		/**
+		 * Test rewinddir() call
+		 */
+		$dirs = array();
+		while (($d = readdir($dh)) !== false) {
+			array_push($dirs, $d);
+		}
+		
+		$this->assertEquals(0, count($dirs));  // Expecing: '.', '..', and 'dir3'
+		
+		rewinddir($dh);
+		
+		$dirs = array();
+		while (($d = readdir($dh)) !== false) {
+			array_push($dirs, $d);
+		}
+		
+		$this->assertEquals(3, count($dirs));  // Expecing: '.', '..', and 'dir3'
+		$this->assertEquals('dir3', $dirs[2]); // $dir[2] should be 'dir3
+		
         closedir($dh);
-	}
-	
-	/**
-	 * Tests PHP rewinddir() calls
-	 *
-	 * Tests WP_Local_Stream_Wrapper_Base::dir_rewinddir()
-	 */
-	public function test_rewinddir() {
-		// @todo implement test_rewinddir()
-		$this->markTestIncomplete('rewinddir() test has not been implemented yet.');
 	}
 	
 	/**
