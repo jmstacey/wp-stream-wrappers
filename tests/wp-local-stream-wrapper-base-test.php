@@ -41,6 +41,15 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	private $test_dir;
 	
 	/**
+	 * Assert that the registry has the core attributes needed
+	 */
+	public function test_class_attributes() {
+		$this->assertclassHasAttribute('context', 'WP_Local_Stream_Wrapper_Base');
+		$this->assertclassHasAttribute('handle', 'WP_Local_Stream_Wrapper_Base');
+		$this->assertclassHasAttribute('uri', 'WP_Local_Stream_Wrapper_Base');
+	}
+	
+	/**
 	 * Setup this test case
 	 */
 	function setUp() {
