@@ -80,7 +80,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		// The local stream wrapper needs no initialization at this point.
 	}
 	
-	
 	/**
 	 * Retrieves the path that the wrapper is responsible for
 	 *
