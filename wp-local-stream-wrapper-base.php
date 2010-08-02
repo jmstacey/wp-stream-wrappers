@@ -365,9 +365,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @param int $cast_as
 	 *   STREAM_CAST_FOR_SELECT or STREAM_CAST_AS_STREAM
 	 *
-	 * @return bool
-	 *   false is always returned. This method is not implemened in the stream
-	 *   wrappers plugin as of version 1.0.0.
+	 * @throws E_USER_NOTICE
 	 *
 	 * @see WP_Stream_Wrapper_Interface::stream_cast()
 	 * @see stream_select()
@@ -375,9 +373,9 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @since 1.0.0
 	 */
 	public function stream_cast($cast_as) {
+		// @todo figure out if we really need to do something with this
 		// This method is not implemented
 		trigger_error('stream_cast() is not implemented in the stream wrappers plugin as of version 1.0.0.', E_USER_NOTICE);
-		return false;
 	}
 	
 	/**
