@@ -332,6 +332,26 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	}
 	
 	/**
+	 * Tests PHP stream_set_option() calls
+	 *
+	 * Tests WP_Local_Stream_Wrapper_Base::stream_set_option()
+	 *
+	 * Note: stream_set_option() is not implemented so we expect an exception in this test.
+	 */
+	public function test_stream_set_option() {
+		$instance = WP_Stream::new_wrapper_instance('test://');
+		
+		$this->assertThat($instance,
+						$this->logicalNot(
+							$this->EqualTo(false)
+						)
+		);
+		
+		$this->setExpectedException('PHPUnit_Framework_Error');
+		$this->assertFalse($instance->stream_set_option(null, null, null));
+	}
+	
+	/**
 	 * Tests getting the web accessible URL of a file.
 	 *
 	 * Tests generic call routing of
