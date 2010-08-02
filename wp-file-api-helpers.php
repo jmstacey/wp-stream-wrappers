@@ -45,16 +45,10 @@ function wp_chmod($uri, $mode = null) {
 	}
 
 	if ($wrapper = WP_Stream::new_wrapper_instance($uri)) {
-		if ($wrapper->chmod($mode)) {
-			return true;
-		}
+		return $wrapper->chmod($mode);
 	} else {
-		if (chmod($uri, $mode)) {
-			return true;
-		}
+		return chmod($uri, $mode);
 	}
-	
-	return false;
 }
 
 /**
