@@ -28,11 +28,6 @@ require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/tests/wp-test-stream-wrapper.php
  * @since      Class available since Release 1.0.0
  */
 class WP_Stream_Wrapper_Registry_Test extends WPTestCase {
-	
-	/**
-	 * @todo Test registering when a wrapper with same scheme is already
-	 * registered.
-	 */
 
 	/**
 	 * Assert that the registry has the core attributes needed
