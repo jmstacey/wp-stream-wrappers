@@ -116,7 +116,7 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 		/**
 		 * Test creating multiple directories recursively as needed
 		 */
-		$dir  = '/dir2/dir3/dir4';
+		$dir  = 'dir2/dir3/dir4';
 		$uri  = 'test://' . $dir;
 		$path = $this->test_dir.'/'.$dir;
 		
@@ -205,15 +205,35 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	 */
 	
 	/**
-	 * Tests PHP opendir(), readdir(), and rewinddir()
+	 * Tests PHP opendir(), readdir(), and rewinddir() calls
 	 *
 	 * Tests WP_Local_Stream_Wrapper_Base::dir_opendir()
 	 * Tests WP_Local_Stream_Wrapper_Base::dir_closedir()
 	 * Tests WP_Local_Stream_Wrapper_Base::dir_readdir()
 	 */
 	public function test_opendir_family() {
-		// @todo implement test_opendir_family()
-		$this->markTestIncomplete('opendir() and family tests have not been implemented yet.');
+		$uri = 'test://opendir_test/dir1/dir2/dir3/dir4/dir5';
+		
+		mkdir($uri, 0777, true);
+		// $this->assertTrue(mkdir($uri), 0777, true); // Whoa! This does not work for some reason
+		$this->assertTrue(is_dir('test://opendir_test'));
+		$this->assertFileExists($uri);
+		
+		$this->assertThat($dh = opendir('test://opendir_test/dir1/dir2'),
+						$this->logicalNot(
+							$this->EqualTo(false)
+						)
+		);
+		
+		$dirs = array();
+		while (($d = readdir($dh)) !== false) {
+			array_push($dirs, $d);
+		}
+		
+		$this->assertEquals(3, count($dirs));  // Expecing: '.', '..', and 'dir3'
+		$this->assertEquals('dir3', $dirs[2]); // $dir[2] should be 'dir3
+		
+        closedir($dh);
 	}
 	
 	/**
