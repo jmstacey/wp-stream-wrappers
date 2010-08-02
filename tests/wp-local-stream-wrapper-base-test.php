@@ -233,6 +233,16 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	}
 	
 	/**
+	 * Tests PHP flock() calls
+	 *
+	 * Tests WP_Local_Stream_Wrapper_Base::stream_lock()
+	 */
+	public function test_flock() {
+		// @todo implement test_flock()
+		$this->markTestIncomplete('flock() test has not been implemented yet.');
+	}
+	
+	/**
 	 * Tests getting the web accessible URL of a file.
 	 *
 	 * Tests generic call routing of
