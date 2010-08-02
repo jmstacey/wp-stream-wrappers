@@ -41,6 +41,16 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	private $test_dir;
 	
 	/**
+	 * Somple file
+	 *
+	 * A simple file for read-only purpose tests
+	 *
+	 * @var string
+	 * @access private
+	 */
+	private $sample_file;
+	
+	/**
 	 * Somple file contents
 	 *
 	 * A basic sentence that can be used in test files.
@@ -73,6 +83,16 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 		$this->test_dir = $wrapper->get_wrapper_path();
 
 		$this->sample_content = 'The miracle is this - the more we share, the more we have. -- Leonard Nimoy';
+		
+		/**
+		 * Prepare sample file with sample contents
+		 */
+		$this->sample_file = 'test://sample_file.txt';
+		
+		$fp = fopen($this->sample_file, 'w');
+		fwrite($fp, $this->sample_content);
+		fclose($fp);
+		$this->assertFileExists($this->sample_file);
 	}
 	
 	/**
@@ -250,9 +270,9 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	 * Tests WP_Local_Stream_Wrapper_Base::stream_lock()
 	 */
 	public function test_flock() {
-		$uri = 'test://lock_test.txt';
+		$uri = $this->sample_file;
 		
-		$fp1 = fopen($uri, 'w+');
+		$fp1 = fopen($uri, 'r+');
 		$this->assertTrue(flock($fp1, LOCK_EX | LOCK_NB), "Couldn't acquire file lock.");
 		fwrite($fp1, $this->sample_content);
 		
