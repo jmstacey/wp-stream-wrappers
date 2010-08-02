@@ -173,6 +173,66 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	 */
 	
 	/**
+	 * Tests PHP opendir() calls
+	 *
+	 * Tests WP_Local_Stream_Wrapper_Base::opendir()
+	 */
+	public function test_opendir() {
+		// @todo implement test_opendir()
+		$this->markTestIncomplete('opendir() test has not been implemented yet.');
+	}
+	
+	/**
+	 * Tests PHP closedir() calls
+	 *
+	 * Tests WP_Local_Stream_Wrapper_Base::closedir()
+	 */
+	public function test_closedir() {
+		// @todo implement test_closedir()
+		$this->markTestIncomplete('closedir() test has not been implemented yet.');
+	}
+	
+	/**
+	 * Tests PHP readdir() calls
+	 *
+	 * Tests WP_Local_Stream_Wrapper_Base::readdir()
+	 */
+	public function test_readdir() {
+		// @todo implement test_readdir()
+		$this->markTestIncomplete('readdir() test has not been implemented yet.');
+	}
+	
+	/**
+	 * Tests PHP rewinddir() calls
+	 *
+	 * Tests WP_Local_Stream_Wrapper_Base::rewinddir()
+	 */
+	public function test_rewinddir() {
+		// @todo implement test_rewinddir()
+		$this->markTestIncomplete('rewinddir() test has not been implemented yet.');
+	}
+	
+	/**
+	 * Tests PHP fseek() calls
+	 *
+	 * Tests WP_Local_Stream_Wrapper_Base::fseek()
+	 */
+	public function test_fseek() {
+		// @todo implement test_fseek()
+		$this->markTestIncomplete('fseek() test has not been implemented yet.');
+	}
+	
+	/**
+	 * Tests PHP ftell() calls
+	 *
+	 * Tests WP_Local_Stream_Wrapper_Base::ftell()
+	 */
+	public function test_ftell() {
+		// @todo implement test_ftell()
+		$this->markTestIncomplete('ftell() test has not been implemented yet.');
+	}
+	
+	/**
 	 * Tests getting the web accessible URL of a file.
 	 *
 	 * Tests generic call routing of
