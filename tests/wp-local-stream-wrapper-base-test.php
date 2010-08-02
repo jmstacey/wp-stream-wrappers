@@ -41,6 +41,16 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	private $test_dir;
 	
 	/**
+	 * Somple file contents
+	 *
+	 * A basic sentence that can be used in test files.
+	 *
+	 * @var string
+	 * @access private
+	 */
+	private $sample_content;
+	
+	/**
 	 * Assert that the registry has the core attributes needed
 	 */
 	public function test_class_attributes() {
@@ -61,6 +71,8 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 		// Set the expected test directory
 		$wrapper = WP_Stream::new_wrapper_instance('test://');
 		$this->test_dir = $wrapper->get_wrapper_path();
+
+		$this->sample_content = 'The miracle is this - the more we share, the more we have. -- Leonard Nimoy';
 	}
 	
 	/**
@@ -117,7 +129,7 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 		$filename = 'testfile.txt';
 		$uri  = 'test://'.$filename;
 		$path = $this->test_dir.'/'.$filename;
-		$expected_contents = 'The miracle is this - the more we share, the more we have. -- Leonard Nimoy';
+		$expected_contents = $this->sample_content;
 		
 		// Make sure the file doesn't exist to start with
 		$this->assertFileNotExists($path);
