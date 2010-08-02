@@ -175,7 +175,7 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	/**
 	 * Tests PHP opendir() calls
 	 *
-	 * Tests WP_Local_Stream_Wrapper_Base::opendir()
+	 * Tests WP_Local_Stream_Wrapper_Base::dir_opendir()
 	 */
 	public function test_opendir() {
 		// @todo implement test_opendir()
@@ -185,7 +185,7 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	/**
 	 * Tests PHP closedir() calls
 	 *
-	 * Tests WP_Local_Stream_Wrapper_Base::closedir()
+	 * Tests WP_Local_Stream_Wrapper_Base::dir_closedir()
 	 */
 	public function test_closedir() {
 		// @todo implement test_closedir()
@@ -195,7 +195,7 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	/**
 	 * Tests PHP readdir() calls
 	 *
-	 * Tests WP_Local_Stream_Wrapper_Base::readdir()
+	 * Tests WP_Local_Stream_Wrapper_Base::dir_readdir()
 	 */
 	public function test_readdir() {
 		// @todo implement test_readdir()
@@ -205,7 +205,7 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	/**
 	 * Tests PHP rewinddir() calls
 	 *
-	 * Tests WP_Local_Stream_Wrapper_Base::rewinddir()
+	 * Tests WP_Local_Stream_Wrapper_Base::dir_rewinddir()
 	 */
 	public function test_rewinddir() {
 		// @todo implement test_rewinddir()
@@ -215,7 +215,7 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	/**
 	 * Tests PHP fseek() calls
 	 *
-	 * Tests WP_Local_Stream_Wrapper_Base::fseek()
+	 * Tests WP_Local_Stream_Wrapper_Base::stream_seek()
 	 */
 	public function test_fseek() {
 		// @todo implement test_fseek()
@@ -225,7 +225,7 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	/**
 	 * Tests PHP ftell() calls
 	 *
-	 * Tests WP_Local_Stream_Wrapper_Base::ftell()
+	 * Tests WP_Local_Stream_Wrapper_Base::stream_tell()
 	 */
 	public function test_ftell() {
 		// @todo implement test_ftell()
