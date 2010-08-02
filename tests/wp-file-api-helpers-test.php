@@ -269,6 +269,7 @@ class WP_File_Helpers_Test extends WPTestCase {
 	 * Tests wp_rmdir_recursive()
 	 */
 	public function test_wp_rmdir_recursive() {
+		// @todo Implement test_wp_rmdir_recursive()
 		$this->markTestIncomplete('wp_rmdir_recursive() test has not been implemented yet.');
 	}
 	
