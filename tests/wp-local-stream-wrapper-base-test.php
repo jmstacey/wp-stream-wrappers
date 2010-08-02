@@ -250,8 +250,15 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	 * Tests WP_Local_Stream_Wrapper_Base::stream_seek()
 	 */
 	public function test_fseek() {
-		// @todo implement test_fseek()
-		$this->markTestIncomplete('fseek() test has not been implemented yet.');
+		$uri = $this->sample_file;
+		
+		$fp = fopen($uri, 'r');
+		$data = fgets($fp, 5);
+		$this->assertEquals(4, ftell($fp), "Something messed up in fgets() or ftell().");
+		
+		$this->assertEquals(0, fseek($fp, 0));
+		
+		fclose($fp);
 	}
 	
 	/**
