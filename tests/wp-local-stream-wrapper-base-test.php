@@ -229,7 +229,6 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 		$actual = WP_Stream::new_wrapper_instance('local://')->get_wrapper_path();
 		$this->assertEquals(WP_CONTENT_DIR, $actual);
 	}
-		
 	
 	/**
 	 * Test wrapper checking dependencies
