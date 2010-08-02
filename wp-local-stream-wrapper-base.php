@@ -162,7 +162,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * This function is called in response to PHP's closedir().
 	 *
 	 * @return bool
-	 *   true on success.
+	 *   true on success or false on failure.
 	 *
 	 * @see WP_Stream_Wrapper_Interface::dir_closedir()
 	 * @see closedir()
@@ -170,7 +170,14 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @since 1.0.0
 	 */
 	public function dir_closedir() {
-		return closedir($this->handle);
+		/**
+		 * PHP's closedir() doesn't return anything, but the stream wrapper
+		 * implementation needs to return a boolean. For the time being
+		 * we just assume and return true since we don't have any feedback
+		 * form the PHP call at this point.
+		 */
+		closedir($this->handle);
+		return true;
 	}
 	
 	/**
@@ -184,7 +191,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   whether or not to enforce safe mode.
 	 *
 	 * @return bool
-	 *   true on success.
+	 *   true on success or false on failure.
 	 *
 	 * @see WP_Stream_Wrapper_Interface::dir_opendir()
 	 * @see opendir()
@@ -204,8 +211,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * This function is called in response to PHP's readdir().
 	 *
 	 * @return mixed
-	 *   the next filename (string), or false (bool) if there are no more
-	 * files in the directory.
+	 *   the next filename (string), or false (bool) if there is no next file.
 	 *
 	 * @see WP_Stream_Wrapper_Interface::dir_readdir()
 	 * @see readdir()
@@ -230,7 +236,14 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @since 1.0.0
 	 */
 	public function dir_rewinddir() {
-		return rewinddir($this->handle);
+		/**
+		 * PHP's rewinddir() doesn't return anything, but the stream wrapper
+		 * implementation needs to return a boolean. For the time being
+		 * we just assume and return true since we don't have any feedback
+		 * form the PHP call at this point.
+		 */
+		rewinddir($this->handle);
+		return true;
 	}
 	
 	/**
@@ -258,12 +271,10 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		$recursive = (bool)($options & STREAM_MKDIR_RECURSIVE);
 
 		if ($options & STREAM_REPORT_ERRORS) {
-			$ret = mkdir($this->get_local_path(), $mode, $recursive);
+			return mkdir($this->get_local_path(), $mode, $recursive);
 		} else {
-			$ret = @mkdir($this->get_local_path(), $mode, $recursive);
+			return @mkdir($this->get_local_path(), $mode, $recursive);
 		}
-
-		return $ret == 0 ? true : false;
 	}
 
 	/**
@@ -377,7 +388,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @since 1.0.0
 	 */
 	public function stream_close() {
-		return fclose($this->handle);
+		fclose($this->handle);
 	}
 	
 	/**
@@ -457,7 +468,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *   path actually opened.
 	 *
 	 * @return bool
-	 *   true if file was opened successfully.
+	 *   true on success or false on failure.
 	 *
 	 * @see WP_Stream_Wrapper_Interface::stream_open()
 	 * @link http://php.net/manual/en/streamwrapper.stream-open.php
@@ -546,7 +557,9 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @since 1.0.0
 	 */
 	public function stream_set_option($option, $arg1, $arg2) {
-		return false; // This method is not implemented.
+		// This method is not implemented
+		trigger_error('stream_set_option() is not implemented in the stream wrappers plugin as of version 1.0.0.', E_USER_NOTICE);
+		return false;
 	}
 	
 	/**
