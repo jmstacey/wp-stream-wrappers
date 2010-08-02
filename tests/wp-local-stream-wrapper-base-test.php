@@ -250,8 +250,24 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	 * Tests WP_Local_Stream_Wrapper_Base::stream_lock()
 	 */
 	public function test_flock() {
-		// @todo implement test_flock()
-		$this->markTestIncomplete('flock() test has not been implemented yet.');
+		$uri = 'test://lock_test.txt';
+		
+		$fp1 = fopen($uri, 'w+');
+		$this->assertTrue(flock($fp1, LOCK_EX | LOCK_NB), "Couldn't acquire file lock.");
+		fwrite($fp1, $this->sample_content);
+		
+		$fp2 = fopen($uri, 'r+');
+		$this->assertFalse(flock($fp2, LOCK_EX | LOCK_NB), "We should not be able to acquire a lock here.");
+		
+		$this->assertTrue(flock($fp1, LOCK_UN), "Couldn't release file lock.");
+		$this->assertTrue(flock($fp2, LOCK_EX | LOCK_NB), "We should be able to acquire a lock here.");
+		$this->assertTrue(flock($fp2, LOCK_UN), "Couldn't release file lock.");
+		
+		fclose($fp1);
+		fclose($fp2);
+		
+		unlink($uri);
+		$this->assertFileNotExists($uri, "The lock_test.txt file should have been removed.");
 	}
 	
 	/**
