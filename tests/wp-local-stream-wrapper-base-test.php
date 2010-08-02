@@ -260,8 +260,13 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	 * Tests WP_Local_Stream_Wrapper_Base::stream_tell()
 	 */
 	public function test_ftell() {
-		// @todo implement test_ftell()
-		$this->markTestIncomplete('ftell() test has not been implemented yet.');
+		$uri = $this->sample_file;
+		
+		$fp = fopen($uri, 'r');
+		$data = fgets($fp, 12);
+		
+		$this->assertEquals(11, ftell($fp));
+		fclose($fp);
 	}
 	
 	/**
