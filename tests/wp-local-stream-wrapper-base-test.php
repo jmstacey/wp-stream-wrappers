@@ -318,17 +318,17 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	 * Tests PHP stream_select() calls
 	 *
 	 * Tests WP_Local_Stream_Wrapper_Base::stream_cast()
+	 *
+	 * stream_cast() is not implemented so we expect an exception in this test.
 	 */
 	public function test_stream_select() {
-		$var1 = '';
-		$var2 = '';
-		$var3 = '';
+		$read    = array('test');
+		$write   = array('test');
+		$except  = array();
+		$timeout = 10;
 		
 		$this->setExpectedException('PHPUnit_Framework_Error');
-		$this->assertFalse(stream_select($var1, $var2, $var3, 10));
-		/**
-		 * stream_cast() is not implemented so we expect an exception in this test.
-		 */
+		$this->assertFalse(stream_select($read, $write, $except, $timeout));
 	}
 	
 	/**
