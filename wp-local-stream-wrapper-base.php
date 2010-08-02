@@ -551,9 +551,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @param int $arg1
 	 * @param int $arg2
 	 *
-	 * @return bool
-	 *   false is always returned. This method is not implemened in the stream
-	 *   wrappers plugin as of version 1.0.0.
+	 * @throws E_USER_NOTICE
 	 *
 	 * @see WP_Stream_Wrapper_Interface::stream_set_option()
 	 * @see 
@@ -561,9 +559,10 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @since 1.0.0
 	 */
 	public function stream_set_option($option, $arg1, $arg2) {
+		// @todo figure out if we really need to do something with this
+		
 		// This method is not implemented
 		trigger_error('stream_set_option() is not implemented in the stream wrappers plugin as of version 1.0.0.', E_USER_NOTICE);
-		return false;
 	}
 	
 	/**
