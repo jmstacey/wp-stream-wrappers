@@ -251,6 +251,24 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	}
 	
 	/**
+	 * Tests setting and getting URI
+	 *
+	 * Tests the $uri attribute of 
+	 */
+	public function test_uri_attribute() {
+		$uri 		= 'test://testfile.txt';
+		$scheme 	= WP_Stream::scheme($uri);
+		$class_name = WP_Stream::wrapper_class_name($scheme);
+		
+		$instance = WP_Stream::new_wrapper_instance($uri);
+		$this->assertEquals($uri, $instance->get_uri());
+		
+		$new_uri = 'test://testfile2.txt';
+		$instance->set_uri($new_uri);
+		$this->assertEquals($new_uri, $instance->get_uri());
+	}
+	
+	/**
 	 * Teardown this test case
 	 */
 	function tearDown() {
