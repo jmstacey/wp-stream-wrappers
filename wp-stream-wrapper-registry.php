@@ -20,7 +20,6 @@
  * @package Stream Wrappers
  */
 
-
 /**
  * Initializes WP Stream Wrapper Registry
  * 
@@ -33,7 +32,6 @@
 function wp_stream_wrapper_registry_init() {
 	$registry = WP_Stream_Wrapper_Registry::get_registry();
 }
-
 
 /**
  * WP Stream Wrapper Registry
