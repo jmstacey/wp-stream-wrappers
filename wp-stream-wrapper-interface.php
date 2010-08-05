@@ -21,7 +21,6 @@
  * @package Stream Wrappers
  */
 
-
 /**
  * Generic PHP stream wrapper interface
  *
@@ -186,8 +185,7 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 * @see 
 	 * @since Method available since Release 1.0.0
 	 */
-	public function get_web_accessible_url();
-	
+	public function get_web_accessible_url();	
 }
 
 ?>
