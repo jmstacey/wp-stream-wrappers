@@ -81,12 +81,14 @@ class WP_Stream_Wrapper_Registry {
 	/**
 	 * Initializes the WP_Stream_Wrapper_Regisitry singleton object
 	 *
+	 * Action: register_stream_wrapper
+	 *    This action tells stream wrapper plugins that it's time to register
+	 *    themselves.
+	 *
 	 * @access private
 	 * @since Method available since Release 1.0.0
 	 */
 	private function __construct() {
-		// Run register_stream_wrapper action which tells stream wrapper
-		// plugins that it's time to register themselves.
 		do_action('register_stream_wrapper');
 	}
 	
@@ -147,14 +149,13 @@ class WP_Stream_Wrapper_Registry {
 	 * @since Method available since Release 1.0.0
 	 */
 	public static function register_wrapper($scheme, $metadata) {
-		// Ask PHP for registered wrappers (stream_get_wrappers()).
-		// If a wrapper is already registered with this scheme, override.
 		if (in_array($scheme, stream_get_wrappers(), true)) {
+			// We override wrappers silently.
 			stream_wrapper_unregister($scheme);
 		}
 	
 		if (stream_wrapper_register($scheme, $metadata['class'])) {
-			// If registered with PHP succesfully, add to registry.
+			// If PHP accepted the registration, add it to our registry.
 			self::$stream_wrappers[$scheme] = $metadata;
 			return true;
 		} else {
