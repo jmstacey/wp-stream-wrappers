@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: WP Stream Wrappers
-Plugin URI: TBD
-Description: WP Stream Wrappers provides the core foundation upon which wrappers for WordPress are built.
+Plugin URI: http://github.com/jmstacey/wp-stream-wrappers
+Description: Providing a foundation for next generation WordPress file handling capabilities.
 Version: 1.0.0
 Author: Jon Stacey
 Author URI: http://jonsview.com
@@ -11,7 +11,7 @@ Author URI: http://jonsview.com
 define('WP_STREAM_WRAPPERS_VERSION', '1.0.0');
 
 /**
- * Initialization takes place in the following order.
+ * Initialization takes place in the following order:
  *
  * Step 1: Initialize stream wrapper registry
  * Step 2: Load WP_Stream utilities class
@@ -64,9 +64,9 @@ function wp_stream_wrappers_init() {
 	wp_stream_wrapper_registry_init();
 }
 
-// Register Stream Wrapper API Initialization function with WordPress
-// We may need to evenaully initialize even before WordPress.
-// It depends how far down the rabbit hole we wish to travel.
+/**
+ * Register Stream Wrapper initialization function with WordPress.
+ */
 add_action('init', 'wp_stream_wrappers_init', 0, 0);
 
 ?>
