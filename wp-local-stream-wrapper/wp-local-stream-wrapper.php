@@ -21,8 +21,14 @@ define('WP_LOCAL_STREAM_WRAPPER_VERSION', '1.0.0');
 
 /**
  * Registers the WP Local Stream Wrapper
- * 
- * Prepares the WordPress Local Stream Wrapper for use
+ *
+ * Information about this stream wrapper:
+ *
+ * Scheme     : local
+ * Class      : WP_Local_Stream_Wrapper
+ * Description: WP Local Stream Wrapper provides a simple example of
+ *				leveraging the WP_Local_Stream_Wrapper_Base class to create
+ *				simple wrappers capable of manipulating local files.
  *
  * @package Stream Wrappers
  * @since 1.0.0
@@ -78,10 +84,12 @@ function wp_local_stream_wrapper_dependency_check() {
  */
 function wp_local_stream_wrapper_show_error() {
 	// @todo: Update href to a useful page in the documentation
-	print('<div id="message" class="error">Unable to register the WP Local Stream Wrapper (local://). The WP Stream Wrappers plugin is required. <a href="/">More info...</a></div>');
+	print('<div id="message" class="error">Unable to register the WP Local Stream Wrapper (local://). The WP Stream Wrappers plugin is required. <a href="http://wiki.github.com/jmstacey/wp-stream-wrappers/unable-to-register-wrapper-error">More info...</a></div>');
 }
 
-// Register action hooks
+/**
+ * Register action hooks
+ */
 add_action('register_stream_wrapper', 'wp_local_stream_wrapper_register', 1, 0);
 add_action('plugins_loaded', 'wp_local_stream_wrapper_dependency_check');
 
