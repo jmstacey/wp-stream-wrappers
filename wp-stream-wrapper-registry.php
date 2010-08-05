@@ -152,8 +152,6 @@ class WP_Stream_Wrapper_Registry {
 		if (in_array($scheme, stream_get_wrappers(), true)) {
 			stream_wrapper_unregister($scheme);
 		}
-		
-		self::$stream_wrappers[$scheme] = $metadata; // Debug purposes only
 	
 		if (stream_wrapper_register($scheme, $metadata['class'])) {
 			// If registered with PHP succesfully, add to registry.
