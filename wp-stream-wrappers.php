@@ -8,9 +8,6 @@ Author: Jon Stacey
 Author URI: http://jonsview.com
 */
 
-// Coding standards: http://codex.wordpress.org/WordPress_Coding_Standards
-// Inline documentation standards: http://codex.wordpress.org/Inline_Documentation
-
 define('WP_STREAM_WRAPPERS_VERSION', '1.0.0');
 
 /**
