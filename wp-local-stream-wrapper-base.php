@@ -480,11 +480,16 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 */
 	public function stream_open($uri, $mode, $options, &$opened_path) {
 		$this->uri = $uri;
-		$path = $this->get_local_path();
-		$this->handle = ($options & STREAM_REPORT_ERRORS) ? fopen($path, $mode) : @fopen($path, $mode);
+		$path      = $this->get_local_path();
+		
+		if ($options & STREAM_REPORT_ERRORS) {
+			$this->handle = fopen($path, $mode);
+		} else {
+			$this->handle = @fopen($path, $mode);
+		}
 
 		if ((bool)$this->handle && $options & STREAM_USE_PATH) {
-			$opened_url = $path;
+			$opened_path = $path;
 		}
 
 		return (bool)$this->handle;
