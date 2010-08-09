@@ -154,13 +154,13 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 		// Make sure the file doesn't exist to start with
 		$this->assertFileNotExists($path);
 		
-		// // Touch the file
-		// touch($uri);
-		// $this->assertFileExists($path);
-		// 
-		// // Unlink the file
-		// unlink($uri);
-		// $this->assertFileNotExists($path);
+		// Touch the file
+		wp_touch($uri);
+		$this->assertFileExists($path);
+		
+		// Unlink the file
+		unlink($uri);
+		$this->assertFileNotExists($path);
 		
 		// Open and write to the file
 		$fh = fopen($uri, 'w');
@@ -197,12 +197,6 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 		unlink($uri);
 		$this->assertfileNotExists($path);	
 	}
-	
-	/**
-	 * @todo test touch() because it currently isn't working. It probably
-	 * has something to do with the way stream wrapper implementation use
-	 * realpath and the file doesn't exist.
-	 */
 	
 	/**
 	 * Tests PHP opendir(), readdir(), and rewinddir() calls
