@@ -162,6 +162,29 @@ function wp_dirname($uri) {
 		return dirname($uri);
 	}
 }
+
+function wp_touch($uri, $time = null, $atime = null) {
+	if (is_null($time)) {
+		$time = time();
+	}
+	
+	$scheme = WP_Stream::scheme($uri);
+	
+	if ($scheme && WP_Stream::scheme_valid($scheme)) {
+		$dirname  = wp_dirname($uri);
+		$filename = basename($uri);
+		$path     = wp_realpath($dirname);
+		
+		if ($path !== false) {
+			$uri = $path . '/' . $filename;
+		} else {
+			// The directory path does not exist
+			return false;
+		}
+	}
+
+	return touch($uri, $time, $atime);
+}
 	
 /**
  * Removes directory recursively
