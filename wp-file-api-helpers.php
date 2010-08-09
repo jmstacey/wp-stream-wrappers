@@ -34,7 +34,7 @@
 function wp_chmod($uri, $mode = null) {
 	/**
 	 * Todo: Look into making these settings global, or maybe
-	 * defineable by each individual stream wrapper for flexibility.
+	 * definable by each individual stream wrapper for flexibility.
 	 */
 	if (!isset($mode)) {
 		if (is_dir($uri)) {
