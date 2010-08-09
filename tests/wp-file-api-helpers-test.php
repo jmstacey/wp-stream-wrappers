@@ -264,6 +264,44 @@ class WP_File_Helpers_Test extends WPTestCase {
 	}
 	
 	/**
+	 * Tests creating and setting access times of files with touch
+	 *
+	 * Tests wp_touch()
+	 */
+	public function test_wp_touch() {
+		$name = 'touch_test.txt';
+		$uri  = 'test://' . $name;
+		$path = $this->test_dir . '/' .  $name;
+		
+		/**
+		 * Test with URI
+		 */
+		$this->assertTrue(wp_touch($uri));
+		$this->assertFileExists($uri);
+		$this->assertFileExists($path);
+		unlink($path);
+		$this->assertFileNotExists($uri);
+		$this->assertFileNotExists($path);
+		
+		/**
+		 * Test with normal path
+		 */
+		$this->assertTrue(wp_touch($path));
+		$this->assertFileExists($path);
+		$this->assertFileExists($uri);
+		unlink($uri);
+		$this->assertFileNotExists($path);
+		$this->assertFileNotExists($uri);
+		
+		/**
+		 * Test a touch with a nonexistent directory
+		 */
+		$uri = 'test://asdfasdf/' . $name;
+		$this->assertFalse(wp_touch($uri));
+		$this->assertFileNotExists($uri);
+	}
+	
+	/**
 	 * Tests removing directories recursively
 	 *
 	 * Tests wp_rmdir_recursive()
