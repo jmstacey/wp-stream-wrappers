@@ -163,6 +163,32 @@ function wp_dirname($uri) {
 	}
 }
 
+/**
+ * Sets access and modification time of file
+ *
+ * PHP's touch() does not work well with stream wrappers. This helper function
+ * adds this missing support.
+ *
+ * This function is fully compatible with PHP's touch() function and may be
+ * called in the same way. For example, both a URI and a normal filepath
+ * can be provided for the $uri parameter.
+ *
+ * @param string $uri
+ *   the URI or path to file being touched.
+ * @param int $time
+ *   The touch time. If $time is not provided, the current system time is
+ *   used.
+ * @param int $atime
+ *   If present, the access time of the given filename is set to the value
+ *   of $atime. Otherwise, it is set to $time.
+ *
+ * @return bool
+ *   true on success or false on failure.
+ *
+ * @link http://php.net/manual/en/function.touch.php
+ * @see touch()
+ * @since 1.0.0
+ */
 function wp_touch($uri, $time = null, $atime = null) {
 	if (is_null($time)) {
 		$time = time();
