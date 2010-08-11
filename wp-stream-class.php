@@ -38,10 +38,10 @@ class WP_Stream {
      * @return mixed
      *   the name of the scheme, or false if there is no scheme.
      *
-     * @access public
+     * @access  public
      * @static
      * @see
-     * @since 1.0.0
+     * @since   1.0.0
      */
     public static function scheme($uri) {
         $components = explode('://', $uri, 2);
@@ -68,10 +68,10 @@ class WP_Stream {
      *   returned if the stream does not have an explicit target, such as
      *   in the case of "scheme://"
      *
-     * @access public
+     * @access  public
      * @static
      * @see
-     * @since 1.0.0
+     * @since   1.0.0
      */
     public static function target($uri) {
         list($scheme, $target) = explode('://', $uri, 2);
@@ -111,10 +111,10 @@ class WP_Stream {
      *   a new stream wrapper instance for the given URI. Returns false if
      *   a registered wrapper cannot be found.
      *
-     * @access public
+     * @access  public
      * @static
      * @see
-     * @since 1.0.0
+     * @since   1.0.0
      */
     public static function new_wrapper_instance($uri) {
         $scheme     = WP_Stream::scheme($uri);
@@ -138,10 +138,10 @@ class WP_Stream {
      *   the class name of the registered wrapper handler, or false if
      *   there is no registered handler.
      *
-     * @access public
+     * @access  public
      * @static
      * @see
-     * @since 1.0.0
+     * @since   1.0.0
      */
     public static function wrapper_class_name($scheme) {
         $wrappers = WP_Stream_Wrapper_Registry::get_stream_wrappers();
@@ -163,10 +163,10 @@ class WP_Stream {
      *   true if the scheme is valid, or false if the scheme does not have
      *   a registered handler.
      *
-     * @access public
+     * @access  public
      * @static
      * @see
-     * @since 1.0.0
+     * @since   1.0.0
      */
     public static function scheme_valid($scheme) {
         $class_name = WP_Stream::wrapper_class_name($scheme);
@@ -193,10 +193,10 @@ class WP_Stream {
      *   the normalized stream URI after the modifications listed in the
      *   function description have been performed.
      *
-     * @access public
+     * @access  public
      * @static
      * @see
-     * @since 1.0.0
+     * @since   1.0.0
      */
     public static function normalize($uri) {
         $scheme = WP_Stream::scheme($uri);
@@ -225,10 +225,10 @@ class WP_Stream {
      * @return string
      *   the cleaned path.
      *
-     * @access private
+     * @access  private
      * @static
-     * @see WP_Stream::normalize()
-     * @since 1.0.0
+     * @see     WP_Stream::normalize()
+     * @since   1.0.0
      */
     private static function _clean_path_components($path) {
         $components = explode('/', $path);

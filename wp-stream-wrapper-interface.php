@@ -89,9 +89,9 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
      * @return string
      *   String containing the current WP_File URI.
      *
-     * @access public
-     * @see set_uri()
-     * @since 1.0.0
+     * @access  public
+     * @see     set_uri()
+     * @since   1.0.0
      */
     public function get_uri();
 
@@ -103,9 +103,9 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
      * @param string
      *   String containing the new URI for the WP_File object.
      *
-     * @access public
+     * @access  public
      * @see
-     * @since 1.0.0
+     * @since   1.0.0
      */
     public function set_uri($uri);
 
@@ -122,10 +122,10 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
      * @return bool
      *   true on success or false on failure.
      *
-     * @access public
-     * @link http://php.net/manual/en/function.chmod.php
+     * @access  public
+     * @link    http://php.net/manual/en/function.chmod.php
      * @see
-     * @since 1.0.0
+     * @since   1.0.0
      */
     public function chmod($mode);
 
@@ -142,10 +142,10 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
      * @return mixed
      *   the new temporary filename, or false on failure.
      *
-     * @access public
-     * @link http://us2.php.net/manual/en/function.dirname.php
+     * @access  public
+     * @link    http://us2.php.net/manual/en/function.dirname.php
      * @see
-     * @since 1.0.0
+     * @since   1.0.0
      */
     public function dirname($uri);
 
@@ -161,10 +161,10 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
      *   WP_Local_Stream_Wrapper_Base], or false on failure or if the
      *   registered wrapper does not provide an implementation.
      *
-     * @access public
-     * @link http://php.net/manual/en/function.realpath.php
+     * @access  public
+     * @link    http://php.net/manual/en/function.realpath.php
      * @see
-     * @since 1.0.0
+     * @since   1.0.0
      */
     public function realpath();
 
@@ -181,9 +181,9 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
      * @return string
      *   the web accessible URL for the resource.
      *
-     * @access public
+     * @access  public
      * @see
-     * @since 1.0.0
+     * @since   1.0.0
      */
     public function get_web_accessible_url();
 }

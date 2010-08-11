@@ -73,7 +73,7 @@ require_once('wp-local-stream-wrapper/wp-local-stream-wrapper.php');
  * Prepares the WordPress Stream Wrapper registry and interfaces for use.
  *
  * @package Stream Wrappers
- * @since 1.0.0
+ * @since   1.0.0
  */
 function wp_stream_wrappers_init() {
     wp_stream_wrapper_registry_init();

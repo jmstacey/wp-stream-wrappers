@@ -33,8 +33,8 @@ class WP_File_Helpers_Test extends WPTestCase {
      *
      * This variable holds the name fo the test file
      *
-     * @var string
-     * @access private
+     * @var     string
+     * @access  private
      */
     private $filename;
 
@@ -43,8 +43,8 @@ class WP_File_Helpers_Test extends WPTestCase {
      *
      * This variable holds the URI of the test file
      *
-     * @var string
-     * @access private
+     * @var     string
+     * @access  private
      */
     private $uri;
 
@@ -53,8 +53,8 @@ class WP_File_Helpers_Test extends WPTestCase {
      *
      * This variable holds the local path that the URI resides at.
      *
-     * @var string
-     * @access private
+     * @var     string
+     * @access  private
      */
     private $path;
 
@@ -63,8 +63,8 @@ class WP_File_Helpers_Test extends WPTestCase {
      *
      * This variable holds the expected contents of the test file.
      *
-     * @var string
-     * @access private
+     * @var     string
+     * @access  private
      */
     private $expected_contents;
 
@@ -73,8 +73,8 @@ class WP_File_Helpers_Test extends WPTestCase {
      *
      * This variable holds the local path that the test wrapper is pointed to.
      *
-     * @var string
-     * @access private
+     * @var     string
+     * @access  private
      */
     private $test_dir;
 

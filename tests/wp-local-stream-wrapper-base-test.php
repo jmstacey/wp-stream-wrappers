@@ -34,8 +34,8 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
      *
      * This variable holds the local path that the test wrapper is pointed to.
      *
-     * @var string
-     * @access private
+     * @var     string
+     * @access  private
      */
     private $test_dir;
 
@@ -44,8 +44,8 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
      *
      * A simple file for read-only purpose tests
      *
-     * @var string
-     * @access private
+     * @var     string
+     * @access  private
      */
     private $sample_file;
 
@@ -54,8 +54,8 @@ class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
      *
      * A basic sentence that can be used in test files.
      *
-     * @var string
-     * @access private
+     * @var     string
+     * @access  private
      */
     private $sample_content;
 

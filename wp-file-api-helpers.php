@@ -27,9 +27,9 @@
  * @return bool
  *   true on success or false on failure.
  *
- * @link http://php.net/manual/en/function.chmod.php
+ * @link    http://php.net/manual/en/function.chmod.php
  * @see
- * @since 1.0.0
+ * @since   1.0.0
  */
 function wp_chmod($uri, $mode = null) {
     /**
@@ -68,10 +68,10 @@ function wp_chmod($uri, $mode = null) {
  *   the canonicalized [absolute] pathname on success, or false on failure
  *   such as when the file does not exist.
  *
- * @link http://php.net/manual/en/function.realpath.php
- * @see realpath()
- * @see WP_Stream_Wrapper_Interface::realpath()
- * @since 1.0.0
+ * @link    http://php.net/manual/en/function.realpath.php
+ * @see     realpath()
+ * @see     WP_Stream_Wrapper_Interface::realpath()
+ * @since   1.0.0
  */
 function wp_realpath($uri) {
     if ($wrapper = WP_Stream::new_wrapper_instance($uri)) {
@@ -105,9 +105,9 @@ function wp_realpath($uri) {
  * @return mixed
  *   the new temporary filename, or false on failure.
  *
- * @link http://php.net/manual/en/function.tempnam.php
- * @see tempnam()
- * @since 1.0.0
+ * @link    http://php.net/manual/en/function.tempnam.php
+ * @see     tempnam()
+ * @since   1.0.0
  */
 function wp_tempnam_stream_compatible($directory, $prefix) {
     /**
@@ -149,9 +149,9 @@ function wp_tempnam_stream_compatible($directory, $prefix) {
  * @return string
  *   the new temporary filename, or false on failure.
  *
- * @link http://us2.php.net/manual/en/function.dirname.php
- * @see dirname()
- * @since 1.0.0
+ * @link    http://us2.php.net/manual/en/function.dirname.php
+ * @see     dirname()
+ * @since   1.0.0
  */
 function wp_dirname($uri) {
     $scheme = WP_Stream::scheme($uri);
@@ -175,7 +175,7 @@ function wp_dirname($uri) {
  *
  * @param string $uri
  *   the URI or path to file being touched.
- * @param int $time
+ * @param   int $time
  *   The touch time. If $time is not provided, the current system time is
  *   used.
  * @param int $atime
@@ -185,9 +185,9 @@ function wp_dirname($uri) {
  * @return bool
  *   true on success or false on failure.
  *
- * @link http://php.net/manual/en/function.touch.php
- * @see touch()
- * @since 1.0.0
+ * @link    http://php.net/manual/en/function.touch.php
+ * @see     touch()
+ * @since   1.0.0
  */
 function wp_touch($uri, $time = null, $atime = null) {
     if (is_null($time)) {
@@ -228,9 +228,9 @@ function wp_touch($uri, $time = null, $atime = null) {
  * @return bool
  *   true on success or false on failure.
  *
- * @link http://us2.php.net/manual/en/function.rmdir.php
- * @see rmdir()
- * @since 1.0.0
+ * @link    http://us2.php.net/manual/en/function.rmdir.php
+ * @see     rmdir()
+ * @since   1.0.0
  */
 function wp_rmdir_recursive($uri) {
     $path = wp_realpath($uri);

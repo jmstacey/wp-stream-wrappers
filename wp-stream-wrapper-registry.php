@@ -27,7 +27,7 @@
  * makes sure that the registry gets built before use.
  *
  * @package Stream Wrappers
- * @since 1.0.0
+ * @since   1.0.0
  */
 function wp_stream_wrapper_registry_init() {
     $registry = WP_Stream_Wrapper_Registry::get_registry();
@@ -53,8 +53,8 @@ class WP_Stream_Wrapper_Registry {
      *
      * The stream wrapper registry singleton.
      *
-     * @var object
-     * @access private
+     * @var     object
+     * @access  private
      */
     private static $registry;
 
@@ -71,8 +71,8 @@ class WP_Stream_Wrapper_Registry {
      *      'class' => 'wrapper implementation class name',
      *      'description' => 'brief description of wrapper.'
      *
-     * @var array
-     * @access private
+     * @var     array
+     * @access  private
      */
     private static $stream_wrappers = array();
 
@@ -83,8 +83,8 @@ class WP_Stream_Wrapper_Registry {
      *    This action tells stream wrapper plugins that it's time to register
      *    themselves.
      *
-     * @access private
-     * @since 1.0.0
+     * @access  private
+     * @since   1.0.0
      */
     private function __construct() {
         do_action('register_stream_wrapper');
@@ -99,10 +99,10 @@ class WP_Stream_Wrapper_Registry {
      * @return object
      *   A singleton object for the stream wrapper registry.
      *
-     * @access public
+     * @access  public
      * @static
-     * @see WP_Stream_Wrapper_Registry::get_stream_wrappers()
-     * @since 1.0.0
+     * @see     WP_Stream_Wrapper_Registry::get_stream_wrappers()
+     * @since   1.0.0
      */
     public static function get_registry() {
         if (!isset(self::$registry)) {
@@ -139,12 +139,12 @@ class WP_Stream_Wrapper_Registry {
      * @return mixed
      *   returns true on success or a WP_Error object on failure.
      *
-     * @access public
+     * @access  public
      * @static
-     * @link http://www.php.net/manual/en/function.stream-wrapper-unregister.php
-     * @link http://php.net/manual/en/function.stream-wrapper-register.php
-     * @see WP_Stream_Wrapper_Registry::unregister_wrapper()
-     * @since 1.0.0
+     * @link    http://www.php.net/manual/en/function.stream-wrapper-unregister.php
+     * @link    http://php.net/manual/en/function.stream-wrapper-register.php
+     * @see     WP_Stream_Wrapper_Registry::unregister_wrapper()
+     * @since   1.0.0
      */
     public static function register_wrapper($scheme, $metadata) {
         if (in_array($scheme, stream_get_wrappers(), true)) {
@@ -173,10 +173,10 @@ class WP_Stream_Wrapper_Registry {
      * @return bool
      *   true on success, or false on failure.
      *
-     * @access public
+     * @access  public
      * @static
-     * @see WP_Stream_Wrapper_Registry::register_wrapper()
-     * @since 1.0.0
+     * @see     WP_Stream_Wrapper_Registry::register_wrapper()
+     * @since   1.0.0
      */
     public static function unregister_wrapper($scheme) {
         if (in_array($scheme, stream_get_wrappers(), true)) {
@@ -198,10 +198,10 @@ class WP_Stream_Wrapper_Registry {
      * @return array
      *   An array containing all metadata for registered wrappers.
      *
-     * @access public
+     * @access  public
      * @static
-     * @see WP_Stream_Wrapper_Registry::register_wrapper()
-     * @since 1.0.0
+     * @see     WP_Stream_Wrapper_Registry::register_wrapper()
+     * @since   1.0.0
      */
     public static function get_stream_wrappers() {
         return self::$stream_wrappers;

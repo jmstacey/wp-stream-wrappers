@@ -33,8 +33,8 @@ class WP_Local_Stream_Wrapper extends WP_Local_Stream_Wrapper_Base {
      * @return string
      *   the path that this wrapper is responsible for.
      *
-     * @see WP_Local_Stream_Wrapper_Base::get_wrapper_path()
-     * @since 1.0.0
+     * @see     WP_Local_Stream_Wrapper_Base::get_wrapper_path()
+     * @since   1.0.0
      */
     public function get_wrapper_path() {
         /**
@@ -54,8 +54,8 @@ class WP_Local_Stream_Wrapper extends WP_Local_Stream_Wrapper_Base {
      * @return string
      *   the web accessible URL for the resource.
      *
-     * @see WP_Local_Stream_Wrapper_Interface::get_web_accessible_url()
-     * @since 1.0.0
+     * @see     WP_Local_Stream_Wrapper_Interface::get_web_accessible_url()
+     * @since   1.0.0
      */
     public function get_web_accessible_url() {
         $path = str_replace('\\', '/', WP_Stream::target($this->uri));

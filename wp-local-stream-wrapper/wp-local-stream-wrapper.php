@@ -31,7 +31,7 @@ define('WP_LOCAL_STREAM_WRAPPER_VERSION', '1.0.0');
  *              simple wrappers capable of manipulating local files.
  *
  * @package Stream Wrappers
- * @since 1.0.0
+ * @since   1.0.0
  */
 function wp_local_stream_wrapper_register() {
     $scheme = 'local'; // Wrapper scheme
@@ -60,7 +60,7 @@ function wp_local_stream_wrapper_register() {
  * as an example to other developers creating separate wrapper plugins.
  *
  * @package Stream Wrappers
- * @since 1.0.0
+ * @since   1.0.0
  */
 function wp_local_stream_wrapper_dependency_check() {
     if (!has_action('register_stream_wrapper')) {
@@ -80,7 +80,7 @@ function wp_local_stream_wrapper_dependency_check() {
  * the WP Stram Wrappers Plugin.
  *
  * @package Stream Wrappers
- * @since 1.0.0
+ * @since   1.0.0
  */
 function wp_local_stream_wrapper_show_error() {
     // @todo: Update href to a useful page in the documentation
