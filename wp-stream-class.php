@@ -7,9 +7,11 @@
  */
 
 /**
- * WordPress Stream File Object and helper methods
+ * WordPress stream helper methods
  *
- * @todo add more thourough description here
+ * This class provides useful helper methods for streams.
+ * A stream is referenced as scheme://target. The methods contained within
+ * this class are static and can be used without instantiation. 
  *
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
