@@ -41,10 +41,10 @@ function wp_stream_wrapper_registry_init() {
  *
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
- * @version    Release: 1.0.0
+ * @version    1.0.0
  * @link       
  * @see        
- * @since      Class available since Release 1.0.0
+ * @since      1.0.0
  */
 class WP_Stream_Wrapper_Registry {
 	
@@ -84,7 +84,7 @@ class WP_Stream_Wrapper_Registry {
 	 *    themselves.
 	 *
 	 * @access private
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	private function __construct() {
 		do_action('register_stream_wrapper');
@@ -102,7 +102,7 @@ class WP_Stream_Wrapper_Registry {
 	 * @access public
 	 * @static
 	 * @see WP_Stream_Wrapper_Registry::get_stream_wrappers()
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public static function get_registry() {
 		if (!isset(self::$registry)) {
@@ -144,7 +144,7 @@ class WP_Stream_Wrapper_Registry {
 	 * @link http://www.php.net/manual/en/function.stream-wrapper-unregister.php
 	 * @link http://php.net/manual/en/function.stream-wrapper-register.php
 	 * @see WP_Stream_Wrapper_Registry::unregister_wrapper()
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public static function register_wrapper($scheme, $metadata) {
 		if (in_array($scheme, stream_get_wrappers(), true)) {
@@ -176,7 +176,7 @@ class WP_Stream_Wrapper_Registry {
 	 * @access public
 	 * @static
 	 * @see WP_Stream_Wrapper_Registry::register_wrapper()
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public static function unregister_wrapper($scheme) {
 		if (in_array($scheme, stream_get_wrappers(), true)) {
@@ -201,7 +201,7 @@ class WP_Stream_Wrapper_Registry {
 	 * @access public
 	 * @static
 	 * @see WP_Stream_Wrapper_Registry::register_wrapper()
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public static function get_stream_wrappers() {
 		return self::$stream_wrappers;

@@ -30,10 +30,10 @@
  *
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
- * @version    Release: 1.0.0
+ * @version    1.0.0
  * @link       http://www.php.net/manual/en/class.streamwrapper.php
  * @see        WP_Stream_Wrapper_Interface
- * @since      Class available since Release 1.0.0
+ * @since      1.0.0
  */
 abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interface {
 	/**
@@ -74,7 +74,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 *
 	 * @access public
 	 * @see WP_Local_Stream_Wrapper
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public function __construct() {
 		// The local stream wrapper needs no initialization at this point.

@@ -33,10 +33,10 @@
  *
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
- * @version    Release: 1.0.0
+ * @version    1.0.0
  * @link       http://www.php.net/manual/en/class.streamwrapper.php
  * @see        WP_Stream_Wrapper_Interface
- * @since      Class available since Release 1.0.0
+ * @since      1.0.0
  */
 interface PHP_Stream_Wrapper_Interface {	
 	public function __construct();
@@ -75,10 +75,10 @@ interface PHP_Stream_Wrapper_Interface {
  *
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
- * @version    Release: 1.0.0
+ * @version    1.0.0
  * @link       
  * @see        PHP_Stream_Wrapper_Interface
- * @since      Class available since Release 1.0.0
+ * @since      1.0.0
  */
 interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	/**
@@ -91,7 +91,7 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 *
 	 * @access public
 	 * @see set_uri()
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public function get_uri();
 	
@@ -105,7 +105,7 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 *
 	 * @access public
 	 * @see 
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public function set_uri($uri);
 	
@@ -125,7 +125,7 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 * @access public
 	 * @link http://php.net/manual/en/function.chmod.php
 	 * @see 
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public function chmod($mode);
 	
@@ -145,7 +145,7 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 * @access public
 	 * @link http://us2.php.net/manual/en/function.dirname.php
 	 * @see 
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public function dirname($uri);
 	
@@ -164,7 +164,7 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 * @access public
 	 * @link http://php.net/manual/en/function.realpath.php
 	 * @see 
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public function realpath();
 	
@@ -183,7 +183,7 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 *
 	 * @access public
 	 * @see 
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public function get_web_accessible_url();	
 }

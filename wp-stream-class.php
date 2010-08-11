@@ -15,10 +15,10 @@
  *
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
- * @version    Release: 1.0.0
+ * @version    1.0.0
  * @link       http://www.php.net/manual/en/intro.stream.php
  * @see        
- * @since      Class available since Release 1.0.0
+ * @since      1.0.0
  */
 class WP_Stream {
 	/**
@@ -41,7 +41,7 @@ class WP_Stream {
 	 * @access public
 	 * @static
 	 * @see 
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public static function scheme($uri) {
 		$components = explode('://', $uri, 2);
@@ -71,7 +71,7 @@ class WP_Stream {
 	 * @access public
 	 * @static
 	 * @see 
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public static function target($uri) {
 		list($scheme, $target) = explode('://', $uri, 2);
@@ -114,7 +114,7 @@ class WP_Stream {
 	 * @access public
 	 * @static
 	 * @see 
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public static function new_wrapper_instance($uri) {
 		$scheme 	= WP_Stream::scheme($uri);
@@ -141,7 +141,7 @@ class WP_Stream {
 	 * @access public
 	 * @static
 	 * @see 
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public static function wrapper_class_name($scheme) {
 		$wrappers = WP_Stream_Wrapper_Registry::get_stream_wrappers();
@@ -166,7 +166,7 @@ class WP_Stream {
 	 * @access public
 	 * @static
 	 * @see 
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public static function scheme_valid($scheme) {
 		$class_name = WP_Stream::wrapper_class_name($scheme);
@@ -196,7 +196,7 @@ class WP_Stream {
 	 * @access public
 	 * @static
 	 * @see 
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	public static function normalize($uri) {
 		$scheme = WP_Stream::scheme($uri);
@@ -228,7 +228,7 @@ class WP_Stream {
 	 * @access private
 	 * @static
 	 * @see WP_Stream::normalize()
-	 * @since Method available since Release 1.0.0
+	 * @since 1.0.0
 	 */
 	private static function _clean_path_components($path) {
 		$components = explode('/', $path);

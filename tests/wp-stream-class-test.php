@@ -22,9 +22,9 @@ require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/tests/wp-test-stream-wrapper.php
  *
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
- * @version    Release: 1.0.0
+ * @version    1.0.0
  * @see        WP_Stream
- * @since      Class available since Release 1.0.0
+ * @since      1.0.0
  */
 class WP_Stream_Test extends WPTestCase {
 	

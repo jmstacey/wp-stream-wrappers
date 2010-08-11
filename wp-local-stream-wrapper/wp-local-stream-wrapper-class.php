@@ -17,10 +17,10 @@
  *
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
- * @version    Release: 1.0.0
+ * @version    1.0.0
  * @link       
  * @see        WP_Local_Stream_Wrapper_Base
- * @since      Class available since Release 1.0.0
+ * @since      1.0.0
  */
 class WP_Local_Stream_Wrapper extends WP_Local_Stream_Wrapper_Base {
 	/**

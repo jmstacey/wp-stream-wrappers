@@ -24,9 +24,9 @@ require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/tests/wp-test-stream-wrapper.php
  *
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
- * @version    Release: 1.0.0
+ * @version    1.0.0
  * @see        WP_Local_Stream_Wrapper_Base
- * @since      Class available since Release 1.0.0
+ * @since      1.0.0
  */
 class WP_Local_Stream_Wrapper_Base_Test extends WPTestCase {
 	
