@@ -22,7 +22,7 @@
 
 /**
  * Initializes WP Stream Wrapper Registry
- * 
+ *
  * Builds the stream wrapper registry. This is a helper function that simply
  * makes sure that the registry gets built before use.
  *
@@ -42,12 +42,12 @@ function wp_stream_wrapper_registry_init() {
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
- * @link       
- * @see        
+ * @link
+ * @see
  * @since      1.0.0
  */
 class WP_Stream_Wrapper_Registry {
-	
+
 	/**
 	 * The wrapper registry object
 	 *
@@ -57,7 +57,7 @@ class WP_Stream_Wrapper_Registry {
 	 * @access private
 	 */
 	private static $registry;
-	
+
 	/**
 	 * The wrapper registry
 	 *
@@ -75,7 +75,7 @@ class WP_Stream_Wrapper_Registry {
 	 * @access private
 	 */
 	private static $stream_wrappers = array();
-	
+
 	/**
 	 * Initializes the WP_Stream_Wrapper_Regisitry singleton object
 	 *
@@ -89,7 +89,7 @@ class WP_Stream_Wrapper_Registry {
 	private function __construct() {
 		do_action('register_stream_wrapper');
 	}
-	
+
 	/**
 	 * Gets the entire stream wrapper registry
 	 *
@@ -108,10 +108,10 @@ class WP_Stream_Wrapper_Registry {
 		if (!isset(self::$registry)) {
 			self::$registry = new WP_Stream_Wrapper_Registry();
 		}
-		
+
 		return self::$registry;
 	}
-	
+
 	/**
 	 * Registers given stream wrapper
 	 *
@@ -133,7 +133,7 @@ class WP_Stream_Wrapper_Registry {
 	 *
 	 * @param string
 	 *   String containing the scheme implemented by wrapper (e.g. 'sample').
-	 * @param array 
+	 * @param array
 	 *   Stream wrapper metadata array. See array structure example above.
 	 *
 	 * @return mixed
@@ -151,7 +151,7 @@ class WP_Stream_Wrapper_Registry {
 			// We override wrappers silently.
 			stream_wrapper_unregister($scheme);
 		}
-	
+
 		if (stream_wrapper_register($scheme, $metadata['class'])) {
 			// If PHP accepted the registration, add it to our registry.
 			self::$stream_wrappers[$scheme] = $metadata;
@@ -160,7 +160,7 @@ class WP_Stream_Wrapper_Registry {
 			return new WP_Error('stream-wrapper-registration-error', sprintf(__("Unable to register wrapper implementing scheme '%s'"), $scheme));
 		}
 	}
-	
+
 	/**
 	 * Unregisters given stream wrapper
 	 *
@@ -182,13 +182,13 @@ class WP_Stream_Wrapper_Registry {
 		if (in_array($scheme, stream_get_wrappers(), true)) {
 			stream_wrapper_unregister($scheme);
 			unset(self::$stream_wrappers[$scheme]);
-			
+
 			return true;
 		} else {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Gets the stream wrappers registration array
 	 *
@@ -206,7 +206,7 @@ class WP_Stream_Wrapper_Registry {
 	public static function get_stream_wrappers() {
 		return self::$stream_wrappers;
 	}
-	
+
 	/**
 	 * Prevents users from cloning the registry
 	 *

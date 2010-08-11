@@ -10,7 +10,7 @@ WordPress are built.
 
 == Description ==
 
-WP Stream Wrappers provides the core foundation upon which PHP5+ 
+WP Stream Wrappers provides the core foundation upon which PHP5+
 stream wrappers for WordPress are built. This plugin by itself
 provides little to no user visible functionality. Rather, most use
 comes from other wrapper implementation plugins.

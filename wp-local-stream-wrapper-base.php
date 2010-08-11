@@ -40,14 +40,14 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * Stream context resource
 	 *
 	 * Note: This property must be public so PHP can populate it with
-	 * the actual context resource. 
+	 * the actual context resource.
 	 *
 	 * @see stream_context_get_options()
 	 * @var resource
 	 * @access public
 	 */
 	public $context;
-	
+
 	/**
 	 * Generic resource handle
 	 *
@@ -58,7 +58,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @access public
 	 */
 	public $handle = null;
-	
+
 	/**
 	 * Instance URI (stream)
 	 *
@@ -68,7 +68,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @access protected
 	 */
 	protected $uri;
-	
+
 	/**
 	 * Initializes the abstract implementation of WP_Local_Stream_Wrapper_Base
 	 *
@@ -79,7 +79,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function __construct() {
 		// The local stream wrapper needs no initialization at this point.
 	}
-	
+
 	/**
 	 * Retrieves the path that the wrapper is responsible for
 	 *
@@ -96,7 +96,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @since 1.0.0
 	 */
 	abstract function get_wrapper_path();
-	
+
 	/**
 	 * Returns the local filesystem path
 	 *
@@ -110,10 +110,10 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		if (!isset($uri)) {
 			$uri = $this->uri;
 		}
-		
+
 		return $this->get_wrapper_path().'/'.WP_Stream::target($uri);
 	}
-	
+
 	/**
 	 * Sets the URI instance variable
 	 *
@@ -124,7 +124,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	function set_uri($uri) {
 		$this->uri = $uri;
 	}
-	
+
 	/**
 	 * Returns the instance URI
 	 *
@@ -135,7 +135,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	function get_uri() {
 		return $this->uri;
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::chmod()
 	 *
@@ -145,7 +145,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	function chmod($mode) {
 		return @chmod($this->realpath(), $mode);
 	}
-	
+
 	/**
 	 * Implementation of WP_Stream_Wrapper_Interface::realpath()
 	 *
@@ -155,7 +155,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	function realpath() {
 		return @realpath($this->get_wrapper_path().'/'.WP_Stream::target($this->uri));
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::dir_closedir()
 	 *
@@ -179,7 +179,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		closedir($this->handle);
 		return true;
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::dir_opendir()
 	 *
@@ -201,10 +201,10 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function dir_opendir($uri, $options) {
 		$this->uri = $uri;
 		$this->handle = opendir($this->get_local_path());
-		
+
 		return (bool)$this->handle;
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::dir_readdir()
 	 *
@@ -221,7 +221,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function dir_readdir() {
 		return readdir($this->handle);
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::dir_rewinddir()
 	 *
@@ -245,7 +245,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		rewinddir($this->handle);
 		return true;
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::mkdir()
 	 *
@@ -298,7 +298,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function rename($from_uri, $to_uri) {
 		return rename($this->get_local_path($from_uri), $this->get_local_path($to_uri));
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::dirname()
 	 *
@@ -318,14 +318,14 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		list($scheme, $target) = explode('://', $uri, 2);
 		$target  = WP_Stream::target($uri);
 		$dirname = dirname($target);
-		
+
 		if ($dirname == '.') {
 			$dirname = '';
 		}
-		
+
 		return $scheme . '://' . $dirname;
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::rmdir()
 	 *
@@ -346,14 +346,14 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 */
 	public function rmdir($uri, $options) {
 		$this->uri = $uri;
-		
+
 		if ($options & STREAM_REPORT_ERRORS) {
 			return rmdir($this->get_local_path());
 		} else {
 			return @rmdir($this->get_local_path());
 		}
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_cast()
 	 *
@@ -377,7 +377,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		// This method is not implemented
 		trigger_error('stream_cast() is not implemented in the stream wrappers plugin as of version 1.0.0.', E_USER_NOTICE);
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_close()
 	 *
@@ -394,7 +394,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function stream_close() {
 		fclose($this->handle);
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_eof()
 	 *
@@ -412,7 +412,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function stream_eof() {
 		return feof($this->handle);
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_flush()
 	 *
@@ -429,8 +429,8 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 */
 	public function stream_flush() {
 		return fflush($this->handle);
-	}	
-	
+	}
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_lock()
 	 *
@@ -454,7 +454,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function stream_lock($operation) {
 		return flock($this->handle, $operation);
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_open()
 	 *
@@ -481,7 +481,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function stream_open($uri, $mode, $options, &$opened_path) {
 		$this->uri = $uri;
 		$path      = $this->get_local_path();
-		
+
 		if ($options & STREAM_REPORT_ERRORS) {
 			$this->handle = fopen($path, $mode);
 		} else {
@@ -494,7 +494,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 
 		return (bool)$this->handle;
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_read()
 	 *
@@ -516,7 +516,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function stream_read($count) {
 		return fread($this->handle, $count);
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_seek()
 	 *
@@ -540,10 +540,10 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 */
 	public function stream_seek($offset, $whence) {
 		$ret = fseek($this->handle, $offset, $whence);
-		
+
 		return $ret == 0 ? true : false;
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_set_option()
 	 *
@@ -559,17 +559,17 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @throws E_USER_NOTICE
 	 *
 	 * @see WP_Stream_Wrapper_Interface::stream_set_option()
-	 * @see 
+	 * @see
 	 * @link http://php.net/manual/en/streamwrapper.stream-set-option.php
 	 * @since 1.0.0
 	 */
 	public function stream_set_option($option, $arg1, $arg2) {
 		// @todo figure out if we really need to do something with this
-		
+
 		// This method is not implemented
 		trigger_error('stream_set_option() is not implemented in the stream wrappers plugin as of version 1.0.0.', E_USER_NOTICE);
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_stat()
 	 *
@@ -586,7 +586,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function stream_stat() {
 		return fstat($this->handle);
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_tell()
 	 *
@@ -603,7 +603,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function stream_tell() {
 		return ftell($this->handle);
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::stream_write()
 	 *
@@ -624,7 +624,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	public function stream_write($data) {
 		return fwrite($this->handle, $data);
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::unlink()
 	 *
@@ -645,7 +645,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 		$this->uri = $uri; // set instance URI
 		return unlink($this->get_local_path());
 	}
-	
+
 	/**
 	 * Implements WP_Stream_Wrapper_Interface::url_stat()
 	 *
@@ -656,7 +656,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 * @param string $uri
 	 *   the uri to get information about.
 	 * @param $flags
-	 *   additional flags set by the streams API. 
+	 *   additional flags set by the streams API.
 	 *   See streamWrapper:url_stat().
 	 *
 	 * @return mixed
@@ -669,7 +669,7 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
 	 */
 	public function url_stat($uri, $flags) {
 		$this->uri = $uri; // set instance URI
-		
+
 		if ($flags & STREAM_URL_STAT_QUIET) {
 			return @stat($this->get_local_path());
 		} else {

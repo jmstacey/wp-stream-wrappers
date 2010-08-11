@@ -38,18 +38,18 @@
  * @see        WP_Stream_Wrapper_Interface
  * @since      1.0.0
  */
-interface PHP_Stream_Wrapper_Interface {	
+interface PHP_Stream_Wrapper_Interface {
 	public function __construct();
-	
-	public function dir_closedir();	
+
+	public function dir_closedir();
 	public function dir_opendir($uri, $options);
 	public function dir_readdir();
 	public function dir_rewinddir();
-	
+
 	public function mkdir($uri, $mode, $options);
 	public function rename($from_uri, $to_uri);
 	public function rmdir($uri, $options);
-	
+
 	public function stream_cast($cast_as);
 	public function stream_close();
 	public function stream_eof();
@@ -62,7 +62,7 @@ interface PHP_Stream_Wrapper_Interface {
 	public function stream_stat();
 	public function stream_tell();
 	public function stream_write($data);
-	
+
 	public function unlink($uri);
 	public function url_stat($uri, $flags);
 }
@@ -76,7 +76,7 @@ interface PHP_Stream_Wrapper_Interface {
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
- * @link       
+ * @link
  * @see        PHP_Stream_Wrapper_Interface
  * @since      1.0.0
  */
@@ -94,7 +94,7 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 * @since 1.0.0
 	 */
 	public function get_uri();
-	
+
 	/**
 	 * Sets the URI of the current file object
 	 *
@@ -104,11 +104,11 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 *   String containing the new URI for the WP_File object.
 	 *
 	 * @access public
-	 * @see 
+	 * @see
 	 * @since 1.0.0
 	 */
 	public function set_uri($uri);
-	
+
 	/**
 	 * Changes permissions of the resource
 	 *
@@ -124,11 +124,11 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 *
 	 * @access public
 	 * @link http://php.net/manual/en/function.chmod.php
-	 * @see 
+	 * @see
 	 * @since 1.0.0
 	 */
 	public function chmod($mode);
-	
+
 	/**
 	 * Returns the directory name component of given path
 	 *
@@ -144,11 +144,11 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 *
 	 * @access public
 	 * @link http://us2.php.net/manual/en/function.dirname.php
-	 * @see 
+	 * @see
 	 * @since 1.0.0
 	 */
 	public function dirname($uri);
-	
+
 	/**
 	 * Returns the canonical [absolute] path of the resource
 	 *
@@ -163,11 +163,11 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 *
 	 * @access public
 	 * @link http://php.net/manual/en/function.realpath.php
-	 * @see 
+	 * @see
 	 * @since 1.0.0
 	 */
 	public function realpath();
-	
+
 	/**
 	 * Returns the web accessible URL for the resource
 	 *
@@ -182,10 +182,10 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
 	 *   the web accessible URL for the resource.
 	 *
 	 * @access public
-	 * @see 
+	 * @see
 	 * @since 1.0.0
 	 */
-	public function get_web_accessible_url();	
+	public function get_web_accessible_url();
 }
 
 ?>

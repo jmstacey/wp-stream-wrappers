@@ -8,7 +8,7 @@
  * is an excellent example of this use case.
  *
  * Developers: If you are using this wrapper as a template for a new wrapper
- * and intend to extend WP_Local_Stream_Wrapper_Base you are responsible for 
+ * and intend to extend WP_Local_Stream_Wrapper_Base you are responsible for
  * dependency checks. That is, if a user loads your wrapper before having
  * installed WP Stream Wrappers plugin, show and administrative error, and
  * don't cause a PHP error by trying to extend a non-existent class. See this
@@ -35,15 +35,15 @@ define('WP_LOCAL_STREAM_WRAPPER_VERSION', '1.0.0');
  */
 function wp_local_stream_wrapper_register() {
 	$scheme = 'local'; // Wrapper scheme
-	
+
 	// Wrapper registration metadata
 	$wrapper_metadata = array(
 		'name' => 'WP Local Stream Wrapper',
 		'class' => 'WP_Local_Stream_Wrapper',
 		'description' => 'WP Local Stream Wrapper provides a simple example of leveraging the WP_Local_Stream_Wrapper_Base class to create simple wrappers capable of manipulating local files.'
 	);
-	
-	/** 
+
+	/**
 	 * This file contains the WP Local Stream wrapper implementation
 	 */
 	require_once('wp-local-stream-wrapper-class.php');
@@ -65,10 +65,10 @@ function wp_local_stream_wrapper_register() {
 function wp_local_stream_wrapper_dependency_check() {
 	if (!has_action('register_stream_wrapper')) {
 		// @todo: figure out how to test with WP Automated Tests
-		
+
 		// Notify the admin that the stream wrappers plugin is needed
 		add_action('admin_notices', 'wp_local_stream_wrapper_show_error');
-		
+
 		return new WP_Error('stream-wrapper-dependency-error', __("The WP Stream Wrappers Plugin is required, but is not installed."));
 	}
 }

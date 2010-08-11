@@ -28,7 +28,7 @@
  *   true on success or false on failure.
  *
  * @link http://php.net/manual/en/function.chmod.php
- * @see 
+ * @see
  * @since 1.0.0
  */
 function wp_chmod($uri, $mode = null) {
@@ -79,7 +79,7 @@ function wp_realpath($uri) {
 	} elseif (!empty($uri)) {
 		return realpath($uri);
 	}
-	
+
 	return false;
 }
 
@@ -118,11 +118,11 @@ function wp_tempnam_stream_compatible($directory, $prefix) {
 	 * @todo Merge the two functions.
 	 */
 	$scheme = WP_Stream::scheme($directory);
-	
+
 	if ($scheme && WP_Stream::scheme_valid($scheme)) {
 		$wrapper = WP_Stream::new_wrapper_instance($scheme . '://');
 		$path 	 = wp_realpath($directory);
-		
+
 		if ($path && $filename = tempnam($path, $prefix)) {
 			return WP_Stream::normalize($directory . '/' . basename($filename));
 		} else {
@@ -155,7 +155,7 @@ function wp_tempnam_stream_compatible($directory, $prefix) {
  */
 function wp_dirname($uri) {
 	$scheme = WP_Stream::scheme($uri);
-	
+
 	if ($scheme && WP_Stream::scheme_valid($scheme)) {
 		return WP_Stream::new_wrapper_instance($scheme . '://')->dirname($uri);
 	} else {
@@ -193,14 +193,14 @@ function wp_touch($uri, $time = null, $atime = null) {
 	if (is_null($time)) {
 		$time = time();
 	}
-	
+
 	$scheme = WP_Stream::scheme($uri);
-	
+
 	if ($scheme && WP_Stream::scheme_valid($scheme)) {
 		$dirname  = wp_dirname($uri);
 		$filename = basename($uri);
 		$path     = wp_realpath($dirname);
-		
+
 		if ($path !== false) {
 			$uri = $path . '/' . $filename;
 		} else {
@@ -211,7 +211,7 @@ function wp_touch($uri, $time = null, $atime = null) {
 
 	return touch($uri, $time, $atime);
 }
-	
+
 /**
  * Removes directory recursively
  *
@@ -235,7 +235,7 @@ function wp_touch($uri, $time = null, $atime = null) {
 function wp_rmdir_recursive($uri) {
 	$path = wp_realpath($uri);
 	$path = rtrim($path, "/");
-	
+
 	$objects = glob($path . '/*', GLOB_MARK);
 	foreach($objects as $object) {
 		if (is_dir($object)) {
@@ -244,11 +244,11 @@ function wp_rmdir_recursive($uri) {
 			unlink($object);
 		}
 	}
-	
+
 	if (is_dir($path)) {
 		return rmdir($path);
 	}
-	
+
 	return true;
 }
 

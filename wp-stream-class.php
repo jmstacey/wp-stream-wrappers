@@ -11,13 +11,13 @@
  *
  * This class provides useful helper methods for streams.
  * A stream is referenced as scheme://target. The methods contained within
- * this class are static and can be used without instantiation. 
+ * this class are static and can be used without instantiation.
  *
  * @package    Stream Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
  * @link       http://www.php.net/manual/en/intro.stream.php
- * @see        
+ * @see
  * @since      1.0.0
  */
 class WP_Stream {
@@ -40,7 +40,7 @@ class WP_Stream {
 	 *
 	 * @access public
 	 * @static
-	 * @see 
+	 * @see
 	 * @since 1.0.0
 	 */
 	public static function scheme($uri) {
@@ -70,16 +70,16 @@ class WP_Stream {
 	 *
 	 * @access public
 	 * @static
-	 * @see 
+	 * @see
 	 * @since 1.0.0
 	 */
 	public static function target($uri) {
 		list($scheme, $target) = explode('://', $uri, 2);
-		
+
 		// Remove unnecessary leading and traling slashes.
 		return trim($target, '\/');
 	}
-	
+
 	/**
 	 * Returns a new instance of the wrapper responsible for given stream URI
 	 *
@@ -89,9 +89,9 @@ class WP_Stream {
 	 * // given full URI "local://example.txt"
 	 * $uri = "local://example.txt"
 	 * $instance = WP_Stream::wrapper_instance($uri);
-	 * 
+	 *
 	 * // Option 2 - in this case only the scheme (in proper stream reference
-	 * // form), so the wrapper instance is initialized without a 
+	 * // form), so the wrapper instance is initialized without a
 	 * // target "local://".
 	 * $scheme = "local"
 	 * $instance = WP_Stream:wrapper_instance($scheme);
@@ -113,13 +113,13 @@ class WP_Stream {
 	 *
 	 * @access public
 	 * @static
-	 * @see 
+	 * @see
 	 * @since 1.0.0
 	 */
 	public static function new_wrapper_instance($uri) {
 		$scheme 	= WP_Stream::scheme($uri);
 		$class_name = WP_Stream::wrapper_class_name($scheme);
-		
+
 		if (class_exists($class_name)) {
 			$instance = new $class_name();
 			$instance->set_uri($uri);
@@ -128,7 +128,7 @@ class WP_Stream {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Returns ths class name of the wrapper implementation for given scheme
 	 *
@@ -140,12 +140,12 @@ class WP_Stream {
 	 *
 	 * @access public
 	 * @static
-	 * @see 
+	 * @see
 	 * @since 1.0.0
 	 */
 	public static function wrapper_class_name($scheme) {
 		$wrappers = WP_Stream_Wrapper_Registry::get_stream_wrappers();
-		
+
 		return empty($wrappers[$scheme]) ? false : $wrappers[$scheme]['class'];
 	}
 
@@ -165,19 +165,19 @@ class WP_Stream {
 	 *
 	 * @access public
 	 * @static
-	 * @see 
+	 * @see
 	 * @since 1.0.0
 	 */
 	public static function scheme_valid($scheme) {
 		$class_name = WP_Stream::wrapper_class_name($scheme);
-		
+
 		if (class_exists($class_name)) {
 			return true;
 		} else {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Normalizes a stream URI by making it syntactically correct
 	 *
@@ -195,24 +195,24 @@ class WP_Stream {
 	 *
 	 * @access public
 	 * @static
-	 * @see 
+	 * @see
 	 * @since 1.0.0
 	 */
 	public static function normalize($uri) {
 		$scheme = WP_Stream::scheme($uri);
-		
+
 		if ($scheme && WP_Stream::scheme_valid($scheme)) {
 			$target = WP_Stream::target($uri);
-			
+
 			if ($target !== false) {
 				$target = self::_clean_path_components($target);
 				$uri 	= $scheme . '://' . $target;
 			}
 		}
-		
+
 		return $uri;
 	}
-	
+
 	/**
 	 * Removes superfluous separators from given path
 	 *
@@ -232,17 +232,17 @@ class WP_Stream {
 	 */
 	private static function _clean_path_components($path) {
 		$components = explode('/', $path);
-		
+
 		$path = '';
 		foreach ($components as $c) {
 			if (strlen($c) > 0) {
 				$path .= '/' . $c;
 			}
 		}
-		
+
 		return ltrim($path, '/');
 	}
 
 }
-	
+
 ?>

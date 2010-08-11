@@ -5,12 +5,12 @@
  * @package Stream Wrappers
  */
 
-/** 
+/**
  * Initialize the Stream Wrappers Plugin in the proper sequence
  */
 require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/wp-stream-wrappers.php';
 
-/** 
+/**
  * This file contains the WP Test Stream Wrapper class.
  */
 require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/tests/wp-test-stream-wrapper.php';
@@ -27,7 +27,7 @@ require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/tests/wp-test-stream-wrapper.php
  * @since      1.0.0
  */
 class WP_Stream_Test extends WPTestCase {
-	
+
 	/**
 	 * Setup this test case
 	 */
@@ -35,7 +35,7 @@ class WP_Stream_Test extends WPTestCase {
 		// Register test stream wrapper
 		wp_test_stream_wrapper_register();
 	}
-	
+
 	/**
 	 * Tests getting the scheme of a stream
 	 *
@@ -44,12 +44,12 @@ class WP_Stream_Test extends WPTestCase {
 	public function test_scheme() {
 		$stream   = 'test://example/path1/path2/hello_world.txt';
 		$expected = 'test';
-		
+
 		$actual = WP_Stream::scheme($stream);
-		
+
 		$this->assertEquals($expected, $actual, "WP_Stream::scheme returned '$actual' instead of the expected '$expected'.");
 	}
-	
+
 	/**
 	 * Tests getting the target of a stream
 	 *
@@ -58,12 +58,12 @@ class WP_Stream_Test extends WPTestCase {
 	public function test_target() {
 		$stream   = 'test://example/path1/path2/hello_world.txt';
 		$expected = 'example/path1/path2/hello_world.txt';
-		
+
 		$actual = WP_Stream::target($stream);
-		
+
 		$this->assertEquals($expected, $actual, "WP_Stream::target returned '$actual' instead of the expected '$expected'.");
 	}
-	
+
 	/**
 	 * Tests getting a new wrapper instance
 	 *
@@ -71,10 +71,10 @@ class WP_Stream_Test extends WPTestCase {
 	 */
 	public function test_new_wrapper_instance() {
 		$uri = 'test://example/path1/path2/hello_world.txt';
-		
+
 		$wrapper_object = WP_Stream::new_wrapper_instance($uri);
 		$this->assertTrue(is_object($wrapper_object));
-		
+
 		unset($wrapper_object);
 
 		// Call should fail if only a scheme is provided
@@ -83,7 +83,7 @@ class WP_Stream_Test extends WPTestCase {
 		// Call should fail if no registered wrapper is available
 		$this->assertFalse(WP_Stream::new_wrapper_instance('hullabloothiswrapperdoesnotexist'));
 	}
-	
+
 	/**
 	 * Tests getting the wrapper class name
 	 *
@@ -92,11 +92,11 @@ class WP_Stream_Test extends WPTestCase {
 	public function test_wrapper_class_name() {
 		$scheme   = 'test';
 		$expected = 'WP_Test_Stream_Wrapper';
-		
+
 		$actual = WP_Stream::wrapper_class_name($scheme);
 		$this->assertEquals($expected, $actual, "WP_Stream::wrapper_class_name returned '$actual' instead of the expected '$expected'");
 	}
-	
+
 	/**
 	 * Tests checking the validity of a scheme
 	 *
@@ -106,7 +106,7 @@ class WP_Stream_Test extends WPTestCase {
 		$this->assertTrue(WP_Stream::scheme_valid('test'));
 		$this->assertFalse(WP_Stream::scheme_valid('nonexistentwrapper'));
 	}
-	
+
 	/**
 	 * Tests normalizing a stream
 	 *
@@ -118,42 +118,42 @@ class WP_Stream_Test extends WPTestCase {
 		 */
 		$malformed_uri = 'test:///example/path1/path2/hello_world.txt';
 		$expected      = 'test://example/path1/path2/hello_world.txt';
-		
+
 		$this->assertEquals($expected, WP_Stream::normalize($malformed_uri));
-		
+
 		/**
 		 * Test malformed URI with multiple separators in target
 		 */
 		$malformed_uri = 'test://example/path1//path2/hello_world.txt';
 		$expected      = 'test://example/path1/path2/hello_world.txt';
-		
+
 		$this->assertEquals($expected, WP_Stream::normalize($malformed_uri));
-		
+
 		/**
 		 * Test malformed URI with mutliple problems
 		 */
 		$malformed_uri = 'test:////example/path1//path2//hello_world.txt';
 		$expected      = 'test://example/path1/path2/hello_world.txt';
-		
+
 		$this->assertEquals($expected, WP_Stream::normalize($malformed_uri));
-		
+
 		/**
 		 * Test method call when there is no target
 		 */
 		$malformed_uri = 'test://';
 		$expected      = 'test://';
-		
+
 		$this->assertEquals($expected, WP_Stream::normalize($malformed_uri));
-		
+
 		/**
 		 * Test method call when there is no target but the URI is malformed
 		 */
 		$malformed_uri = 'test:///';
 		$expected      = 'test://';
-		
+
 		$this->assertEquals($expected, WP_Stream::normalize($malformed_uri));
 	}
-	
+
 	/**
 	 * Teardown this test case
 	 */
@@ -162,5 +162,5 @@ class WP_Stream_Test extends WPTestCase {
 		WP_Stream_Wrapper_Registry::unregister_wrapper('test');
 	}
 }
-	
+
 ?>
