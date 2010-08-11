@@ -1,8 +1,14 @@
 <?php
 /**
- * This file contains the WordPress Local Stream Wrapper Base tests.
+ * Tests WordPress Local Stream Wrapper Base
  *
- * @package Stream Wrappers
+ * @package     Stream Wrappers
+ * @author      Jon Stacey <jon@jonsview.com>
+ * @copyright   2010 Jon Stacey
+ * @license     http://wordpress.org/about/gpl/
+ * @link        http://github.com/jmstacey/wp-stream-wrappers
+ * @version     1.0.0
+ * @since       1.0.0
  */
 
 /**

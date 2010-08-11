@@ -1,10 +1,17 @@
 <?php
 /**
- * This file contains the Local WordPress Stream Wrapper implementation
- * for the "local://" scheme. This is a simple and complete stream wrapper
- * implementation for use and reference purposes.
+ * WordPress Local (local://) stream wrapper implementation
  *
- * @package Stream Wrappers
+ * This is a simple and complete stream wrapper implemenation for use and
+ * reference purposes.
+ *
+ * @package     Stream Wrappers
+ * @author      Jon Stacey <jon@jonsview.com>
+ * @copyright   2010 Jon Stacey
+ * @license     http://wordpress.org/about/gpl/
+ * @link        http://github.com/jmstacey/wp-stream-wrappers
+ * @version     1.0.0
+ * @since       1.0.0
  */
 
 /**

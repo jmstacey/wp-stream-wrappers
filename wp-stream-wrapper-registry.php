@@ -1,23 +1,31 @@
 <?php
 /**
- * This file contains the Stream Wrapper Registry. The registry keeps track of
- * the scheme and implementation class of each registered wrapper. The
- * WordPress registry differs from PHP's native registry. The WordPress
- * registry builds on top of PHPs native support and adds more functionality.
- * For example, PHP does not currently provide native capabilities to ask
- * "what wrapper class is responsible for handling this URI or scheme?" This
- * ability is vital to providing functions specific to WordPress.
+ * WP Stream Wrapper Registry
  *
- * It is important to note that the WP Wrapper Registry does not register
- * PHP's built-in wrappers such as 'http' or 'ssl'. These wrappers may still
- * be used with PHP functions normally, but any functions that rely on the
- * WP Registry will fail because the wrapper will not be found. For example,
- * the call StreamWrapperRegistry::valid_scheme('http') would return false
+ * This registry keeps track of the scheme and implementation class of each
+ * registered wrapper. The WordPress registry differs from PHP's native
+ * registry. The WordPress registry builds on top of PHPs native support and
+ * adds more functionality. For example, PHP does not currently provide native
+ * capabilities to ask "what wrapper class is responsible for handling this
+ * URI or scheme?" This ability is vital to providing functions specific to
+ * WordPress.
+ *
+ * It is important to note that the WP Wrapper Registry does not register PHPs
+ * built-in wrappers such as 'http' or 'ssl'. These wrapeprs may still be used
+ * with PHP functions normally, but any functions that rely on the WP Registry
+ * will fail because the wrapper will not be found. For example, the call
+ * WP_Stream_Wrapper_Registry::valid_scheme('http') would return false
  * despite PHP's built-in http wrapper being available. In most cases this
  * will not be an issue because PHP's wrappers do not contain attributes
  * specific to WordPress.
  *
- * @package Stream Wrappers
+ * @package     Stream Wrappers
+ * @author      Jon Stacey <jon@jonsview.com>
+ * @copyright   2010 Jon Stacey
+ * @license     http://wordpress.org/about/gpl/
+ * @link        http://github.com/jmstacey/wp-stream-wrappers
+ * @version     1.0.0
+ * @since       1.0.0
  */
 
 /**

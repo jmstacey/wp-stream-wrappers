@@ -1,11 +1,17 @@
 <?php
 /**
- * This file contains WordPress File API helper functions.
+ * WordPress File API helper functions
  *
- * These helper functions are declared in the global namespace so that
+ * Thesehelper functions are declared in the global namespace so that
  * they can be called in a similar manner to PHP's own functions.
  *
- * @package Stream Wrappers
+ * @package     Stream Wrappers
+ * @author      Jon Stacey <jon@jonsview.com>
+ * @copyright   2010 Jon Stacey
+ * @license     http://wordpress.org/about/gpl/
+ * @link        http://github.com/jmstacey/wp-stream-wrappers
+ * @version     1.0.0
+ * @since       1.0.0
  */
 
 /**

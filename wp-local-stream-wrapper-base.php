@@ -1,20 +1,28 @@
 <?php
 /**
- * This file contains the Local WordPress Stream Wrapper Base class.
- * this is a simple implementation of the WP_Stream_Wrapper_Interface
- * class that can be used by stream wrappers that manipulate files on
- * the local filesystem. A custom wrapper such as "local://" can be created
- * with just a few lines of code.
+ * WordPress Local Stream Wrapper Base Class
  *
- * Developers: If you are using this class as a base for your own wrapper you
- * must make sure that this class exists first. It is quite possible that an
- * end-user might install your wrapper without having first installed the WP
- * Stream Wrappers Plugin. If this happens, everythign will come to a crashing
- * halt. Refer to the included WP Local Stream Wrapper implementation for
- * an example handling this problem. Basically, put your implementation class
- * in a separate file and only include it upon registration.
+ * This file contains the local WordPress stream wrapper base class.
+ * This is a simple implementation of WP_Stream_Wrapper_Interface and
+ * can be used by stream wrappers that manipulate files on the local
+ * filesystem. A custom wrapepr such as "local://" can be created with just
+ * a few lines of code.
  *
- * @package Stream Wrappers
+ * Developers: If you are using this class as a base for your own wrapper
+ * you must make sure that this class exists first. It is quite possible that
+ * an end-user might install your wrapper without having first installed the
+ * WP Stream Wrappers plugin. If this happens, everything will come to a
+ * crashing halt. Refer to the included WP Local Stream Wrapper for an example
+ * on how to handle this problem. Basically, put your implementation class in
+ * a separate file and only include it upon registration.
+ *
+ * @package     Stream Wrappers
+ * @author      Jon Stacey <jon@jonsview.com>
+ * @copyright   2010 Jon Stacey
+ * @license     http://wordpress.org/about/gpl/
+ * @link        http://github.com/jmstacey/wp-stream-wrappers
+ * @version     1.0.0
+ * @since       1.0.0
  */
 
 /**

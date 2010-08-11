@@ -1,20 +1,29 @@
 <?php
 /**
- * This file contains the Local WordPress Stream Wrapper which implements
- * the "local://" scheme. This is a simple and complete stream wrapper
- * implementation for testing, reference, and extension purposes. Other stream
- * wrappers that manipulate files on the local filesystem can quickly extend
- * this class to suit more specific needs. The WP Test [test://] stream
- * is an excellent example of this use case.
+ * WordPress Local Stream Wrapper
  *
- * Developers: If you are using this wrapper as a template for a new wrapper
+ * This file contains the local stream wrapper which implements the
+ * "local" scheme. This is a simple and complete stream wrapper
+ * for testing, reference, and extension purposes. Other stream wrappers
+ * that manipulate files on the local filesystem can quickly extend this class
+ * to suit more specific needs. The WP Test [test://] stream wrapper is an
+ * excellent example of this use case.
+ *
+ * Developers: If you are using this wrapper as a tempalte for a new wrapper
  * and intend to extend WP_Local_Stream_Wrapper_Base you are responsible for
  * dependency checks. That is, if a user loads your wrapper before having
- * installed WP Stream Wrappers plugin, show and administrative error, and
- * don't cause a PHP error by trying to extend a non-existent class. See this
- * example for how this is handled.
+ * installed and activated the WP Stream Wrappers plugin, show an
+ * error message to the admin user and avoid causing a PHP error by trying to
+ * extend a non-existent class. See the implementation in this file for one
+ * way to handle this problem in a consistent manner.
  *
- * @package Stream Wrappers
+ * @package     Stream Wrappers
+ * @author      Jon Stacey <jon@jonsview.com>
+ * @copyright   2010 Jon Stacey
+ * @license     http://wordpress.org/about/gpl/
+ * @link        http://github.com/jmstacey/wp-stream-wrappers
+ * @version     1.0.0
+ * @since       1.0.0
  */
 
 define('WP_LOCAL_STREAM_WRAPPER_VERSION', '1.0.0');

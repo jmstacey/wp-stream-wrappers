@@ -1,10 +1,16 @@
 <?php
 /**
- * This file contains the Test WordPress Stream Wrapper.
+ * WordPress Test Stream Wrapper
  *
  * This wrapper is used only for testing purposes.
  *
- * @package Stream Wrappers
+ * @package     Stream Wrappers
+ * @author      Jon Stacey <jon@jonsview.com>
+ * @copyright   2010 Jon Stacey
+ * @license     http://wordpress.org/about/gpl/
+ * @link        http://github.com/jmstacey/wp-stream-wrappers
+ * @version     1.0.0
+ * @since       1.0.0
  */
 
 /**
@@ -13,7 +19,7 @@
  * Helper function that prepares the WordPress Test Stream Wrapper for use.
  *
  * @package Stream Wrappers
- * @since 1.0.0
+ * @since   1.0.0
  */
 function wp_test_stream_wrapper_register() {
     $scheme = 'test'; // Wrapper scheme

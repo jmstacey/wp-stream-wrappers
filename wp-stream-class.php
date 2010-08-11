@@ -1,9 +1,16 @@
 <?php
 /**
- * This file contains the WordPress Stream Wrappers helper class. It provides
- * useful functions that are used by WordPress Wrapper implementations.
+ * WordPress Stream Helpers
  *
- * @package Stream Wrappers
+ * This class provies methods that are used by WordPress Wrappers.
+ *
+ * @package     Stream Wrappers
+ * @author      Jon Stacey <jon@jonsview.com>
+ * @copyright   2010 Jon Stacey
+ * @license     http://wordpress.org/about/gpl/
+ * @link        http://github.com/jmstacey/wp-stream-wrappers
+ * @version     1.0.0
+ * @since       1.0.0
  */
 
 /**

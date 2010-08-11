@@ -1,9 +1,17 @@
 <?php
 /**
- * This file contains the WordPress Stream Wrapper Registry tests. It makes
- * sure that the registry implementation is up to spec and working properly.
+ * Tests WordPress Stream Wrapper Registry
  *
- * @package Stream Wrappers
+ * These tests ensure that the registry implementation is up to spec and
+ * working properly.
+ *
+ * @package     Stream Wrappers
+ * @author      Jon Stacey <jon@jonsview.com>
+ * @copyright   2010 Jon Stacey
+ * @license     http://wordpress.org/about/gpl/
+ * @link        http://github.com/jmstacey/wp-stream-wrappers
+ * @version     1.0.0
+ * @since       1.0.0
  */
 
 /**
