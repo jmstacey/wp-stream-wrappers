@@ -76,7 +76,7 @@ require_once('wp-local-stream-wrapper/wp-local-stream-wrapper.php');
  * @since 1.0.0
  */
 function wp_stream_wrappers_init() {
-	wp_stream_wrapper_registry_init();
+    wp_stream_wrapper_registry_init();
 }
 
 /**
