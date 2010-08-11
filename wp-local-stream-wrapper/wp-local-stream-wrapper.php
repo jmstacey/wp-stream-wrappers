@@ -27,29 +27,29 @@ define('WP_LOCAL_STREAM_WRAPPER_VERSION', '1.0.0');
  * Scheme     : local
  * Class      : WP_Local_Stream_Wrapper
  * Description: WP Local Stream Wrapper provides a simple example of
- *				leveraging the WP_Local_Stream_Wrapper_Base class to create
- *				simple wrappers capable of manipulating local files.
+ *              leveraging the WP_Local_Stream_Wrapper_Base class to create
+ *              simple wrappers capable of manipulating local files.
  *
  * @package Stream Wrappers
  * @since 1.0.0
  */
 function wp_local_stream_wrapper_register() {
-	$scheme = 'local'; // Wrapper scheme
+    $scheme = 'local'; // Wrapper scheme
 
-	// Wrapper registration metadata
-	$wrapper_metadata = array(
-		'name' => 'WP Local Stream Wrapper',
-		'class' => 'WP_Local_Stream_Wrapper',
-		'description' => 'WP Local Stream Wrapper provides a simple example of leveraging the WP_Local_Stream_Wrapper_Base class to create simple wrappers capable of manipulating local files.'
-	);
+    // Wrapper registration metadata
+    $wrapper_metadata = array(
+        'name' => 'WP Local Stream Wrapper',
+        'class' => 'WP_Local_Stream_Wrapper',
+        'description' => 'WP Local Stream Wrapper provides a simple example of leveraging the WP_Local_Stream_Wrapper_Base class to create simple wrappers capable of manipulating local files.'
+    );
 
-	/**
-	 * This file contains the WP Local Stream wrapper implementation
-	 */
-	require_once('wp-local-stream-wrapper-class.php');
+    /**
+     * This file contains the WP Local Stream wrapper implementation
+     */
+    require_once('wp-local-stream-wrapper-class.php');
 
-	// Register this wrapper
-	WP_Stream_Wrapper_Registry::register_wrapper($scheme, $wrapper_metadata);
+    // Register this wrapper
+    WP_Stream_Wrapper_Registry::register_wrapper($scheme, $wrapper_metadata);
 }
 
 /**
@@ -63,14 +63,14 @@ function wp_local_stream_wrapper_register() {
  * @since 1.0.0
  */
 function wp_local_stream_wrapper_dependency_check() {
-	if (!has_action('register_stream_wrapper')) {
-		// @todo: figure out how to test with WP Automated Tests
+    if (!has_action('register_stream_wrapper')) {
+        // @todo: figure out how to test with WP Automated Tests
 
-		// Notify the admin that the stream wrappers plugin is needed
-		add_action('admin_notices', 'wp_local_stream_wrapper_show_error');
+        // Notify the admin that the stream wrappers plugin is needed
+        add_action('admin_notices', 'wp_local_stream_wrapper_show_error');
 
-		return new WP_Error('stream-wrapper-dependency-error', __("The WP Stream Wrappers Plugin is required, but is not installed."));
-	}
+        return new WP_Error('stream-wrapper-dependency-error', __("The WP Stream Wrappers Plugin is required, but is not installed."));
+    }
 }
 
 /**
@@ -83,8 +83,8 @@ function wp_local_stream_wrapper_dependency_check() {
  * @since 1.0.0
  */
 function wp_local_stream_wrapper_show_error() {
-	// @todo: Update href to a useful page in the documentation
-	print('<div id="message" class="error">Unable to register the WP Local Stream Wrapper (local://). The WP Stream Wrappers plugin is required. <a href="http://wiki.github.com/jmstacey/wp-stream-wrappers/unable-to-register-wrapper-error">More info...</a></div>');
+    // @todo: Update href to a useful page in the documentation
+    print('<div id="message" class="error">Unable to register the WP Local Stream Wrapper (local://). The WP Stream Wrappers plugin is required. <a href="http://wiki.github.com/jmstacey/wp-stream-wrappers/unable-to-register-wrapper-error">More info...</a></div>');
 }
 
 /**

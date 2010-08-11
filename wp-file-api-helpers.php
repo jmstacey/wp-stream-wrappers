@@ -32,23 +32,23 @@
  * @since 1.0.0
  */
 function wp_chmod($uri, $mode = null) {
-	/**
-	 * Todo: Look into making these settings global, or maybe
-	 * definable by each individual stream wrapper for flexibility.
-	 */
-	if (!isset($mode)) {
-		if (is_dir($uri)) {
-			$mode = 0775;
-		} else {
-			$mode = 0664;
-		}
-	}
+    /**
+     * Todo: Look into making these settings global, or maybe
+     * definable by each individual stream wrapper for flexibility.
+     */
+    if (!isset($mode)) {
+        if (is_dir($uri)) {
+            $mode = 0775;
+        } else {
+            $mode = 0664;
+        }
+    }
 
-	if ($wrapper = WP_Stream::new_wrapper_instance($uri)) {
-		return $wrapper->chmod($mode);
-	} else {
-		return chmod($uri, $mode);
-	}
+    if ($wrapper = WP_Stream::new_wrapper_instance($uri)) {
+        return $wrapper->chmod($mode);
+    } else {
+        return chmod($uri, $mode);
+    }
 }
 
 /**
@@ -74,13 +74,13 @@ function wp_chmod($uri, $mode = null) {
  * @since 1.0.0
  */
 function wp_realpath($uri) {
-	if ($wrapper = WP_Stream::new_wrapper_instance($uri)) {
-		return $wrapper->realpath();
-	} elseif (!empty($uri)) {
-		return realpath($uri);
-	}
+    if ($wrapper = WP_Stream::new_wrapper_instance($uri)) {
+        return $wrapper->realpath();
+    } elseif (!empty($uri)) {
+        return realpath($uri);
+    }
 
-	return false;
+    return false;
 }
 
 /**
@@ -110,27 +110,27 @@ function wp_realpath($uri) {
  * @since 1.0.0
  */
 function wp_tempnam_stream_compatible($directory, $prefix) {
-	/**
-	 * NOTE: This is a temporary function name. This function should
-	 * be named wp_tempnam(), but that currently conflicts with an existing
-	 * declaration in wp-admin/includes/file.php.
-	 *
-	 * @todo Merge the two functions.
-	 */
-	$scheme = WP_Stream::scheme($directory);
+    /**
+     * NOTE: This is a temporary function name. This function should
+     * be named wp_tempnam(), but that currently conflicts with an existing
+     * declaration in wp-admin/includes/file.php.
+     *
+     * @todo Merge the two functions.
+     */
+    $scheme = WP_Stream::scheme($directory);
 
-	if ($scheme && WP_Stream::scheme_valid($scheme)) {
-		$wrapper = WP_Stream::new_wrapper_instance($scheme . '://');
-		$path 	 = wp_realpath($directory);
+    if ($scheme && WP_Stream::scheme_valid($scheme)) {
+        $wrapper = WP_Stream::new_wrapper_instance($scheme . '://');
+        $path    = wp_realpath($directory);
 
-		if ($path && $filename = tempnam($path, $prefix)) {
-			return WP_Stream::normalize($directory . '/' . basename($filename));
-		} else {
-			return false;
-		}
-	} else {
-		return tempnam($directory, $prefix);
-	}
+        if ($path && $filename = tempnam($path, $prefix)) {
+            return WP_Stream::normalize($directory . '/' . basename($filename));
+        } else {
+            return false;
+        }
+    } else {
+        return tempnam($directory, $prefix);
+    }
 }
 
 /**
@@ -154,13 +154,13 @@ function wp_tempnam_stream_compatible($directory, $prefix) {
  * @since 1.0.0
  */
 function wp_dirname($uri) {
-	$scheme = WP_Stream::scheme($uri);
+    $scheme = WP_Stream::scheme($uri);
 
-	if ($scheme && WP_Stream::scheme_valid($scheme)) {
-		return WP_Stream::new_wrapper_instance($scheme . '://')->dirname($uri);
-	} else {
-		return dirname($uri);
-	}
+    if ($scheme && WP_Stream::scheme_valid($scheme)) {
+        return WP_Stream::new_wrapper_instance($scheme . '://')->dirname($uri);
+    } else {
+        return dirname($uri);
+    }
 }
 
 /**
@@ -190,26 +190,26 @@ function wp_dirname($uri) {
  * @since 1.0.0
  */
 function wp_touch($uri, $time = null, $atime = null) {
-	if (is_null($time)) {
-		$time = time();
-	}
+    if (is_null($time)) {
+        $time = time();
+    }
 
-	$scheme = WP_Stream::scheme($uri);
+    $scheme = WP_Stream::scheme($uri);
 
-	if ($scheme && WP_Stream::scheme_valid($scheme)) {
-		$dirname  = wp_dirname($uri);
-		$filename = basename($uri);
-		$path     = wp_realpath($dirname);
+    if ($scheme && WP_Stream::scheme_valid($scheme)) {
+        $dirname  = wp_dirname($uri);
+        $filename = basename($uri);
+        $path     = wp_realpath($dirname);
 
-		if ($path !== false) {
-			$uri = $path . '/' . $filename;
-		} else {
-			// The directory path does not exist
-			return false;
-		}
-	}
+        if ($path !== false) {
+            $uri = $path . '/' . $filename;
+        } else {
+            // The directory path does not exist
+            return false;
+        }
+    }
 
-	return touch($uri, $time, $atime);
+    return touch($uri, $time, $atime);
 }
 
 /**
@@ -233,23 +233,23 @@ function wp_touch($uri, $time = null, $atime = null) {
  * @since 1.0.0
  */
 function wp_rmdir_recursive($uri) {
-	$path = wp_realpath($uri);
-	$path = rtrim($path, "/");
+    $path = wp_realpath($uri);
+    $path = rtrim($path, "/");
 
-	$objects = glob($path . '/*', GLOB_MARK);
-	foreach($objects as $object) {
-		if (is_dir($object)) {
-			wp_rmdir_recursive($object);
-		} else {
-			unlink($object);
-		}
-	}
+    $objects = glob($path . '/*', GLOB_MARK);
+    foreach($objects as $object) {
+        if (is_dir($object)) {
+            wp_rmdir_recursive($object);
+        } else {
+            unlink($object);
+        }
+    }
 
-	if (is_dir($path)) {
-		return rmdir($path);
-	}
+    if (is_dir($path)) {
+        return rmdir($path);
+    }
 
-	return true;
+    return true;
 }
 
 ?>

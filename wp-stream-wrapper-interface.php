@@ -39,32 +39,32 @@
  * @since      1.0.0
  */
 interface PHP_Stream_Wrapper_Interface {
-	public function __construct();
+    public function __construct();
 
-	public function dir_closedir();
-	public function dir_opendir($uri, $options);
-	public function dir_readdir();
-	public function dir_rewinddir();
+    public function dir_closedir();
+    public function dir_opendir($uri, $options);
+    public function dir_readdir();
+    public function dir_rewinddir();
 
-	public function mkdir($uri, $mode, $options);
-	public function rename($from_uri, $to_uri);
-	public function rmdir($uri, $options);
+    public function mkdir($uri, $mode, $options);
+    public function rename($from_uri, $to_uri);
+    public function rmdir($uri, $options);
 
-	public function stream_cast($cast_as);
-	public function stream_close();
-	public function stream_eof();
-	public function stream_flush();
-	public function stream_lock($operation);
-	public function stream_open($uri, $mode, $options, &$opened_uri);
-	public function stream_read($count);
-	public function stream_seek($offset, $whence);
-	public function stream_set_option($option, $arg1, $arg2);
-	public function stream_stat();
-	public function stream_tell();
-	public function stream_write($data);
+    public function stream_cast($cast_as);
+    public function stream_close();
+    public function stream_eof();
+    public function stream_flush();
+    public function stream_lock($operation);
+    public function stream_open($uri, $mode, $options, &$opened_uri);
+    public function stream_read($count);
+    public function stream_seek($offset, $whence);
+    public function stream_set_option($option, $arg1, $arg2);
+    public function stream_stat();
+    public function stream_tell();
+    public function stream_write($data);
 
-	public function unlink($uri);
-	public function url_stat($uri, $flags);
+    public function unlink($uri);
+    public function url_stat($uri, $flags);
 }
 
 /**
@@ -81,111 +81,111 @@ interface PHP_Stream_Wrapper_Interface {
  * @since      1.0.0
  */
 interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
-	/**
-	 * Returns the URI of the current file object
-	 *
-	 * A URI stream is referenced as "scheme://target"
-	 *
-	 * @return string
-	 *   String containing the current WP_File URI.
-	 *
-	 * @access public
-	 * @see set_uri()
-	 * @since 1.0.0
-	 */
-	public function get_uri();
+    /**
+     * Returns the URI of the current file object
+     *
+     * A URI stream is referenced as "scheme://target"
+     *
+     * @return string
+     *   String containing the current WP_File URI.
+     *
+     * @access public
+     * @see set_uri()
+     * @since 1.0.0
+     */
+    public function get_uri();
 
-	/**
-	 * Sets the URI of the current file object
-	 *
-	 * A URI stream is referenced as "scheme://target"
-	 *
-	 * @param string
-	 *   String containing the new URI for the WP_File object.
-	 *
-	 * @access public
-	 * @see
-	 * @since 1.0.0
-	 */
-	public function set_uri($uri);
+    /**
+     * Sets the URI of the current file object
+     *
+     * A URI stream is referenced as "scheme://target"
+     *
+     * @param string
+     *   String containing the new URI for the WP_File object.
+     *
+     * @access public
+     * @see
+     * @since 1.0.0
+     */
+    public function set_uri($uri);
 
-	/**
-	 * Changes permissions of the resource
-	 *
-	 * This functionality does not exist in the official stream wraper
-	 * interface, and so is implemented just for WordPress.
-	 *
-	 * @param int $mode
-	 *   an integer value for the permissions. Consult PHP chmod()
-	 *   documentation for more information.
-	 *
-	 * @return bool
-	 *   true on success or false on failure.
-	 *
-	 * @access public
-	 * @link http://php.net/manual/en/function.chmod.php
-	 * @see
-	 * @since 1.0.0
-	 */
-	public function chmod($mode);
+    /**
+     * Changes permissions of the resource
+     *
+     * This functionality does not exist in the official stream wraper
+     * interface, and so is implemented just for WordPress.
+     *
+     * @param int $mode
+     *   an integer value for the permissions. Consult PHP chmod()
+     *   documentation for more information.
+     *
+     * @return bool
+     *   true on success or false on failure.
+     *
+     * @access public
+     * @link http://php.net/manual/en/function.chmod.php
+     * @see
+     * @since 1.0.0
+     */
+    public function chmod($mode);
 
-	/**
-	 * Returns the directory name component of given path
-	 *
-	 * PHP's dirname() function does not support stream wrappers. This
-	 * default is provided so that individual wrappers may implement
-	 * their own solutions. See WP_Local_Stream_Wrapper_Base for an example.
-	 *
-	 * @param string $uri
-	 *   the URI or path.
-	 *
-	 * @return mixed
-	 *   the new temporary filename, or false on failure.
-	 *
-	 * @access public
-	 * @link http://us2.php.net/manual/en/function.dirname.php
-	 * @see
-	 * @since 1.0.0
-	 */
-	public function dirname($uri);
+    /**
+     * Returns the directory name component of given path
+     *
+     * PHP's dirname() function does not support stream wrappers. This
+     * default is provided so that individual wrappers may implement
+     * their own solutions. See WP_Local_Stream_Wrapper_Base for an example.
+     *
+     * @param string $uri
+     *   the URI or path.
+     *
+     * @return mixed
+     *   the new temporary filename, or false on failure.
+     *
+     * @access public
+     * @link http://us2.php.net/manual/en/function.dirname.php
+     * @see
+     * @since 1.0.0
+     */
+    public function dirname($uri);
 
-	/**
-	 * Returns the canonical [absolute] path of the resource
-	 *
-	 * PHP's realpath() does not support stream wrappers. This default is
-	 * provided so that individual wrappers may implement their own
-	 * solutions. See WP_Local_Stream_Wrapper_Base for an example.
-	 *
-	 * @return string
-	 *   a string with absolute pathname on success [as implemented by
-	 *   WP_Local_Stream_Wrapper_Base], or false on failure or if the
-	 *   registered wrapper does not provide an implementation.
-	 *
-	 * @access public
-	 * @link http://php.net/manual/en/function.realpath.php
-	 * @see
-	 * @since 1.0.0
-	 */
-	public function realpath();
+    /**
+     * Returns the canonical [absolute] path of the resource
+     *
+     * PHP's realpath() does not support stream wrappers. This default is
+     * provided so that individual wrappers may implement their own
+     * solutions. See WP_Local_Stream_Wrapper_Base for an example.
+     *
+     * @return string
+     *   a string with absolute pathname on success [as implemented by
+     *   WP_Local_Stream_Wrapper_Base], or false on failure or if the
+     *   registered wrapper does not provide an implementation.
+     *
+     * @access public
+     * @link http://php.net/manual/en/function.realpath.php
+     * @see
+     * @since 1.0.0
+     */
+    public function realpath();
 
-	/**
-	 * Returns the web accessible URL for the resource
-	 *
-	 * Returns a URL that can be accessed from a browser. For example,
-	 * the web URL of the internal URI "local://example.txt" might be
-	 * "http://www.example.com/wp-content/example.txt".
-	 *
-	 * All wrappers that intend to make their resources available
-	 * in this way must implement this method.
-	 *
-	 * @return string
-	 *   the web accessible URL for the resource.
-	 *
-	 * @access public
-	 * @see
-	 * @since 1.0.0
-	 */
-	public function get_web_accessible_url();
+    /**
+     * Returns the web accessible URL for the resource
+     *
+     * Returns a URL that can be accessed from a browser. For example,
+     * the web URL of the internal URI "local://example.txt" might be
+     * "http://www.example.com/wp-content/example.txt".
+     *
+     * All wrappers that intend to make their resources available
+     * in this way must implement this method.
+     *
+     * @return string
+     *   the web accessible URL for the resource.
+     *
+     * @access public
+     * @see
+     * @since 1.0.0
+     */
+    public function get_web_accessible_url();
 }
 
 ?>
