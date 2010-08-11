@@ -1,4 +1,19 @@
 <?php
+/**
+ * WP Stream Wrappers Plugin
+ *
+ * WP Stream wrappers provides a foundation for next generation WordPress
+ * file handling capabilities.
+ *
+ * @package     Stream Wrappers
+ * @author      Jon Stacey <jon@jonsview.com>
+ * @copyright   2010 Jon Stacey
+ * @license     http://wordpress.org/about/gpl/
+ * @link        http://github.com/jmstacey/wp-stream-wrappers
+ * @version     1.0.0
+ * @since       1.0.0
+ */
+
 /*
 Plugin Name: WP Stream Wrappers
 Plugin URI: http://github.com/jmstacey/wp-stream-wrappers
