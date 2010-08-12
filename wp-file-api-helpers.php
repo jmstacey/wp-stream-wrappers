@@ -34,7 +34,6 @@
  *   true on success or false on failure.
  *
  * @link    http://php.net/manual/en/function.chmod.php
- * @see
  * @since   1.0.0
  */
 function wp_chmod($uri, $mode = null) {

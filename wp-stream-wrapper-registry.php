@@ -50,7 +50,6 @@ function wp_stream_wrapper_registry_init() {
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
  * @link
- * @see
  * @since      1.0.0
  */
 class WP_Stream_Wrapper_Registry {

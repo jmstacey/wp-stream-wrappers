@@ -24,7 +24,6 @@
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
  * @link       http://www.php.net/manual/en/intro.stream.php
- * @see
  * @since      1.0.0
  */
 class WP_Stream {
@@ -47,7 +46,6 @@ class WP_Stream {
      *
      * @access  public
      * @static
-     * @see
      * @since   1.0.0
      */
     public static function scheme($uri) {
@@ -77,7 +75,6 @@ class WP_Stream {
      *
      * @access  public
      * @static
-     * @see
      * @since   1.0.0
      */
     public static function target($uri) {
@@ -120,7 +117,6 @@ class WP_Stream {
      *
      * @access  public
      * @static
-     * @see
      * @since   1.0.0
      */
     public static function new_wrapper_instance($uri) {
@@ -147,7 +143,6 @@ class WP_Stream {
      *
      * @access  public
      * @static
-     * @see
      * @since   1.0.0
      */
     public static function wrapper_class_name($scheme) {
@@ -172,7 +167,6 @@ class WP_Stream {
      *
      * @access  public
      * @static
-     * @see
      * @since   1.0.0
      */
     public static function scheme_valid($scheme) {
@@ -202,7 +196,6 @@ class WP_Stream {
      *
      * @access  public
      * @static
-     * @see
      * @since   1.0.0
      */
     public static function normalize($uri) {

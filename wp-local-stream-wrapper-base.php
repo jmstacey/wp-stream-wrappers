@@ -567,7 +567,6 @@ abstract class WP_Local_Stream_Wrapper_Base implements WP_Stream_Wrapper_Interfa
      * @throws  E_USER_NOTICE
      *
      * @see     WP_Stream_Wrapper_Interface::stream_set_option()
-     * @see
      * @link    http://php.net/manual/en/streamwrapper.stream-set-option.php
      * @since   1.0.0
      */

@@ -112,7 +112,6 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
      *   String containing the new URI for the WP_File object.
      *
      * @access  public
-     * @see
      * @since   1.0.0
      */
     public function set_uri($uri);
@@ -132,7 +131,6 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
      *
      * @access  public
      * @link    http://php.net/manual/en/function.chmod.php
-     * @see
      * @since   1.0.0
      */
     public function chmod($mode);
@@ -152,7 +150,6 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
      *
      * @access  public
      * @link    http://us2.php.net/manual/en/function.dirname.php
-     * @see
      * @since   1.0.0
      */
     public function dirname($uri);
@@ -171,7 +168,6 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
      *
      * @access  public
      * @link    http://php.net/manual/en/function.realpath.php
-     * @see
      * @since   1.0.0
      */
     public function realpath();
@@ -190,7 +186,6 @@ interface WP_Stream_Wrapper_Interface extends PHP_Stream_Wrapper_Interface {
      *   the web accessible URL for the resource.
      *
      * @access  public
-     * @see
      * @since   1.0.0
      */
     public function get_web_accessible_url();
