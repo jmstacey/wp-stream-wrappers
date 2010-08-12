@@ -49,7 +49,6 @@ function wp_stream_wrapper_registry_init() {
  * @package    WP_Stream_Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
- * @link
  * @since      1.0.0
  */
 class WP_Stream_Wrapper_Registry {

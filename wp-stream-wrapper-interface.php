@@ -84,7 +84,6 @@ interface PHP_Stream_Wrapper_Interface {
  * @package    WP_Stream_Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
- * @link
  * @see        PHP_Stream_Wrapper_Interface
  * @since      1.0.0
  */

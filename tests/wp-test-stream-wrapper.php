@@ -42,7 +42,6 @@ function wp_test_stream_wrapper_register() {
  * @package    WP_Stream_Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
- * @link
  * @see        WP_Local_Stream_Wrapper_Base
  * @since      1.0.0
  */
