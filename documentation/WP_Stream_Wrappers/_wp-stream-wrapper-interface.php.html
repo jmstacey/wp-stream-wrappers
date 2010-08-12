@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs for page wp-stream-wrapper-interface.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="file-name">/wp-stream-wrapper-interface.php</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-classes">Classes</a>
+														</div>
+	<div class="info-box-body">	
+		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">WordPress Stream Wrapper Interface</p>
+<p class="description"><p>This interface must be implemented [extended] by any stream wrappers that  wish to interact with the WordPress Stream Wrappers plugin.</p><p>A stream is simply an abstraction of any kind of data. For example, a  stream could be a local file on the hard drive, a web page, or even input  from STDIN.</p><p>Note: PHP 5 fopen() only supports URIs in the form of &quot;scheme://target&quot;  despite the fact that according to RFC 3986 a URI's scheme component  delimiter is in general just &quot;:&quot;, and not &quot;://&quot;. As a result of this  PHP limitation and for the sake of consistency, WordPress will only  accept URIs in full form (i.e. &quot;scheme://target&quot;). More information  on this problem can be found at the following links.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jon Stacey &lt;<a href="mailto:jon@jonsview.com">jon@jonsview.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0</li>
+				<li><span class="field">copyright:</span> 2010 Jon Stacey</li>
+				<li><span class="field">link:</span> <a href="http://bugs.php.net/bug.php?id=47070">http://bugs.php.net/bug.php?id=47070</a></li>
+				<li><span class="field">link:</span> <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a></li>
+				<li><span class="field">link:</span> <a href="http://us3.php.net/manual/en/function.fopen.php">http://us3.php.net/manual/en/function.fopen.php</a></li>
+				<li><span class="field">link:</span> <a href="http://github.com/jmstacey/wp-stream-wrappers">http://github.com/jmstacey/wp-stream-wrappers</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">license:</span> <a href="http://wordpress.org/about/gpl/">http://wordpress.org/about/gpl/</a></li>
+			</ul>
+		
+			</div>
+</div>
+		
+	<a name="sec-classes"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Classes</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Classes</span>
+																	</div>
+		<div class="info-box-body">	
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; vertical-align: top">
+						<a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html">PHP_Stream_Wrapper_Interface</a>
+					</td>
+					<td>
+											Generic PHP stream wrapper interface
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; vertical-align: top">
+						<a href="../WP_Stream_Wrappers/WP_Stream_Wrapper_Interface.html">WP_Stream_Wrapper_Interface</a>
+					</td>
+					<td>
+											WordPress Stream Wrapper Extension
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+	
+	
+	
+	
+	<p class="notes" id="credit">
+		Documentation generated on Thu, 12 Aug 2010 15:19:18 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class WP_Local_Stream_Wrapper</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class WP_Local_Stream_Wrapper</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">WordPress local (local://) stream wrapper class</p>
+<p class="description"><p>A simple stream wrapper that implements access to files on the local  filesystem. Additionally, this wrapper provides a simple example of  how to build a custom wrapper on top of the  WP_Local_Stream_Wrapper_Base class.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jon Stacey &lt;<a href="mailto:jon@jonsview.com">jon@jonsview.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0</li>
+				<li><span class="field">see:</span> <a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html">WP_Local_Stream_Wrapper_Base</a></li>
+				<li><span class="field">link:</span> </li>
+				<li><span class="field">since:</span> 1.0.0</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_wp-local-stream-wrapper---wp-local-stream-wrapper-class.php.html">/wp-local-stream-wrapper/wp-local-stream-wrapper-class.php</a> (line <span class="field">32</span>)
+		</p>
+		
+				
+		<pre><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html">WP_Local_Stream_Wrapper_Base</a>
+   |
+   --WP_Local_Stream_Wrapper</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																				
+												<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#get_web_accessible_url" title="details" class="method-name">get_web_accessible_url</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#get_wrapper_path" title="details" class="method-name">get_wrapper_path</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html">WP_Local_Stream_Wrapper_Base</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#var$context">WP_Local_Stream_Wrapper_Base::$context</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#var$handle">WP_Local_Stream_Wrapper_Base::$handle</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#var$uri">WP_Local_Stream_Wrapper_Base::$uri</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodget_web_accessible_url" id="get_web_accessible_url"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">get_web_accessible_url</span> (line <span class="line-number">67</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::get_web_accessible_url()</p>
+<p class="description"><p>Returns a URL that can be accessed from a browser. For example,  the web URL of the internal URI &quot;local://example.txt&quot; might be  &quot;http://www.example.com/wp-content/example.txt&quot;.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the web accessible URL for the resource.</li>
+				<li><span class="field">see:</span> WP_Local_Stream_Wrapper_Interface::get_web_accessible_url()</li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_web_accessible_url
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget_wrapper_path" id="get_wrapper_path"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">get_wrapper_path</span> (line <span class="line-number">46</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Base::get_wrapper_path()</p>
+<p class="description"><p>Retrieves the path that this wrapper is responsible for. This allows  with minimal development effor the addition and customization of  wrappers specific to different local filesystem locations.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the path that this wrapper is responsible for.</li>
+				<li><span class="field">see:</span> <a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodget_wrapper_path">WP_Local_Stream_Wrapper_Base::get_wrapper_path()</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_wrapper_path
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodget_wrapper_path">WP_Local_Stream_Wrapper_Base::get_wrapper_path()</a></dt>
+						<dd>Retrieves the path that the wrapper is responsible for</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html">WP_Local_Stream_Wrapper_Base</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#method__construct">WP_Local_Stream_Wrapper_Base::__construct()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodchmod">WP_Local_Stream_Wrapper_Base::chmod()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methoddirname">WP_Local_Stream_Wrapper_Base::dirname()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methoddir_closedir">WP_Local_Stream_Wrapper_Base::dir_closedir()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methoddir_opendir">WP_Local_Stream_Wrapper_Base::dir_opendir()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methoddir_readdir">WP_Local_Stream_Wrapper_Base::dir_readdir()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methoddir_rewinddir">WP_Local_Stream_Wrapper_Base::dir_rewinddir()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodget_local_path">WP_Local_Stream_Wrapper_Base::get_local_path()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodget_uri">WP_Local_Stream_Wrapper_Base::get_uri()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodget_wrapper_path">WP_Local_Stream_Wrapper_Base::get_wrapper_path()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodmkdir">WP_Local_Stream_Wrapper_Base::mkdir()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodrealpath">WP_Local_Stream_Wrapper_Base::realpath()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodrename">WP_Local_Stream_Wrapper_Base::rename()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodrmdir">WP_Local_Stream_Wrapper_Base::rmdir()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodset_uri">WP_Local_Stream_Wrapper_Base::set_uri()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodstream_cast">WP_Local_Stream_Wrapper_Base::stream_cast()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodstream_close">WP_Local_Stream_Wrapper_Base::stream_close()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodstream_eof">WP_Local_Stream_Wrapper_Base::stream_eof()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodstream_flush">WP_Local_Stream_Wrapper_Base::stream_flush()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodstream_lock">WP_Local_Stream_Wrapper_Base::stream_lock()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodstream_open">WP_Local_Stream_Wrapper_Base::stream_open()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodstream_read">WP_Local_Stream_Wrapper_Base::stream_read()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodstream_seek">WP_Local_Stream_Wrapper_Base::stream_seek()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodstream_set_option">WP_Local_Stream_Wrapper_Base::stream_set_option()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodstream_stat">WP_Local_Stream_Wrapper_Base::stream_stat()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodstream_tell">WP_Local_Stream_Wrapper_Base::stream_tell()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodstream_write">WP_Local_Stream_Wrapper_Base::stream_write()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodunlink">WP_Local_Stream_Wrapper_Base::unlink()</a></span><br>
+													<span class="method-name"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodurl_stat">WP_Local_Stream_Wrapper_Base::url_stat()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Thu, 12 Aug 2010 15:19:18 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

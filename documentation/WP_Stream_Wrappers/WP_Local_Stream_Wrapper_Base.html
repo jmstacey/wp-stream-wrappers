@@ -1,0 +1,1497 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class WP_Local_Stream_Wrapper_Base</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class WP_Local_Stream_Wrapper_Base</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+                <p class="implements">
+            Implements interfaces:
+            <ul>
+                <li><a href="../WP_Stream_Wrappers/WP_Stream_Wrapper_Interface.html">WP_Stream_Wrapper_Interface</a></li>            </ul>
+        </p>
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">WordPress Local Stream Wrapper Base</p>
+<p class="description"><p>A simple implementation of WP_Stream_Wrapper_Interface and ready to use  skeleton for manipulating files on the local file system. New custom  tailored stream wrappers that deal with local files can be created with  just a few lines of code.</p><p>Look at the WP Local Stream Wrapper (WP_Local_Stream_Wrapper) for an  example of how to use this base class.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jon Stacey &lt;<a href="mailto:jon@jonsview.com">jon@jonsview.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0</li>
+				<li><span class="field">see:</span> <a href="../WP_Stream_Wrappers/WP_Stream_Wrapper_Interface.html">WP_Stream_Wrapper_Interface</a></li>
+				<li><span class="field">link:</span> <a href="http://www.php.net/manual/en/class.streamwrapper.php">http://www.php.net/manual/en/class.streamwrapper.php</a></li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">since:</span> 1.0.0</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_wp-local-stream-wrapper-base.php.html">/wp-local-stream-wrapper-base.php</a> (line <span class="field">46</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../WP_Stream_Wrappers/WP_Test_Stream_Wrapper.html">WP_Test_Stream_Wrapper</a></td>
+					<td>
+											WordPress test (test://) stream wrapper class
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper.html">WP_Local_Stream_Wrapper</a></td>
+					<td>
+											WordPress local (local://) stream wrapper class
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																								<div class="var-title">
+					<span class="var-type">resource</span>
+					<a href="#$context" title="details" class="var-name">$context</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">resource</span>
+					<a href="#$handle" title="details" class="var-name">$handle</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$uri" title="details" class="var-name">$uri</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																												
+												<div class="method-definition">
+											<span class="method-result">WP_Local_Stream_Wrapper_Base</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#chmod" title="details" class="method-name">chmod</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$mode</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#dirname" title="details" class="method-name">dirname</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#dir_closedir" title="details" class="method-name">dir_closedir</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#dir_opendir" title="details" class="method-name">dir_opendir</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>, <span class="var-type">unkown</span>&nbsp;<span class="var-name">$options</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#dir_readdir" title="details" class="method-name">dir_readdir</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#dir_rewinddir" title="details" class="method-name">dir_rewinddir</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#get_local_path" title="details" class="method-name">get_local_path</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#get_uri" title="details" class="method-name">get_uri</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#get_wrapper_path" title="details" class="method-name">get_wrapper_path</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#mkdir" title="details" class="method-name">mkdir</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$mode</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$options</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#realpath" title="details" class="method-name">realpath</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#rename" title="details" class="method-name">rename</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$from_uri</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$to_uri</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#rmdir" title="details" class="method-name">rmdir</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$options</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#set_uri" title="details" class="method-name">set_uri</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$uri</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#stream_cast" title="details" class="method-name">stream_cast</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$cast_as</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">none</span>
+										<a href="#stream_close" title="details" class="method-name">stream_close</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#stream_eof" title="details" class="method-name">stream_eof</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#stream_flush" title="details" class="method-name">stream_flush</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#stream_lock" title="details" class="method-name">stream_lock</a>
+											(<span class="var-type">mode</span>&nbsp;<span class="var-name">$operation</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#stream_open" title="details" class="method-name">stream_open</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$mode</span>, <span class="var-type">bitmask</span>&nbsp;<span class="var-name">$options</span>, <span class="var-type">reference</span>&nbsp;<span class="var-name">&$opened_path</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#stream_read" title="details" class="method-name">stream_read</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$count</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#stream_seek" title="details" class="method-name">stream_seek</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$whence</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#stream_set_option" title="details" class="method-name">stream_set_option</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$option</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$arg1</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$arg2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#stream_stat" title="details" class="method-name">stream_stat</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#stream_tell" title="details" class="method-name">stream_tell</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#stream_write" title="details" class="method-name">stream_write</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#unlink" title="details" class="method-name">unlink</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#url_stat" title="details" class="method-name">url_stat</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>, <span class="var-type">$flags</span>&nbsp;<span class="var-name">$flags</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$context" id="$context"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">resource</span>
+			<span class="var-name">$context</span>
+						(line <span class="line-number">57</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Stream context resource</p>
+<p class="description"><p>Note: This property must be public so PHP can populate it with  the actual context resource.</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="http://www.php.net/stream_context_get_options">stream_context_get_options()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$handle" id="$handle"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">resource</span>
+			<span class="var-name">$handle</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generic resource handle</p>
+<p class="description"><p>This handle is needed so that the currently instantiated object  knows and has access to the actual resource.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$uri" id="$uri"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$uri</span>
+						(line <span class="line-number">78</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Instance URI (stream)</p>
+<p class="description"><p>A stream is referenced as &quot;scheme://target&quot;.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">87</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Initializes the abstract implementation of WP_Local_Stream_Wrapper_Base</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper.html">WP_Local_Stream_Wrapper</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">WP_Local_Stream_Wrapper_Base</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#method__construct">PHP_Stream_Wrapper_Interface::__construct()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodchmod" id="chmod"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">chmod</span> (line <span class="line-number">153</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::chmod()</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../WP_Stream_Wrappers/WP_Stream_Wrapper_Interface.html#methodchmod">WP_Stream_Wrapper_Interface::chmod()</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			chmod
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$mode</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$mode</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/WP_Stream_Wrapper_Interface.html#methodchmod">WP_Stream_Wrapper_Interface::chmod()</a></dt>
+						<dd>Changes permissions of the resource</dd>
+					</dl>
+			
+	</div>
+<a name="methoddirname" id="dirname"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">dirname</span> (line <span class="line-number">325</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::dirname()</p>
+<p class="description"><p>This function is typically invoked through wp_dirname().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the new temporary filename, or false on failure.</li>
+				<li><span class="field">see:</span> <a href="../WP_Stream_Wrappers/WP_Stream_Wrapper_Interface.html#methoddirname">WP_Stream_Wrapper_Interface::dirname()</a></li>
+				<li><span class="field">see:</span> <a href="../WP_Stream_Wrappers/_wp-file-api-helpers.php.html#functionwp_dirname">wp_dirname()</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			dirname
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uri</span><span class="var-description">: the URI or path.</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/WP_Stream_Wrapper_Interface.html#methoddirname">WP_Stream_Wrapper_Interface::dirname()</a></dt>
+						<dd>Returns the directory name component of given path</dd>
+					</dl>
+			
+	</div>
+<a name="methoddir_closedir" id="dir_closedir"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">dir_closedir</span> (line <span class="line-number">180</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::dir_closedir()</p>
+<p class="description"><p>This function is called in response to PHP's closedir().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true on success or false on failure.</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/closedir">closedir()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::dir_closedir()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.dir-closedir.php">http://php.net/manual/en/streamwrapper.dir-closedir.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			dir_closedir
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methoddir_closedir">PHP_Stream_Wrapper_Interface::dir_closedir()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methoddir_opendir" id="dir_opendir"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">dir_opendir</span> (line <span class="line-number">209</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::dir_opendir()</p>
+<p class="description"><p>This function is called in response to PHP's opendir().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true on success or false on failure.</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/opendir">opendir()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::dir_opendir()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.dir-opendir.php">http://php.net/manual/en/streamwrapper.dir-opendir.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			dir_opendir
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>, <span class="var-type">unkown</span>&nbsp;<span class="var-name">$options</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">unkown</span>
+				<span class="var-name">$options</span><span class="var-description">: whether or not to enforce safe mode.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uri</span><span class="var-description">: @uri    the URI passed to opendir().</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methoddir_opendir">PHP_Stream_Wrapper_Interface::dir_opendir()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methoddir_readdir" id="dir_readdir"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">dir_readdir</span> (line <span class="line-number">229</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::dir_readdir()</p>
+<p class="description"><p>This function is called in response to PHP's readdir().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the next filename (string), or false (bool) if there is no next file.</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/readdir">readdir()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::dir_readdir()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.dir-readdir.php">http://php.net/manual/en/streamwrapper.dir-readdir.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			dir_readdir
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methoddir_readdir">PHP_Stream_Wrapper_Interface::dir_readdir()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methoddir_rewinddir" id="dir_rewinddir"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">dir_rewinddir</span> (line <span class="line-number">246</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::dir_rewinddir()</p>
+<p class="description"><p>This function is called in response to PHP's rewinddir().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true on success or false on failure.</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/rewinddir">rewinddir()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::dir_rewinddir()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.dir-rewinddir.php">http://php.net/manual/en/streamwrapper.dir-rewinddir.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			dir_rewinddir
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methoddir_rewinddir">PHP_Stream_Wrapper_Interface::dir_rewinddir()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodget_local_path" id="get_local_path"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">get_local_path</span> (line <span class="line-number">117</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the local filesystem path</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../WP_Stream_Wrappers/WP_Stream_Wrapper_Interface.html#methodchmod">WP_Stream_Wrapper_Interface::chmod()</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			get_local_path
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uri</span><span class="var-description">: optional URI to be supplied when doing a move or rename.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_uri" id="get_uri"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">get_uri</span> (line <span class="line-number">143</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the instance URI</p>
+<p class="description"><p>Base implementation of get_uri().</p></p>
+	<ul class="tags">
+				<li><span class="field">since:</span> 1.0.0</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			get_uri
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/WP_Stream_Wrapper_Interface.html#methodget_uri">WP_Stream_Wrapper_Interface::get_uri()</a></dt>
+						<dd>Returns the URI of the current file object</dd>
+					</dl>
+			
+	</div>
+<a name="methodget_wrapper_path" id="get_wrapper_path"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">get_wrapper_path</span> (line <span class="line-number">106</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves the path that the wrapper is responsible for</p>
+<p class="description"><p>All wrappers that extend WP_Local_Stream_Wrapper_Base must implement  this method.</p><p>This allows, with minimal development effort, the addition and  customization of wrappers specific to different local filesystem  paths.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the path that this wrapper is responsible for.</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">since:</span> 1.0.0</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_wrapper_path
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../WP_Stream_Wrappers/WP_Test_Stream_Wrapper.html#methodget_wrapper_path">WP_Test_Stream_Wrapper::get_wrapper_path()</a>
+								: Implements WP_Stream_Wrapper_Base::get_wrapper_path()
+							</li>
+					<li>
+				<a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper.html#methodget_wrapper_path">WP_Local_Stream_Wrapper::get_wrapper_path()</a>
+								: Implements WP_Stream_Wrapper_Base::get_wrapper_path()
+							</li>
+				</ul>
+	</div>
+<a name="methodmkdir" id="mkdir"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">mkdir</span> (line <span class="line-number">277</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::mkdir()</p>
+<p class="description"><p>This function is called in response to PHP's mkdir().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true on success or false on failure.</li>
+				<li><span class="field">see:</span> <a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodmkdir">WP_Local_Stream_Wrapper_Base::mkdir()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::dir_mkdir()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.mkdir.php">http://php.net/manual/en/streamwrapper.mkdir.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			mkdir
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$mode</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$options</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uri</span><span class="var-description">: URI of the directory which should be created.</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$mode</span><span class="var-description">: the value passed to PHP's mkdir().</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$options</span><span class="var-description">: a bitwise mask of values, such as STREAM_MKDIR_RECURSIVE.</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodmkdir">PHP_Stream_Wrapper_Interface::mkdir()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodrealpath" id="realpath"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">realpath</span> (line <span class="line-number">163</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implementation of WP_Stream_Wrapper_Interface::realpath()</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../WP_Stream_Wrappers/WP_Stream_Wrapper_Interface.html#methodrealpath">WP_Stream_Wrapper_Interface::realpath()</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			realpath
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/WP_Stream_Wrapper_Interface.html#methodrealpath">WP_Stream_Wrapper_Interface::realpath()</a></dt>
+						<dd>Returns the canonical [absolute] path of the resource</dd>
+					</dl>
+			
+	</div>
+<a name="methodrename" id="rename"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">rename</span> (line <span class="line-number">306</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::rename()</p>
+<p class="description"><p>This function is called in response to PHP's rename().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true on success or false on failure.</li>
+				<li><span class="field">see:</span> <a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodrename">WP_Local_Stream_Wrapper_Base::rename()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::rename()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.rename.php">http://php.net/manual/en/streamwrapper.rename.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			rename
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$from_uri</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$to_uri</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$from_uri</span><span class="var-description">: the URI to the current file.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$to_uri</span><span class="var-description">: the URI which $from_uri should be renamed to.</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodrename">PHP_Stream_Wrapper_Interface::rename()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodrmdir" id="rmdir"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">rmdir</span> (line <span class="line-number">355</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::rmdir()</p>
+<p class="description"><p>This function is called in response to PHP's rmdir().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true on success or false on failure.</li>
+				<li><span class="field">see:</span> <a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodrmdir">WP_Local_Stream_Wrapper_Base::rmdir()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::rmdir()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.rmdir.php">http://php.net/manual/en/streamwrapper.rmdir.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			rmdir
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$options</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uri</span><span class="var-description">: the directory which should be removed.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$options</span><span class="var-description">: a bitwise mask of valus, such as STREAM_REPORT_ERRORS.</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodrmdir">PHP_Stream_Wrapper_Interface::rmdir()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodset_uri" id="set_uri"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">set_uri</span> (line <span class="line-number">132</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the URI instance variable</p>
+<p class="description"><p>Base implementation of set_uri().</p></p>
+	<ul class="tags">
+				<li><span class="field">since:</span> 1.0.0</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set_uri
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$uri</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uri</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/WP_Stream_Wrapper_Interface.html#methodset_uri">WP_Stream_Wrapper_Interface::set_uri()</a></dt>
+						<dd>Sets the URI of the current file object</dd>
+					</dl>
+			
+	</div>
+<a name="methodstream_cast" id="stream_cast"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">stream_cast</span> (line <span class="line-number">383</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::stream_cast()</p>
+<p class="description"><p>WARNING: The WP Local Stream Wrapper Base class does not  implement this method. It is here simply as a placeholder.</p><p>This function is called in response to PHP's stream_select().</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::stream_cast()</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/stream_select">stream_select()</a></li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.stream-cast.php">http://php.net/manual/en/streamwrapper.stream-cast.php</a></li>
+				<li><span class="field">throws:</span> E_USER_NOTICE</li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			stream_cast
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$cast_as</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$cast_as</span><span class="var-description">: STREAM_CAST_FOR_SELECT or STREAM_CAST_AS_STREAM</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodstream_cast">PHP_Stream_Wrapper_Interface::stream_cast()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodstream_close" id="stream_close"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">stream_close</span> (line <span class="line-number">402</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::stream_close()</p>
+<p class="description"><p>This function is called in response to PHP's fclose().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> No value is returned.</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/fclose">fclose()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::stream_close()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.stream-close.php">http://php.net/manual/en/streamwrapper.stream-close.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">none</span>
+		<span class="method-name">
+			stream_close
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodstream_close">PHP_Stream_Wrapper_Interface::stream_close()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodstream_eof" id="stream_eof"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">stream_eof</span> (line <span class="line-number">420</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::stream_eof()</p>
+<p class="description"><p>This function is called in response to PHP's feof().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true if the read/write position is at the end of the stream and    no more data is available to be read, otherwise false.</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/feof">feof()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::stream_eof()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.stream-eof.php">http://php.net/manual/en/streamwrapper.stream-eof.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			stream_eof
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodstream_eof">PHP_Stream_Wrapper_Interface::stream_eof()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodstream_flush" id="stream_flush"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">stream_flush</span> (line <span class="line-number">438</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::stream_flush()</p>
+<p class="description"><p>This function is called in response to PHP's fflush().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true if the cached data was successfully stored (or there was no    data to store), or false if the data could not be stored.</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/fflush">fflush()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::stream_flush()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.stream-flush.php">http://php.net/manual/en/streamwrapper.stream-flush.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			stream_flush
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodstream_flush">PHP_Stream_Wrapper_Interface::stream_flush()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodstream_lock" id="stream_lock"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">stream_lock</span> (line <span class="line-number">462</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::stream_lock()</p>
+<p class="description"><p>This function is called in response to PHP's flock().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true on success or false on failure.</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/flock">flock()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::stream_lock()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.stream-lock.php">http://php.net/manual/en/streamwrapper.stream-lock.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			stream_lock
+		</span>
+					(<span class="var-type">mode</span>&nbsp;<span class="var-name">$operation</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mode</span>
+				<span class="var-name">$operation</span><span class="var-description">: one of the following: <ul><li>LOCK_SH to acquire a shared lock (reader)</li><li>LOCK_EX to acquire an exclusive lock (writer)</li><li>LOCK_UN to release a lock (shared or exclusive)</li><li>LOCK_NB if you don't want flock() to block while locking</li></ul></span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodstream_lock">PHP_Stream_Wrapper_Interface::stream_lock()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodstream_open" id="stream_open"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">stream_open</span> (line <span class="line-number">489</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::stream_open()</p>
+<p class="description"><p>Adds support for fopen(), file_get_contents(), file_put_contents(),  etc.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true on success or false on failure.</li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::stream_open()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.stream-open.php">http://php.net/manual/en/streamwrapper.stream-open.php</a></li>
+				<li><span class="field">todo:</span> this needs to be reworked to be WP specific    a bitmask of STREAM_USER_PATH AND STREAM_REPORT_ERRORS.</li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			stream_open
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$mode</span>, <span class="var-type">bitmask</span>&nbsp;<span class="var-name">$options</span>, <span class="var-type">reference</span>&nbsp;<span class="var-name">&$opened_path</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uri</span><span class="var-description">: the path to the file to open.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$mode</span><span class="var-description">: the file mode (e.g. &quot;r&quot; or &quot;wb&quot; etc.).</span>			</li>
+					<li>
+				<span class="var-type">bitmask</span>
+				<span class="var-name">$options</span>			</li>
+					<li>
+				<span class="var-type">reference</span>
+				<span class="var-name">&$opened_path</span><span class="var-description">: path actually opened.</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodstream_open">PHP_Stream_Wrapper_Interface::stream_open()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodstream_read" id="stream_read"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">stream_read</span> (line <span class="line-number">524</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::stream_read()</p>
+<p class="description"><p>This function is called in response to PHP's fread() and fgets().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If there are less than $count bytes available, return as many as are    available. If no more data is available, return either false or an    empty string.</li>
+				<li><span class="field">see:</span> fread() and fgets()</li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::stream_read()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.stream-read.php">http://php.net/manual/en/streamwrapper.stream-read.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			stream_read
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$count</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$count</span><span class="var-description">: how many bytes of data from the current position should be returned.</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodstream_read">PHP_Stream_Wrapper_Interface::stream_read()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodstream_seek" id="stream_seek"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">stream_seek</span> (line <span class="line-number">549</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::stream_seek()</p>
+<p class="description"><p>This function is called in response to PHP's fseek().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true if the position was updated, false otherwise.</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/fseek">fseek()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::stream_seek()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.stream-seek.php">http://php.net/manual/en/streamwrapper.stream-seek.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			stream_seek
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$whence</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$offset</span><span class="var-description">: the stream offset to seek to.</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$whence</span><span class="var-description">: = SEEK_SET    possible valuse include: <ul><li>SEEK_SET to set position equal to $offset bytes</li><li>SEEK_CUR to set position to current location plus $offset</li><li>SEEK_END to set position to end-of-file plus $offset</li></ul></span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodstream_seek">PHP_Stream_Wrapper_Interface::stream_seek()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodstream_set_option" id="stream_set_option"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">stream_set_option</span> (line <span class="line-number">574</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::stream_set_option()</p>
+<p class="description"><p>WARNING: The WP Local Stream Wrapper Base class does not  implement this method. It is here simply as a placeholder.</p><p>This function is called to set options on the stream.</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::stream_set_option()</li>
+				<li><span class="field">see:</span> </li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.stream-set-option.php">http://php.net/manual/en/streamwrapper.stream-set-option.php</a></li>
+				<li><span class="field">throws:</span> E_USER_NOTICE</li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			stream_set_option
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$option</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$arg1</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$arg2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$option</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$arg1</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$arg2</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodstream_set_option">PHP_Stream_Wrapper_Interface::stream_set_option()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodstream_stat" id="stream_stat"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">stream_stat</span> (line <span class="line-number">594</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::stream_stat()</p>
+<p class="description"><p>This function is called in response to PHP's fstat().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> see PHP's stat() documentation</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/stat">stat()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::stream_stat()</li>
+				<li><span class="field">link:</span> <a href="http://www.php.net/manual/en/function.stat.php">http://www.php.net/manual/en/function.stat.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			stream_stat
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodstream_stat">PHP_Stream_Wrapper_Interface::stream_stat()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodstream_tell" id="stream_tell"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">stream_tell</span> (line <span class="line-number">611</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::stream_tell()</p>
+<p class="description"><p>This function is called in response to PHP's ftell().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the current position of the stream.</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/ftell">ftell()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::stream_tell()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.stream-tell.php">http://php.net/manual/en/streamwrapper.stream-tell.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			stream_tell
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodstream_tell">PHP_Stream_Wrapper_Interface::stream_tell()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodstream_write" id="stream_write"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">stream_write</span> (line <span class="line-number">632</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::stream_write()</p>
+<p class="description"><p>This function is called in response to PHP's fwrite().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the number of bytes that were successfully stored, or 0    if none could be stored.</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/fwrite">fwrite()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::stream_write()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.stream-write.php">http://php.net/manual/en/streamwrapper.stream-write.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			stream_write
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: the data to store in the underlying stream.</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodstream_write">PHP_Stream_Wrapper_Interface::stream_write()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodunlink" id="unlink"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">unlink</span> (line <span class="line-number">652</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::unlink()</p>
+<p class="description"><p>This function is called in response to PHP's unlink().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true on success or false on failure.</li>
+				<li><span class="field">see:</span> <a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html#methodunlink">WP_Local_Stream_Wrapper_Base::unlink()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::unlink()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.unlink.php">http://php.net/manual/en/streamwrapper.unlink.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			unlink
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uri</span><span class="var-description">: the file which should be deleted.</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodunlink">PHP_Stream_Wrapper_Interface::unlink()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodurl_stat" id="url_stat"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">url_stat</span> (line <span class="line-number">678</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Implements WP_Stream_Wrapper_Interface::url_stat()</p>
+<p class="description"><p>This function is called in response to all PHP stat() related  functions. See streamWrapper::url_stat() documentation on the PHP  Web site for more information.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> as many elements as stat() does.</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/stat">stat()</a></li>
+				<li><span class="field">see:</span> WP_Stream_Wrapper_Interface::url_stat()</li>
+				<li><span class="field">link:</span> <a href="http://php.net/manual/en/streamwrapper.url-stat.php">http://php.net/manual/en/streamwrapper.url-stat.php</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			url_stat
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>, <span class="var-type">$flags</span>&nbsp;<span class="var-name">$flags</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uri</span><span class="var-description">: the uri to get information about.</span>			</li>
+					<li>
+				<span class="var-type">$flags</span>
+				<span class="var-name">$flags</span><span class="var-description">: additional flags set by the streams API.    See streamWrapper:url_stat().</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html#methodurl_stat">PHP_Stream_Wrapper_Interface::url_stat()</a></dt>
+					</dl>
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Thu, 12 Aug 2010 15:19:18 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class WP_Local_Stream_Wrapper_Base_Test</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class WP_Local_Stream_Wrapper_Base_Test</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">WordPress Local Stream Wrapper Base Test cases</p>
+<p class="description"><p>This class provides tests for the WP Local Stream Wrapper Base class.  The test stream wrapper is used to perform tests which builds on this  base class.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jon Stacey &lt;<a href="mailto:jon@jonsview.com">jon@jonsview.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0</li>
+				<li><span class="field">see:</span> <a href="../WP_Stream_Wrappers/WP_Local_Stream_Wrapper_Base.html">WP_Local_Stream_Wrapper_Base</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_tests---wp-local-stream-wrapper-base-test.php.html">/tests/wp-local-stream-wrapper-base-test.php</a> (line <span class="field">37</span>)
+		</p>
+		
+				
+		<pre>WPTestCase
+   |
+   --WP_Local_Stream_Wrapper_Base_Test</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																												
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setUp" title="details" class="method-name">setUp</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#tearDown" title="details" class="method-name">tearDown</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#test_basic_file_manipulations" title="details" class="method-name">test_basic_file_manipulations</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#test_class_attributes" title="details" class="method-name">test_class_attributes</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#test_flock" title="details" class="method-name">test_flock</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#test_fseek" title="details" class="method-name">test_fseek</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#test_ftell" title="details" class="method-name">test_ftell</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#test_get_web_accessible_url" title="details" class="method-name">test_get_web_accessible_url</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#test_get_wrapper_path" title="details" class="method-name">test_get_wrapper_path</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#test_local_stream_wrapper_dependency_check" title="details" class="method-name">test_local_stream_wrapper_dependency_check</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#test_mkdir_and_rmdir" title="details" class="method-name">test_mkdir_and_rmdir</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#test_opendir_family" title="details" class="method-name">test_opendir_family</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#test_stream_select" title="details" class="method-name">test_stream_select</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#test_stream_set_option" title="details" class="method-name">test_stream_set_option</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#test_uri_attribute" title="details" class="method-name">test_uri_attribute</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodsetUp" id="setUp"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setUp</span> (line <span class="line-number">80</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Setup this test case</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setUp
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtearDown" id="tearDown"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">tearDown</span> (line <span class="line-number">452</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Teardown this test case</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			tearDown
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtest_basic_file_manipulations" id="test_basic_file_manipulations"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">test_basic_file_manipulations</span> (line <span class="line-number">150</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tests creating files, writing to files, and reading from files,  and deleting them again.</p>
+<p class="description"><p>Tests WP_Local_Stream_Wrapper_Base::fopen() and family</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			test_basic_file_manipulations
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtest_class_attributes" id="test_class_attributes"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">test_class_attributes</span> (line <span class="line-number">71</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Assert that the registry has the core attributes needed</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			test_class_attributes
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtest_flock" id="test_flock"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">test_flock</span> (line <span class="line-number">295</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tests PHP flock() calls</p>
+<p class="description"><p>Tests WP_Local_Stream_Wrapper_Base::stream_lock()</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			test_flock
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtest_fseek" id="test_fseek"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">test_fseek</span> (line <span class="line-number">263</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tests PHP fseek() calls</p>
+<p class="description"><p>Tests WP_Local_Stream_Wrapper_Base::stream_seek()</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			test_fseek
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtest_ftell" id="test_ftell"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">test_ftell</span> (line <span class="line-number">280</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tests PHP ftell() calls</p>
+<p class="description"><p>Tests WP_Local_Stream_Wrapper_Base::stream_tell()</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			test_ftell
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtest_get_web_accessible_url" id="test_get_web_accessible_url"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">test_get_web_accessible_url</span> (line <span class="line-number">363</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tests getting the web accessible URL of a file.</p>
+<p class="description"><p>Tests generic call routing of  $wrapper_instance-&gt;get_web_accessible_uril() to the appropriate wrapper  implementation. This tests calls to both the test:// and local://  wrapper implementations. These functions are part of the wrapper  interface and not directly implemented in the local stream wrapper  base class.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			test_get_web_accessible_url
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtest_get_wrapper_path" id="test_get_wrapper_path"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">test_get_wrapper_path</span> (line <span class="line-number">406</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tests getting the wrapper path</p>
+<p class="description"><p>Tests generic call routing of  $wrapper_instance-&gt;get_web_accessible_uril() to the appropriate wrapper  implementation. This tests calls to both the test:// and local://  wrapper implementations. These functions are part of the wrapper  interface and not directly implemented in the local stream wrapper  base class.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			test_get_wrapper_path
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtest_local_stream_wrapper_dependency_check" id="test_local_stream_wrapper_dependency_check"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">test_local_stream_wrapper_dependency_check</span> (line <span class="line-number">425</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Test wrapper checking dependencies</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Figure out how to test failure with WP Automated Tests</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			test_local_stream_wrapper_dependency_check
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtest_mkdir_and_rmdir" id="test_mkdir_and_rmdir"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">test_mkdir_and_rmdir</span> (line <span class="line-number">108</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tests creating directories</p>
+<p class="description"><p>Tests WP_Local_Stream_Wrapper_Base::mkdir()</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			test_mkdir_and_rmdir
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtest_opendir_family" id="test_opendir_family"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">test_opendir_family</span> (line <span class="line-number">213</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tests PHP opendir(), readdir(), and rewinddir() calls</p>
+<p class="description"><p>Tests WP_Local_Stream_Wrapper_Base::dir_opendir()  Tests WP_Local_Stream_Wrapper_Base::dir_closedir()  Tests WP_Local_Stream_Wrapper_Base::dir_readdir()</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			test_opendir_family
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtest_stream_select" id="test_stream_select"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">test_stream_select</span> (line <span class="line-number">323</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tests PHP stream_select() calls</p>
+<p class="description"><p>Tests WP_Local_Stream_Wrapper_Base::stream_cast()</p><p>stream_cast() is not implemented so we expect an exception in this test.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			test_stream_select
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtest_stream_set_option" id="test_stream_set_option"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">test_stream_set_option</span> (line <span class="line-number">340</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tests PHP stream_set_option() calls</p>
+<p class="description"><p>Tests WP_Local_Stream_Wrapper_Base::stream_set_option()</p><p>Note: stream_set_option() is not implemented so we expect an exception in this test.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			test_stream_set_option
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtest_uri_attribute" id="test_uri_attribute"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">test_uri_attribute</span> (line <span class="line-number">436</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tests setting and getting URI</p>
+<p class="description"><p>Tests the $uri attribute of</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			test_uri_attribute
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Thu, 12 Aug 2010 15:19:17 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

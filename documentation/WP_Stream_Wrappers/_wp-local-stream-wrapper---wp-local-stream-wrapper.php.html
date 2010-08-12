@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs for page wp-local-stream-wrapper.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="file-name">/wp-local-stream-wrapper/wp-local-stream-wrapper.php</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+											<a href="#sec-constants">Constants</a>
+			|									<a href="#sec-functions">Functions</a>
+			</div>
+	<div class="info-box-body">	
+		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">WordPress Local Stream Wrapper</p>
+<p class="description"><p>This file contains the local stream wrapper which implements the  &quot;local&quot; scheme. This is a simple and complete stream wrapper  for testing, reference, and extension purposes. Other stream wrappers  that manipulate files on the local filesystem can quickly extend this class  to suit more specific needs. The WP Test [test://] stream wrapper is an  excellent example of this use case.</p><p>Developers: If you are using this wrapper as a tempalte for a new wrapper  and intend to extend WP_Local_Stream_Wrapper_Base you are responsible for  dependency checks. That is, if a user loads your wrapper before having  installed and activated the WP Stream Wrappers plugin, show an  error message to the admin user and avoid causing a PHP error by trying to  extend a non-existent class. See the implementation in this file for one  way to handle this problem in a consistent manner.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jon Stacey &lt;<a href="mailto:jon@jonsview.com">jon@jonsview.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0</li>
+				<li><span class="field">copyright:</span> 2010 Jon Stacey</li>
+				<li><span class="field">link:</span> <a href="http://github.com/jmstacey/wp-stream-wrappers">http://github.com/jmstacey/wp-stream-wrappers</a></li>
+				<li><span class="field">since:</span> 1.0.0</li>
+				<li><span class="field">license:</span> <a href="http://wordpress.org/about/gpl/">http://wordpress.org/about/gpl/</a></li>
+			</ul>
+		
+			</div>
+</div>
+		
+
+	
+	<a name="sec-constants"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+									<span class="disabled">Constants</span>
+			|										<a href="#sec-functions">Functions</a>
+					</div>
+		<div class="info-box-body">	
+			<a name="defineWP_LOCAL_STREAM_WRAPPER_VERSION"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">WP_LOCAL_STREAM_WRAPPER_VERSION</span> = '1.0.0'
+			(line <span class="line-number">32</span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Version of WP Local Stream Wrapper</p>
+	
+		
+</div>
+		</div>
+	</div>
+	
+	
+	<a name="sec-functions"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Functions</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+													<a href="#sec-constants">Constants</a>
+				|									<span class="disabled">Functions</span>
+		</div>
+		<div class="info-box-body">	
+			<a name="functionwp_local_stream_wrapper_dependency_check" id="functionwp_local_stream_wrapper_dependency_check"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">wp_local_stream_wrapper_dependency_check</span> (line <span class="line-number">75</span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks plugin dependencies</p>
+<p class="description"><p>Note: This particular wrapper does not truly require this because  it is part of the core plugin. However, it is included here to serve  as an example to other developers creating separate wrapper plugins.</p></p>
+	<ul class="tags">
+				<li><span class="field">since:</span> 1.0.0</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			wp_local_stream_wrapper_dependency_check
+		</span>
+				()
+			</div>
+
+		
+	
+</div>
+<a name="functionwp_local_stream_wrapper_register" id="functionwp_local_stream_wrapper_register"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">wp_local_stream_wrapper_register</span> (line <span class="line-number">47</span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Registers the WP Local Stream Wrapper</p>
+<p class="description"><p>Information about this stream wrapper:</p><p>Scheme     : local  Class      : WP_Local_Stream_Wrapper  Description: WP Local Stream Wrapper provides a simple example of               leveraging the WP_Local_Stream_Wrapper_Base class to create               simple wrappers capable of manipulating local files.</p></p>
+	<ul class="tags">
+				<li><span class="field">since:</span> 1.0.0</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			wp_local_stream_wrapper_register
+		</span>
+				()
+			</div>
+
+		
+	
+</div>
+<a name="functionwp_local_stream_wrapper_show_error" id="functionwp_local_stream_wrapper_show_error"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">wp_local_stream_wrapper_show_error</span> (line <span class="line-number">94</span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Shows dependency error message to admin users</p>
+<p class="description"><p>A message is displayed to admin users about the requirement of  the WP Stram Wrappers Plugin.</p></p>
+	<ul class="tags">
+				<li><span class="field">since:</span> 1.0.0</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			wp_local_stream_wrapper_show_error
+		</span>
+				()
+			</div>
+
+		
+	
+</div>
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Thu, 12 Aug 2010 15:19:18 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>
