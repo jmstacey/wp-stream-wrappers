@@ -5,7 +5,7 @@
  * WP Stream wrappers provides a foundation for next generation WordPress
  * file handling capabilities.
  *
- * @package     Stream Wrappers
+ * @package     WP_Stream_Wrappers
  * @author      Jon Stacey <jon@jonsview.com>
  * @copyright   2010 Jon Stacey
  * @license     http://wordpress.org/about/gpl/
@@ -23,6 +23,9 @@ Author: Jon Stacey
 Author URI: http://jonsview.com
 */
 
+/**
+ * Version of WP Stream Wrappers Plugin
+ */
 define('WP_STREAM_WRAPPERS_VERSION', '1.0.0');
 
 /**
@@ -72,7 +75,6 @@ require_once('wp-local-stream-wrapper/wp-local-stream-wrapper.php');
  *
  * Prepares the WordPress Stream Wrapper registry and interfaces for use.
  *
- * @package Stream Wrappers
  * @since   1.0.0
  */
 function wp_stream_wrappers_init() {

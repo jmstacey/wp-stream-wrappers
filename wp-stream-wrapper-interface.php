@@ -20,7 +20,7 @@
  * @link http://bugs.php.net/bug.php?id=47070
  * @link http://us3.php.net/manual/en/function.fopen.php
  *
- * @package     Stream Wrappers
+ * @package     WP_Stream_Wrappers
  * @author      Jon Stacey <jon@jonsview.com>
  * @copyright   2010 Jon Stacey
  * @license     http://wordpress.org/about/gpl/
@@ -39,7 +39,7 @@
  * Note: This interface should not be directly implemented. Instead, extend
  * WP_Stream_Wrapper_Interface.
  *
- * @package    Stream Wrappers
+ * @package    WP_Stream_Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
  * @link       http://www.php.net/manual/en/class.streamwrapper.php
@@ -81,7 +81,7 @@ interface PHP_Stream_Wrapper_Interface {
  * Extends the PHP_Stream_Wrapper_Interface with methods expected by
  * WordPress stream wrapper classes
  *
- * @package    Stream Wrappers
+ * @package    WP_Stream_Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
  * @link

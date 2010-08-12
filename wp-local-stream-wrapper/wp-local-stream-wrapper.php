@@ -17,7 +17,7 @@
  * extend a non-existent class. See the implementation in this file for one
  * way to handle this problem in a consistent manner.
  *
- * @package     Stream Wrappers
+ * @package     WP_Stream_Wrappers
  * @author      Jon Stacey <jon@jonsview.com>
  * @copyright   2010 Jon Stacey
  * @license     http://wordpress.org/about/gpl/
@@ -26,6 +26,9 @@
  * @since       1.0.0
  */
 
+/**
+ * Version of WP Local Stream Wrapper
+ */
 define('WP_LOCAL_STREAM_WRAPPER_VERSION', '1.0.0');
 
 /**
@@ -39,7 +42,6 @@ define('WP_LOCAL_STREAM_WRAPPER_VERSION', '1.0.0');
  *              leveraging the WP_Local_Stream_Wrapper_Base class to create
  *              simple wrappers capable of manipulating local files.
  *
- * @package Stream Wrappers
  * @since   1.0.0
  */
 function wp_local_stream_wrapper_register() {
@@ -68,7 +70,6 @@ function wp_local_stream_wrapper_register() {
  * it is part of the core plugin. However, it is included here to serve
  * as an example to other developers creating separate wrapper plugins.
  *
- * @package Stream Wrappers
  * @since   1.0.0
  */
 function wp_local_stream_wrapper_dependency_check() {
@@ -88,7 +89,6 @@ function wp_local_stream_wrapper_dependency_check() {
  * A message is displayed to admin users about the requirement of
  * the WP Stram Wrappers Plugin.
  *
- * @package Stream Wrappers
  * @since   1.0.0
  */
 function wp_local_stream_wrapper_show_error() {

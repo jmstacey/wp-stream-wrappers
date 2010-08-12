@@ -4,7 +4,7 @@
  *
  * This class provies methods that are used by WordPress Wrappers.
  *
- * @package     Stream Wrappers
+ * @package     WP_Stream_Wrappers
  * @author      Jon Stacey <jon@jonsview.com>
  * @copyright   2010 Jon Stacey
  * @license     http://wordpress.org/about/gpl/
@@ -20,7 +20,7 @@
  * A stream is referenced as scheme://target. The methods contained within
  * this class are static and can be used without instantiation.
  *
- * @package    Stream Wrappers
+ * @package    WP_Stream_Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
  * @link       http://www.php.net/manual/en/intro.stream.php

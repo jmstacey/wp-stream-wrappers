@@ -5,7 +5,7 @@
  * This is a simple and complete stream wrapper implemenation for use and
  * reference purposes.
  *
- * @package     Stream Wrappers
+ * @package     WP_Stream_Wrappers
  * @author      Jon Stacey <jon@jonsview.com>
  * @copyright   2010 Jon Stacey
  * @license     http://wordpress.org/about/gpl/
@@ -22,7 +22,7 @@
  * how to build a custom wrapper on top of the
  * WP_Local_Stream_Wrapper_Base class.
  *
- * @package    Stream Wrappers
+ * @package    WP_Stream_Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
  * @link

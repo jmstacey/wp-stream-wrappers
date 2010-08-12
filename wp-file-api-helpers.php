@@ -5,7 +5,7 @@
  * These helper functions are declared in the global namespace so that
  * they can be called in a similar manner to PHP's own functions.
  *
- * @package     Stream Wrappers
+ * @package     WP_Stream_Wrappers
  * @author      Jon Stacey <jon@jonsview.com>
  * @copyright   2010 Jon Stacey
  * @license     http://wordpress.org/about/gpl/

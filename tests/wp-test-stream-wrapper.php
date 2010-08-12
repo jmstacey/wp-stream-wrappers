@@ -4,7 +4,7 @@
  *
  * This wrapper is used only for testing purposes.
  *
- * @package     Stream Wrappers
+ * @package     WP_Stream_Wrappers
  * @author      Jon Stacey <jon@jonsview.com>
  * @copyright   2010 Jon Stacey
  * @license     http://wordpress.org/about/gpl/
@@ -18,7 +18,6 @@
  *
  * Helper function that prepares the WordPress Test Stream Wrapper for use.
  *
- * @package Stream Wrappers
  * @since   1.0.0
  */
 function wp_test_stream_wrapper_register() {
@@ -40,7 +39,7 @@ function wp_test_stream_wrapper_register() {
  *
  * A simple stream wrapper used to test the stream wrappers plugin suite.
  *
- * @package    Stream Wrappers
+ * @package    WP_Stream_Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
  * @link

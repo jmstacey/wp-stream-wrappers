@@ -2,7 +2,7 @@
 /**
  * Tests WordPress Local Stream Wrapper Base
  *
- * @package     Stream Wrappers
+ * @package     WP_Stream_Wrappers
  * @author      Jon Stacey <jon@jonsview.com>
  * @copyright   2010 Jon Stacey
  * @license     http://wordpress.org/about/gpl/
@@ -28,7 +28,7 @@ require_once WP_PLUGIN_DIR.'/wp-stream-wrappers/tests/wp-test-stream-wrapper.php
  * The test stream wrapper is used to perform tests which builds on this
  * base class.
  *
- * @package    Stream Wrappers
+ * @package    WP_Stream_Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
  * @see        WP_Local_Stream_Wrapper_Base

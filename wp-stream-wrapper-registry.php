@@ -19,7 +19,7 @@
  * will not be an issue because PHP's wrappers do not contain attributes
  * specific to WordPress.
  *
- * @package     Stream Wrappers
+ * @package     WP_Stream_Wrappers
  * @author      Jon Stacey <jon@jonsview.com>
  * @copyright   2010 Jon Stacey
  * @license     http://wordpress.org/about/gpl/
@@ -34,7 +34,6 @@
  * Builds the stream wrapper registry. This is a helper function that simply
  * makes sure that the registry gets built before use.
  *
- * @package Stream Wrappers
  * @since   1.0.0
  */
 function wp_stream_wrapper_registry_init() {
@@ -47,7 +46,7 @@ function wp_stream_wrapper_registry_init() {
  * Stores information about registered WordPress stream wrappers in
  * a single location for easy access and reference.
  *
- * @package    Stream Wrappers
+ * @package    WP_Stream_Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
  * @link

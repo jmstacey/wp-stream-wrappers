@@ -16,7 +16,7 @@
  * on how to handle this problem. Basically, put your implementation class in
  * a separate file and only include it upon registration.
  *
- * @package     Stream Wrappers
+ * @package     WP_Stream_Wrappers
  * @author      Jon Stacey <jon@jonsview.com>
  * @copyright   2010 Jon Stacey
  * @license     http://wordpress.org/about/gpl/
@@ -36,7 +36,7 @@
  * Look at the WP Local Stream Wrapper (WP_Local_Stream_Wrapper) for an
  * example of how to use this base class.
  *
- * @package    Stream Wrappers
+ * @package    WP_Stream_Wrappers
  * @author     Jon Stacey <jon@jonsview.com>
  * @version    1.0.0
  * @link       http://www.php.net/manual/en/class.streamwrapper.php
