@@ -2,7 +2,7 @@
 /**
  * WordPress File API helper functions
  *
- * Thesehelper functions are declared in the global namespace so that
+ * These helper functions are declared in the global namespace so that
  * they can be called in a similar manner to PHP's own functions.
  *
  * @package     Stream Wrappers
