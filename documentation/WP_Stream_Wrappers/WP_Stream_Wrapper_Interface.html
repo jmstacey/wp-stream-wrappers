@@ -27,11 +27,10 @@
 				<li><span class="field">author:</span> Jon Stacey &lt;<a href="mailto:jon@jonsview.com">jon@jonsview.com</a>&gt;</li>
 				<li><span class="field">version:</span> 1.0.0</li>
 				<li><span class="field">see:</span> <a href="../WP_Stream_Wrappers/PHP_Stream_Wrapper_Interface.html">PHP_Stream_Wrapper_Interface</a></li>
-				<li><span class="field">link:</span> </li>
 				<li><span class="field">since:</span> 1.0.0</li>
 			</ul>
 		<p class="notes">
-			Located in <a class="field" href="_wp-stream-wrapper-interface.php.html">/wp-stream-wrapper-interface.php</a> (line <span class="field">91</span>)
+			Located in <a class="field" href="_wp-stream-wrapper-interface.php.html">/wp-stream-wrapper-interface.php</a> (line <span class="field">90</span>)
 		</p>
 		
 				
@@ -105,7 +104,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">chmod</span> (line <span class="line-number">138</span>)
+		<span class="method-title">chmod</span> (line <span class="line-number">135</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -113,7 +112,6 @@
 <p class="description"><p>This functionality does not exist in the official stream wraper  interface, and so is implemented just for WordPress.</p></p>
 	<ul class="tags">
 				<li><span class="field">return:</span> true on success or false on failure.</li>
-				<li><span class="field">see:</span> </li>
 				<li><span class="field">link:</span> <a href="http://php.net/manual/en/function.chmod.php">http://php.net/manual/en/function.chmod.php</a></li>
 				<li><span class="field">since:</span> 1.0.0</li>
 				<li><span class="field">access:</span> public</li>
@@ -139,7 +137,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">dirname</span> (line <span class="line-number">158</span>)
+		<span class="method-title">dirname</span> (line <span class="line-number">154</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -147,7 +145,6 @@
 <p class="description"><p>PHP's dirname() function does not support stream wrappers. This  default is provided so that individual wrappers may implement  their own solutions. See WP_Local_Stream_Wrapper_Base for an example.</p></p>
 	<ul class="tags">
 				<li><span class="field">return:</span> the new temporary filename, or false on failure.</li>
-				<li><span class="field">see:</span> </li>
 				<li><span class="field">link:</span> <a href="http://us2.php.net/manual/en/function.dirname.php">http://us2.php.net/manual/en/function.dirname.php</a></li>
 				<li><span class="field">since:</span> 1.0.0</li>
 				<li><span class="field">access:</span> public</li>
@@ -173,7 +170,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">get_uri</span> (line <span class="line-number">104</span>)
+		<span class="method-title">get_uri</span> (line <span class="line-number">103</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -201,7 +198,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">get_web_accessible_url</span> (line <span class="line-number">196</span>)
+		<span class="method-title">get_web_accessible_url</span> (line <span class="line-number">190</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -209,7 +206,6 @@
 <p class="description"><p>Returns a URL that can be accessed from a browser. For example,  the web URL of the internal URI &quot;local://example.txt&quot; might be  &quot;http://www.example.com/wp-content/example.txt&quot;.</p><p>All wrappers that intend to make their resources available  in this way must implement this method.</p></p>
 	<ul class="tags">
 				<li><span class="field">return:</span> the web accessible URL for the resource.</li>
-				<li><span class="field">see:</span> </li>
 				<li><span class="field">since:</span> 1.0.0</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -229,7 +225,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">realpath</span> (line <span class="line-number">177</span>)
+		<span class="method-title">realpath</span> (line <span class="line-number">172</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -237,7 +233,6 @@
 <p class="description"><p>PHP's realpath() does not support stream wrappers. This default is  provided so that individual wrappers may implement their own  solutions. See WP_Local_Stream_Wrapper_Base for an example.</p></p>
 	<ul class="tags">
 				<li><span class="field">return:</span> a string with absolute pathname on success [as implemented by    WP_Local_Stream_Wrapper_Base], or false on failure or if the    registered wrapper does not provide an implementation.</li>
-				<li><span class="field">see:</span> </li>
 				<li><span class="field">link:</span> <a href="http://php.net/manual/en/function.realpath.php">http://php.net/manual/en/function.realpath.php</a></li>
 				<li><span class="field">since:</span> 1.0.0</li>
 				<li><span class="field">access:</span> public</li>
@@ -258,14 +253,13 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">set_uri</span> (line <span class="line-number">118</span>)
+		<span class="method-title">set_uri</span> (line <span class="line-number">116</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">Sets the URI of the current file object</p>
 <p class="description"><p>A URI stream is referenced as &quot;scheme://target&quot;</p></p>
 	<ul class="tags">
-				<li><span class="field">see:</span> </li>
 				<li><span class="field">since:</span> 1.0.0</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -320,7 +314,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Thu, 12 Aug 2010 15:19:18 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Fri, 13 Aug 2010 10:45:45 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</div></body>
 </html>

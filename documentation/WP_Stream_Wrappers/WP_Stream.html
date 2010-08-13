@@ -26,12 +26,11 @@
 	<ul class="tags">
 				<li><span class="field">author:</span> Jon Stacey &lt;<a href="mailto:jon@jonsview.com">jon@jonsview.com</a>&gt;</li>
 				<li><span class="field">version:</span> 1.0.0</li>
-				<li><span class="field">see:</span> </li>
 				<li><span class="field">link:</span> <a href="http://www.php.net/manual/en/intro.stream.php">http://www.php.net/manual/en/intro.stream.php</a></li>
 				<li><span class="field">since:</span> 1.0.0</li>
 			</ul>
 		<p class="notes">
-			Located in <a class="field" href="_wp-stream-class.php.html">/wp-stream-class.php</a> (line <span class="field">30</span>)
+			Located in <a class="field" href="_wp-stream-class.php.html">/wp-stream-class.php</a> (line <span class="field">29</span>)
 		</p>
 		
 				
@@ -103,7 +102,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method new_wrapper_instance</span> (line <span class="line-number">126</span>)
+		<span class="method-title">static method new_wrapper_instance</span> (line <span class="line-number">122</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -121,7 +120,6 @@
 </ol></div>  In both options in the above example, an instance of  WP_Local_Stream_Wrapper is returned.</p><p>Note: Even if a scheme is used, or a URI without a target, the instance  URI will be initialized as a full stream. That is, the instance URI  will be &quot;scheme://&quot;, which has both a scheme and target despite target  being empty.</p></p>
 	<ul class="tags">
 				<li><span class="field">return:</span> new stream wrapper instance for the given URI. Returns false if    a registered wrapper cannot be found.</li>
-				<li><span class="field">see:</span> </li>
 				<li><span class="field">since:</span> 1.0.0</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -148,7 +146,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method normalize</span> (line <span class="line-number">208</span>)
+		<span class="method-title">static method normalize</span> (line <span class="line-number">201</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -156,7 +154,6 @@
 <p class="description"><p>The following actions are performed on the stream URI that is  returned.</p><p><ul><li>Removing leading slashes from target.</li><li>Removing duplicate path separators from target.</li></ul></p></p>
 	<ul class="tags">
 				<li><span class="field">return:</span> the normalized stream URI after the modifications listed in the    function description have been performed.</li>
-				<li><span class="field">see:</span> </li>
 				<li><span class="field">since:</span> 1.0.0</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -182,7 +179,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method scheme</span> (line <span class="line-number">53</span>)
+		<span class="method-title">static method scheme</span> (line <span class="line-number">51</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -193,7 +190,6 @@
 </ol></div></p></p>
 	<ul class="tags">
 				<li><span class="field">return:</span> the name of the scheme, or false if there is no scheme.</li>
-				<li><span class="field">see:</span> </li>
 				<li><span class="field">since:</span> 1.0.0</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -219,7 +215,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method scheme_valid</span> (line <span class="line-number">178</span>)
+		<span class="method-title">static method scheme_valid</span> (line <span class="line-number">172</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -227,7 +223,6 @@
 <p class="description"><p>Confirms that there is a registered stream handler for the given  scheme and that it is callable. This is useful if you want to confirm  a valid scheme without creating a new instance of the registered  wrapper.</p></p>
 	<ul class="tags">
 				<li><span class="field">return:</span> true if the scheme is valid, or false if the scheme does not have    a registered handler.</li>
-				<li><span class="field">see:</span> </li>
 				<li><span class="field">since:</span> 1.0.0</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -253,7 +248,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method target</span> (line <span class="line-number">83</span>)
+		<span class="method-title">static method target</span> (line <span class="line-number">80</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -264,7 +259,6 @@
 </ol></div></p></p>
 	<ul class="tags">
 				<li><span class="field">return:</span> the target (a.k.a. path) of the stream. An empty string ('') is    returned if the stream does not have an explicit target, such as    in the case of &quot;scheme://&quot;</li>
-				<li><span class="field">see:</span> </li>
 				<li><span class="field">since:</span> 1.0.0</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -290,14 +284,13 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method wrapper_class_name</span> (line <span class="line-number">153</span>)
+		<span class="method-title">static method wrapper_class_name</span> (line <span class="line-number">148</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">Returns ths class name of the wrapper implementation for given scheme</p>
 	<ul class="tags">
 				<li><span class="field">return:</span> the class name of the registered wrapper handler, or false if    there is no registered handler.</li>
-				<li><span class="field">see:</span> </li>
 				<li><span class="field">since:</span> 1.0.0</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -326,7 +319,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Thu, 12 Aug 2010 15:19:18 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Fri, 13 Aug 2010 10:45:45 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</div></body>
 </html>
