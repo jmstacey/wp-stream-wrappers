@@ -71,19 +71,8 @@ require_once('wp-local-stream-wrapper-base.php');
 require_once('wp-local-stream-wrapper/wp-local-stream-wrapper.php');
 
 /**
- * Initializes WP Stream Wrappers
- *
- * Prepares the WordPress Stream Wrapper registry and interfaces for use.
- *
- * @since   1.0.0
+ * Register stream wrapper registry initilization function
  */
-function wp_stream_wrappers_init() {
-    wp_stream_wrapper_registry_init();
-}
-
-/**
- * Register Stream Wrapper initialization function with WordPress.
- */
-add_action('init', 'wp_stream_wrappers_init', 0, 0);
+add_action('init', 'wp_stream_wrapper_registry_init', 0, 0);
 
 ?>
