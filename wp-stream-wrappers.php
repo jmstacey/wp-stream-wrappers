@@ -71,7 +71,7 @@ require_once('wp-local-stream-wrapper-base.php');
 require_once('wp-local-stream-wrapper/wp-local-stream-wrapper.php');
 
 /**
- * Register stream wrapper registry initilization function
+ * Register stream wrapper registry initialization function
  */
 add_action('init', 'wp_stream_wrapper_registry_init', 0, 0);
 
